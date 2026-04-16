@@ -1,0 +1,33 @@
+DJ,Ordre,Heure,Duree_min,Titre,Format,Type,Objectif_pedagogique,URL_ancree
+DJ1,1,13:30,15,Inclusion - Le RGPD qui me fait peur,Pleniere/Tour de table,Inclusion,Ouvrir la seance et faire emerger les representations sur le RGPD,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-1-inclusion
+DJ1,2,13:45,20,Apport 1 - RGPD 101 en No-Code/IA,Pleniere/Apport,Apport de contenu,Donner un cadre theorique minimal RGPD adapte au No-Code/IA,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-2-apport-rgpd
+DJ1,3,14:05,40,Pratique 1 - Audit ChatBotRH en binome,Binome,Pratique guidee / Classe inversee,Identifier les violations RGPD d'un cas fictif realiste,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-3-classe-inversee
+DJ1,4,14:45,25,Debrief + Top 8 risques securite No-Code/IA,Pleniere,Debrief + Apport,Completer la grille RGPD puis aborder la cybersecurite,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-4-debrief-securite
+DJ1,5,15:10,15,Pause,Pause,Pause,Coupure franche,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-5-pause
+DJ1,6,15:25,60,Pratique 2 - Mini-AIPD sur ton projet,Individuel + coaching,Pratique guidee,Appliquer un mini-AIPD sur son propre projet,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-6-mini-aipd
+DJ1,7,16:25,20,Consolidation - Carnet de bord DJ1,Individuel,Consolidation,Consolider les apprentissages en actions concretes,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-7-consolidation
+DJ1,8,16:45,15,Cloture - Je retiens j'applique,Pleniere/Tour de table,Cloture,Ancrer les apprentissages et teaser DJ2,https://agoriade-s6.vercel.app/dj1-rgpd-securite/#seq-8-cloture
+DJ2,1,13:30,15,Inclusion - Un site que je trouve hostile,Pleniere/Tour de table,Inclusion,Faire emerger des experiences vecues d'expériences hostiles,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-1-inclusion
+DJ2,2,13:45,20,Apport 1 - Les 4 principes POUR de l'accessibilite,Pleniere/Apport,Apport de contenu,Donner le cadre WCAG/RGAA via les 4 principes POUR,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-2-apport-a11y
+DJ2,3,14:05,40,Pratique 1 - Audit a11y en binome sur site reel,Binome,Pratique guidee,Realiser un audit a11y avec outils gratuits (axe WAVE),https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-3-audit-a11y
+DJ2,4,14:45,25,Debrief + Ecoconception le vrai impact,Pleniere,Debrief + Apport,Poser le cadre ecoconception et les vrais leviers,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-4-apport-eco
+DJ2,5,15:10,15,Pause,Pause,Pause,Coupure franche,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-5-pause
+DJ2,6,15:25,60,Pratique 2 - Analyse d'impact eco sur ton projet,Individuel + coaching,Pratique guidee,Mesurer l'impact d'une feature et identifier 3 optimisations,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-6-pratique-eco
+DJ2,7,16:25,20,Consolidation - Carnet de bord DJ2,Individuel,Consolidation,Consolider en chantiers prioritaires,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-7-consolidation
+DJ2,8,16:45,15,Cloture DJ2 - Je retiens j'applique,Pleniere,Cloture,Ancrer et teaser DJ3,https://agoriade-s6.vercel.app/dj2-accessibilite-ecoconception/#seq-8-cloture
+DJ3,1,09:00,15,Inclusion - La doc de l'enfer,Pleniere/Tour de table,Inclusion,Faire emerger les experiences de doc absente ou inutilisable,https://agoriade-s6.vercel.app/dj3-documentation/#seq-1-inclusion
+DJ3,2,09:15,20,Apport 1 - Les 4 types de doc (Diataxis),Pleniere/Apport,Apport de contenu,Donner un cadre pour savoir quelle doc ecrire pour quel besoin,https://agoriade-s6.vercel.app/dj3-documentation/#seq-2-apport-doc
+DJ3,3,09:35,40,Pratique 1 - Doc technique de ton projet,Individuel + coaching,Pratique guidee,Demarrer ou rattraper la doc technique avec une trame,https://agoriade-s6.vercel.app/dj3-documentation/#seq-3-pratique-doc
+DJ3,4,10:15,25,Debrief + Procedures de support qui tiennent,Pleniere,Debrief + Apport,Decouvrir runbook escalade post-mortem,https://agoriade-s6.vercel.app/dj3-documentation/#seq-4-apport-support
+DJ3,5,10:40,15,Pause,Pause,Pause,Coupure franche,https://agoriade-s6.vercel.app/dj3-documentation/#seq-5-pause
+DJ3,6,10:55,60,Pratique 2 - Ton premier runbook d'incident,Individuel puis binome,Pratique guidee,Produire un runbook complet et testable,https://agoriade-s6.vercel.app/dj3-documentation/#seq-6-pratique-runbook
+DJ3,7,11:55,20,Consolidation - Carnet de bord DJ3,Individuel,Consolidation,Identifier les 3 premiers chantiers doc/support,https://agoriade-s6.vercel.app/dj3-documentation/#seq-7-consolidation
+DJ3,8,12:15,15,Cloture DJ3 - Je retiens j'applique,Pleniere,Cloture,Ancrer et teaser DJ4,https://agoriade-s6.vercel.app/dj3-documentation/#seq-8-cloture
+DJ4,1,13:30,15,Inclusion - Si j'etais le jury,Pleniere/Tour de table,Inclusion,Se mettre a la place du jury pour mieux preparer,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-1-inclusion
+DJ4,2,13:45,20,Apport 1 - La grille du jury decryptee,Pleniere/Apport,Apport de contenu,Demystifier la grille d'evaluation et lister les 6 livrables attendus,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-2-apport-grille
+DJ4,3,14:05,40,Pratique 1 - Simulation soutenance (2 volontaires),Pleniere/Simulation,Mise en situation,Faire passer 2 personnes en conditions reelles devant le groupe-jury,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-3-simulation-1
+DJ4,4,14:45,25,Debrief + Les 5 pieges de la soutenance,Pleniere,Debrief + Apport,Consolider et apporter le cadre sur les ecueils classiques,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-4-debrief-simulation
+DJ4,5,15:10,15,Pause,Pause,Pause,Coupure franche,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-5-pause
+DJ4,6,15:25,60,Pratique 2 - Simulation binome croise + consolidation,Binome puis individuel,Mise en situation,Simulation pour les 4 restants + consolidation des livrables,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-6-simulation-2
+DJ4,7,16:25,20,Plan d'action J-7 vers J-0,Individuel + pair-check,Plan d'action,Construire un retro-planning realiste pour les 9 jours,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-7-plan-action
+DJ4,8,16:45,15,Cloture S6 - Ritual Je suis pret-e,Pleniere/Tour de table,Cloture,Terminer la Sequence 6 avec une cloture symbolique,https://agoriade-s6.vercel.app/dj4-mise-en-situation/#seq-8-cloture

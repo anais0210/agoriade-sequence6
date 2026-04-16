@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ3 — Documentation &amp; Support — Agoriade S6</title>
+  <meta name="description" content="Demi-journée 3 du bootcamp AI Product Builder — Séquence 6. Documentation technique et procédures de support pour une solution No-Code/IA.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade Séquence 6">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade <span style="color: var(--c-yellow);">—</span> S6</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">DJ1</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">DJ2</a></li>
+          <li><a href="/dj3-documentation/" aria-current="page">DJ3</a></li>
+          <li><a href="/dj4-mise-en-situation/">DJ4</a></li>
+          <li><a href="/a-propos-anais/">À propos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero-kicker">DJ3 — Lun. 4 mai — 9h00 à 12h30</span>
+        <h1 id="hero-title">Documentation &amp; Support</h1>
+        <p class="hero-lead">
+          Ton futur toi (ou ton successeur) te remerciera. Apprendre à
+          documenter juste ce qu'il faut, et à construire des procédures de
+          support qui tiennent quand ça casse à 23h un dimanche soir.
+        </p>
+        <div class="hero-actions">
+          <a href="#sommaire" class="btn btn--large">Voir le déroulé</a>
+          <a href="#livrables" class="btn btn--secondary btn--large">Accéder aux livrables</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="sommaire" aria-labelledby="sommaire-title" style="padding-top: var(--sp-12);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li aria-current="page">DJ3 — Documentation &amp; Support</li>
+        </ol>
+      </nav>
+
+      <h2 id="sommaire-title">Déroulé de la demi-journée</h2>
+      <p>8 séquences, 3h30 au total.</p>
+
+      <ol class="timeline" aria-label="Séquences de la DJ3">
+        <li class="timeline-item">
+          <span class="timeline-time">9h00<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-1-inclusion">① Inclusion — « La doc de l'enfer »</a></h4>
+            <p>Brise-glace sur les pires expériences de doc.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">9h15<br><span class="timeline-duration">20 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-2-apport-doc">② Apport 1 — Les 4 types de doc qu'il te faut</a></h4>
+            <p>Framework Diátaxis adapté au No-Code/IA : tutoriel, how-to, explication, référence.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">9h35<br><span class="timeline-duration">40 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-3-pratique-doc">③ Pratique guidée 1 — Écrire la doc technique de ton projet</a></h4>
+            <p>Utiliser la trame fournie pour documenter son propre produit.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">10h15<br><span class="timeline-duration">25 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-4-apport-support">④ Débrief + Apport 2 — Procédures de support qui tiennent</a></h4>
+            <p>Runbook incident, escalade, post-mortem : les 3 briques indispensables.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">10h40<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-5-pause">⑤ Pause</a></h4>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">10h55<br><span class="timeline-duration">60 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-6-pratique-runbook">⑥ Pratique guidée 2 — Écrire ton premier runbook d'incident</a></h4>
+            <p>Scénario « Mon workflow Make est en panne à 23h un dimanche ». Chacun·e écrit son runbook.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">11h55<br><span class="timeline-duration">20 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-7-consolidation">⑦ Consolidation — Carnet de bord DJ3</a></h4>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">12h15<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-8-cloture">⑧ Clôture — « Je retiens, j'applique »</a></h4>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-1-inclusion" aria-labelledby="seq-1-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 1 · 9h00 · 15 min</span>
+      <h2 id="seq-1-title">Inclusion — « La doc de l'enfer »</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Ouvrir la matinée par l'expérience partagée : tout le monde a vécu une doc absente, obsolète ou inutilisable. Récolter ces anecdotes pour ancrer pourquoi on va faire différemment.</p>
+      </div>
+
+      <h3>Consignes animation</h3>
+      <ol>
+        <li><strong>Accueillir (2 min)</strong> — Nouvelle semaine, transition vers la fin de la séquence. Annoncer DJ3+DJ4 comme un binôme (matin/après-midi du 4 mai).</li>
+        <li><strong>Question brise-glace (3 min)</strong> — « Raconte une fois où tu t'es retrouvé·e bloqué·e à cause d'une doc manquante ou incompréhensible. »</li>
+        <li><strong>Tour de table (8 min)</strong> — Noter au tableau les motifs récurrents : « doc obsolète », « doc introuvable », « doc pas faite », « doc mais pas à jour »…</li>
+        <li><strong>Annoncer le cap (2 min)</strong> — « Aujourd'hui, on va construire deux choses : une trame de doc qui tient dans le temps, et un runbook qui te sauve à 23h un dimanche. »</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-2-apport-doc" aria-labelledby="seq-2-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 2 · 9h15 · 20 min</span>
+      <h2 id="seq-2-title">Apport 1 — Les 4 types de doc qu'il te faut</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Donner un cadre qui permet de savoir quelle doc écrire pour quel besoin : le framework Diátaxis, simplifié pour le No-Code/IA.</p>
+      </div>
+
+      <h3>Contenu à transmettre</h3>
+
+      <h4>1. Pourquoi les docs échouent</h4>
+      <p>Parce qu'on mélange 4 objectifs différents dans le même doc. Un utilisateur qui veut <em>apprendre</em> n'a pas les mêmes besoins qu'un utilisateur qui veut <em>résoudre un problème précis</em>. Séparer = doc utile.</p>
+
+      <h4>2. Le framework Diátaxis — 4 types de doc</h4>
+
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">1</span>
+          <h4 class="mt-0">Tutoriel</h4>
+          <p><strong>Pour qui ?</strong> Quelqu'un qui découvre.</p>
+          <p><strong>Objectif :</strong> apprentissage, pas à pas du début à la fin.</p>
+          <p><strong>Exemple :</strong> « Crée ton premier scénario Make en 10 min ».</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">2</span>
+          <h4 class="mt-0">Guide (How-to)</h4>
+          <p><strong>Pour qui ?</strong> Quelqu'un qui sait déjà, face à un problème précis.</p>
+          <p><strong>Objectif :</strong> résoudre une tâche ponctuelle.</p>
+          <p><strong>Exemple :</strong> « Comment ajouter un webhook dans un scénario existant ».</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">3</span>
+          <h4 class="mt-0">Explication</h4>
+          <p><strong>Pour qui ?</strong> Quelqu'un qui veut comprendre « pourquoi ».</p>
+          <p><strong>Objectif :</strong> donner le contexte, les choix, les compromis.</p>
+          <p><strong>Exemple :</strong> « Pourquoi on a choisi Airtable plutôt que Notion ».</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">4</span>
+          <h4 class="mt-0">Référence</h4>
+          <p><strong>Pour qui ?</strong> Quelqu'un qui cherche une info précise, rapide.</p>
+          <p><strong>Objectif :</strong> lookup exhaustif, structuré.</p>
+          <p><strong>Exemple :</strong> liste des scénarios Make, des tables Airtable, des secrets API.</p>
+        </div>
+      </div>
+
+      <h4>3. La règle d'or : commencer par la Référence</h4>
+      <p>Beaucoup de projets n'ont aucune doc. Si tu dois commencer par une seule, commence par la <strong>Référence technique</strong> : inventaire des composants, des secrets, des dépendances. C'est ce qui sauve quand ça casse.</p>
+
+      <h4>4. Où écrire la doc ?</h4>
+      <ul>
+        <li><strong>Notion / Outline / Obsidian</strong> — simple, collaboratif, bon pour les projets No-Code.</li>
+        <li><strong>Un README dans le repo</strong> — si tu as du code (même un peu).</li>
+        <li><strong>GitBook / Mintlify</strong> — si la doc est publique / destinée aux utilisateurs.</li>
+      </ul>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">⚠️ Le piège numéro 1</span>
+        <p class="mb-0">Mettre la doc dans un endroit que tu ne visites jamais. La doc doit vivre là où tu travailles — sinon elle se périmera. Le meilleur endroit, c'est celui où tu retournes tous les jours.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-3-pratique-doc" aria-labelledby="seq-3-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 3 · 9h35 · 40 min</span>
+      <h2 id="seq-3-title">Pratique guidée 1 — Écrire la doc technique de ton projet</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Démarrer — ou rattraper — la doc technique de son propre projet en s'appuyant sur une trame éprouvée. Sortir avec un document utilisable, pas un template vide.</p>
+      </div>
+
+      <h3>Consignes animation</h3>
+      <ol>
+        <li><strong>Distribuer la trame (3 min)</strong> — Pointer la <a href="#livrable-trame-doc">trame de doc technique No-Code/IA</a>. Chacun·e l'ouvre dans son outil préféré (Notion, Google Doc, README).</li>
+        <li><strong>Rappeler les 6 blocs (5 min)</strong> :
+          <ul>
+            <li>Bloc 1 — Vue d'ensemble (1 paragraphe + schéma)</li>
+            <li>Bloc 2 — Stack technique (tous les outils utilisés)</li>
+            <li>Bloc 3 — Comptes et accès</li>
+            <li>Bloc 4 — Flux de données principaux (3-5 schémas)</li>
+            <li>Bloc 5 — Procédures courantes</li>
+            <li>Bloc 6 — Décisions (ADR — Architecture Decision Records)</li>
+          </ul>
+        </li>
+        <li><strong>Rédaction individuelle (25 min)</strong> — Chacun·e remplit la trame sur son projet. Animation en coaching circulant.</li>
+        <li><strong>Mise en commun (7 min)</strong> — 2-3 personnes volontaires partagent leur bloc le mieux rempli et expliquent leurs choix.</li>
+      </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">💡 Pour l'animation</span>
+        <p class="mb-0">Le piège : vouloir tout remplir parfaitement. Pousser à « la version 1 suffisante » — imparfaite mais existante. Mieux vaut un bloc 2 et bloc 3 bien faits qu'une trame complète bâclée.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-4-apport-support" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 4 · 10h15 · 25 min</span>
+      <h2 id="seq-4-title">Débrief + Apport 2 — Procédures de support qui tiennent</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Sortir de « la doc c'est pour les autres » et entrer dans « comment je construis les procédures qui me sauvent quand ça casse ».</p>
+      </div>
+
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Débrief de la pratique doc (7 min)</strong> — Qu'est-ce qui a été difficile ? Qu'est-ce qui reste à faire ? Partager les blocages.</li>
+        <li><strong>Apport sur le support (18 min)</strong> — Parcourir les 3 briques ci-dessous.</li>
+      </ol>
+
+      <h3>Les 3 briques du support qui tient</h3>
+
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">1</span>
+          <h4 class="mt-0">Runbook d'incident</h4>
+          <p>Une fiche par type de panne courante : symptôme → diagnostic → actions → qui alerter.</p>
+          <p><strong>Exemple :</strong> « Le scénario Make ne s'exécute plus » → 1. Vérifier le statut Make → 2. Vérifier les quotas → 3. Vérifier les logs → 4. Si rien : rollback.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">2</span>
+          <h4 class="mt-0">Procédure d'escalade</h4>
+          <p>Qui contacter, dans quel ordre, sur quel canal, pour quel type de problème.</p>
+          <p><strong>Exemple :</strong> Facturation OpenAI → fondateur. Bug fonctionnel → dev. Question utilisateur → support N1.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">3</span>
+          <h4 class="mt-0">Post-mortem</h4>
+          <p>Après chaque incident majeur : qu'est-ce qui s'est passé, qu'est-ce qu'on a appris, qu'est-ce qu'on change.</p>
+          <p><strong>Règle :</strong> pas de blame. Le post-mortem vise les systèmes, pas les personnes.</p>
+        </div>
+      </div>
+
+      <h3>Les 3 principes à retenir</h3>
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">✨ Principe 1 — Le runbook doit être utilisable à 3h du matin</span>
+        <p class="mb-0">Donc : pas d'ambiguïté, pas de « ça dépend », chaque étape est une action concrète avec un critère de réussite clair.</p>
+      </div>
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">✨ Principe 2 — Le runbook doit être testé</span>
+        <p class="mb-0">Au moins une fois tous les 6 mois, simuler l'incident et dérouler le runbook. Si une étape ne marche pas, corriger.</p>
+      </div>
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">✨ Principe 3 — Le runbook doit être accessible vite</span>
+        <p class="mb-0">Ne pas le planquer dans Notion dans un sous-sous-dossier. Un lien direct depuis un endroit que tu vas voir en panique (ton téléphone, ton bookmark, etc.).</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-5-pause" aria-labelledby="seq-5-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 5 · 10h40 · 15 min</span>
+      <h2 id="seq-5-title">Pause</h2>
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Coupure. Reprise à 10h55.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-6-pratique-runbook" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 6 · 10h55 · 60 min</span>
+      <h2 id="seq-6-title">Pratique guidée 2 — Écrire ton premier runbook d'incident</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Produire un runbook complet et testable pour un scénario d'incident réaliste sur son propre projet. Sortir avec une fiche utilisable.</p>
+      </div>
+
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Distribuer le template (3 min)</strong> — Pointer le <a href="#livrable-runbook">template Runbook d'incident</a>.</li>
+        <li><strong>Poser le scénario (5 min)</strong> — Chacun·e choisit un scénario parmi :
+          <ul>
+            <li>« Mon workflow Make est en panne à 23h un dimanche soir »</li>
+            <li>« Ma base Airtable a été corrompue ce matin »</li>
+            <li>« Mes clés API OpenAI ont fuité sur internet »</li>
+            <li>« Mon utilisateur principal me dit que rien ne marche »</li>
+          </ul>
+        </li>
+        <li><strong>Rédaction (35 min)</strong> — Remplir le template pour ce scénario. Coaching circulant.</li>
+        <li><strong>Test en binôme (10 min)</strong> — Échanger son runbook avec un·e voisin·e. L'autre essaie de « jouer » l'incident avec le runbook — trouve-t-il/elle des trous ?</li>
+        <li><strong>Corrections rapides (7 min)</strong> — Corriger son runbook avec les retours reçus.</li>
+      </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">💡 Pour l'animation</span>
+        <p class="mb-0">Le test croisé est LE moment d'apprentissage. Beaucoup vont découvrir que leur runbook a des trous (étapes implicites, chemins non testés). C'est le but. Pousser les paires à être rigoureuses, pas gentilles.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-7-consolidation" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 7 · 11h55 · 20 min</span>
+      <h2 id="seq-7-title">Consolidation — Carnet de bord DJ3</h2>
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Parcourir les livrables (5 min)</strong> — <a href="#livrable-trame-doc">Trame doc technique</a>, <a href="#livrable-runbook">Template runbook</a>, <a href="#livrable-checklist-doc">Checklist « ma doc est-elle exploitable ? »</a>.</li>
+        <li><strong>Remplir la checklist (10 min)</strong> — Évaluer l'état de sa doc actuelle, identifier les 3 premiers chantiers.</li>
+        <li><strong>Écrire l'engagement (5 min)</strong> — « Avant la fin de la semaine, j'aurai rédigé… ».</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-8-cloture" aria-labelledby="seq-8-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 8 · 12h15 · 15 min</span>
+      <h2 id="seq-8-title">Clôture — « Je retiens, j'applique »</h2>
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Tour de table (10 min)</strong> — « Une chose que je retiens + une chose que je vais appliquer cet après-midi. »</li>
+        <li><strong>Teaser la DJ4 (3 min)</strong> — « Cet après-midi, on passe en mode mise en situation. Tu vas préparer ta soutenance d'évaluation (13 mai). C'est LA demi-journée où tu prépares les 6 livrables attendus par le jury. »</li>
+        <li><strong>Partage pause déjeuner (2 min)</strong> — Organiser le déjeuner collectif si prévu.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="section--yellow" id="livrables" aria-labelledby="livrables-title" style="margin-top: var(--sp-16);">
+      <div class="container">
+        <h2 id="livrables-title">Les livrables à emporter</h2>
+        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables pour documenter et sécuriser l'exploitation de ton produit.</p>
+      </div>
+    </section>
+
+    <section class="container" id="livrable-trame-doc" aria-labelledby="livrable-1-title" style="padding-top: var(--sp-12);">
+      <span class="badge">📋 Livrable 1</span>
+      <h2 id="livrable-1-title">Trame de doc technique No-Code/IA</h2>
+      <p>Structure en 6 blocs pour documenter un produit No-Code/IA. À copier-coller dans Notion / Google Doc / README.</p>
+
+      <h3>📦 Bloc 1 — Vue d'ensemble</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Nom du produit :</strong> [nom]</li>
+          <li><strong>Pitch en 1 phrase :</strong> [ex : « Application qui aide les RH à pré-qualifier les candidatures via IA »]</li>
+          <li><strong>Utilisateurs cibles :</strong> [qui utilise, combien]</li>
+          <li><strong>Fonctions principales :</strong> [liste à puces, 3-5 items]</li>
+          <li><strong>Schéma d'architecture :</strong> [image ou description : frontend → backend → services tiers]</li>
+        </ul>
+      </div>
+
+      <h3>🛠️ Bloc 2 — Stack technique</h3>
+      <div class="callout callout--yellow-soft">
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Couche</th><th>Outil</th><th>Version / plan</th><th>Rôle</th></tr></thead>
+            <tbody>
+              <tr><td>Frontend / UI</td><td>[ex : Softr / Bubble / Webflow]</td><td>[plan payé]</td><td>[rôle]</td></tr>
+              <tr><td>Base de données</td><td>[ex : Airtable]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>Automation</td><td>[ex : Make / n8n]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>IA / LLM</td><td>[ex : OpenAI GPT-4o]</td><td>[version API]</td><td>[rôle]</td></tr>
+              <tr><td>Hébergement</td><td>[ex : Vercel]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>Auth</td><td>[ex : Supabase auth]</td><td>[plan]</td><td>[rôle]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>🔑 Bloc 3 — Comptes et accès</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Liste des comptes :</strong> [outil + email du compte owner + qui a accès]</li>
+          <li><strong>Gestionnaire de secrets :</strong> [ex : 1Password, Bitwarden — où sont les clés API]</li>
+          <li><strong>Double auth :</strong> [activée sur quels outils ? avec quel téléphone de secours ?]</li>
+          <li><strong>Procédure de récupération :</strong> [si le fondateur est indisponible, comment accéder]</li>
+        </ul>
+      </div>
+
+      <h3>🌊 Bloc 4 — Flux de données principaux</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Pour les 3-5 flux les plus importants, documenter :</p>
+        <ul class="flow">
+          <li><strong>Déclencheur :</strong> [ex : utilisateur soumet formulaire sur Softr]</li>
+          <li><strong>Étapes :</strong> [numérotées, pas à pas]</li>
+          <li><strong>Données manipulées :</strong> [quelles données, où elles vont]</li>
+          <li><strong>Résultat attendu :</strong> [quoi sortie, dans quel délai]</li>
+          <li><strong>Cas d'échec :</strong> [que se passe-t-il si ça rate]</li>
+        </ul>
+      </div>
+
+      <h3>📝 Bloc 5 — Procédures courantes</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Comment faire les tâches récurrentes. Une fiche par tâche :</p>
+        <ul class="flow">
+          <li><strong>Ajouter un nouvel utilisateur</strong></li>
+          <li><strong>Modifier un prompt IA</strong></li>
+          <li><strong>Ajouter un champ à Airtable</strong></li>
+          <li><strong>Déployer une nouvelle version</strong></li>
+          <li><strong>Faire une sauvegarde manuelle</strong></li>
+        </ul>
+      </div>
+
+      <h3>🧭 Bloc 6 — Décisions (ADR — Architecture Decision Records)</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Une entrée par décision structurante. Pour chacune :</p>
+        <ul class="flow">
+          <li><strong>Titre :</strong> [ex : « Pourquoi Airtable plutôt que Notion »]</li>
+          <li><strong>Date :</strong> [YYYY-MM-DD]</li>
+          <li><strong>Contexte :</strong> [quel problème on résolvait]</li>
+          <li><strong>Alternatives étudiées :</strong> [option A, option B, option C]</li>
+          <li><strong>Décision retenue :</strong> [option + justification courte]</li>
+          <li><strong>Conséquences :</strong> [ce que ça implique, limites connues]</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="livrable-runbook" aria-labelledby="livrable-2-title" style="padding-top: var(--sp-8);">
+      <span class="badge">🚨 Livrable 2</span>
+      <h2 id="livrable-2-title">Template Runbook d'incident</h2>
+      <p>Fiche à remplir <strong>avant</strong> l'incident. Une fiche par type de panne probable.</p>
+
+      <div class="callout">
+        <span class="callout-label">💡 Comment utiliser</span>
+        <p class="mb-0">Copie ce template dans ton wiki projet (Notion / README). Duplique la fiche pour chaque scénario d'incident identifié. Teste au moins une fois par trimestre.</p>
+      </div>
+
+      <h3>📄 Template Runbook</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Titre de l'incident :</strong> [ex : « Le scénario Make ne s'exécute plus »]</li>
+          <li><strong>Dernière mise à jour :</strong> [date] — <strong>Par :</strong> [nom]</li>
+          <li><strong>Dernière fois testé :</strong> [date]</li>
+        </ul>
+
+        <h4>🔎 Comment on sait qu'on est dans ce cas ?</h4>
+        <p>Symptômes observables, dans l'ordre de probabilité :</p>
+        <ul class="flow">
+          <li>[Symptôme 1 — ex : « Les emails automatiques ne partent plus depuis ce matin »]</li>
+          <li>[Symptôme 2]</li>
+          <li>[Symptôme 3]</li>
+        </ul>
+
+        <h4>🩺 Diagnostic (dans l'ordre)</h4>
+        <ol>
+          <li>[Action de diagnostic 1 — ex : « Aller sur <a href="https://status.make.com">status.make.com</a> — vérifier si Make a un incident » — critère de réussite : [réponse observable]]</li>
+          <li>[Action de diagnostic 2 — ex : « Aller dans le dashboard Make, onglet Scenarios, vérifier si le scénario est ON et son dernier run »]</li>
+          <li>[Action de diagnostic 3 — ex : « Regarder les logs du dernier run pour voir le message d'erreur »]</li>
+        </ol>
+
+        <h4>🛠️ Actions correctives (par ordre d'effort)</h4>
+        <ol>
+          <li>[Action 1 — la plus simple, la plus rapide]</li>
+          <li>[Action 2 — si la 1 ne marche pas]</li>
+          <li>[Action 3 — rollback, plan B, dernier recours]</li>
+        </ol>
+
+        <h4>📞 Qui alerter et quand</h4>
+        <ul class="flow">
+          <li><strong>Si l'action 1 résout :</strong> [qui prévenir éventuellement, ex : message Slack]</li>
+          <li><strong>Si on passe à l'action 2-3 :</strong> [personne à alerter, canal]</li>
+          <li><strong>Si aucune action ne résout (30 min sans solution) :</strong> [personne de dernier recours, téléphone]</li>
+        </ul>
+
+        <h4>🔁 Après l'incident</h4>
+        <ul class="flow">
+          <li>Noter l'incident dans le registre (date, cause, durée, action qui a résolu)</li>
+          <li>Si l'incident était nouveau : mettre à jour ce runbook</li>
+          <li>Si l'incident est récurrent : prévoir une vraie correction structurelle (pas juste patch)</li>
+          <li>Si impact utilisateur : préparer la comm (ce qu'on dit, quand, à qui)</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="livrable-checklist-doc" aria-labelledby="livrable-3-title" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <span class="badge">📋 Livrable 3</span>
+      <h2 id="livrable-3-title">Checklist — « Ma doc est-elle exploitable ? »</h2>
+      <p>12 points pour auditer rapidement la qualité de ta documentation actuelle.</p>
+
+      <div class="checklist-wrapper" data-checklist-id="dj3-doc">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 12 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="doc-1"><label for="doc-1">Ma doc est à un <strong>seul endroit connu</strong> de toute l'équipe (pas dispersée dans 4 outils).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-2"><label for="doc-2">L'endroit où est la doc fait partie de mon <strong>outil de travail quotidien</strong> (Notion, Slack bookmarks, etc.).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-3"><label for="doc-3">La <strong>vue d'ensemble</strong> du produit (1 page) existe et est récente (&lt; 3 mois).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-4"><label for="doc-4">La <strong>stack technique</strong> est inventoriée (outils, plans, rôles).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-5"><label for="doc-5">Les <strong>comptes et accès</strong> sont documentés (qui a quoi, où sont les secrets).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-6"><label for="doc-6">Les <strong>flux de données principaux</strong> (3-5) sont schématisés ou décrits.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-7"><label for="doc-7">Les <strong>procédures courantes</strong> sont rédigées pas à pas (ajouter user, modifier prompt, etc.).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-8"><label for="doc-8">Au moins <strong>un runbook d'incident</strong> existe et a été testé dans les 6 derniers mois.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-9"><label for="doc-9">Une <strong>procédure d'escalade</strong> existe (qui contacter pour quel type de problème).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-10"><label for="doc-10">Les <strong>décisions structurantes</strong> sont tracées (ADR ou équivalent).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-11"><label for="doc-11">La doc est <strong>mise à jour</strong> dans les 7 jours qui suivent une modification majeure (convention équipe).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-12"><label for="doc-12">Une personne tierce (collègue, conjoint·e) pourrait <strong>se débrouiller sans moi</strong> avec ma doc.</label></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="section--black" aria-labelledby="fin-title">
+      <div class="container">
+        <h2 id="fin-title">Une question après la séance ?</h2>
+        <p style="margin-top: var(--sp-6);">
+          <a href="mailto:contact@agoriade.fr" class="btn">contact@agoriade.fr</a>
+          <a href="/dj4-mise-en-situation/" class="btn btn--secondary">DJ4 — Mise en situation →</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div>
+          <p><strong>Agoriade</strong><br>Bootcamp AI Product Builder<br>Séquence 6 — 27 avril au 13 mai 2026</p>
+        </div>
+        <div>
+          <p><strong>Contact formation</strong><br>Anaïs Sparesotto<br>
+          <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+        </div>
+        <div>
+          <p><strong>Navigation rapide</strong><br>
+          <a href="#sommaire">Déroulé</a><br>
+          <a href="#livrables">Livrables</a></p>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>© 2026 Agoriade — Espace pédagogique.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js"></script>
+</body>
+</html>

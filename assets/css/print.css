@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Agoriade — Séquence 6 — styles d'impression
+   Objectif : chaque page web devient un PDF/papier propre via Ctrl/Cmd+P
+   ========================================================================== */
+
+@media print {
+  :root {
+    font-size: 11pt;
+  }
+
+  /* Éléments à cacher complètement en impression */
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .site-nav,
+  .login-wrapper,
+  .btn,
+  .checklist-reset,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Titres : garder noir sur blanc, pas de bloc jaune en fond (gaspille l'encre) */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 { font-size: 22pt; }
+  h2 { font-size: 17pt; margin-top: 1.5em; }
+  h3 { font-size: 14pt; margin-top: 1.2em; }
+
+  /* Hero : rendu sobre en impression */
+  .hero {
+    background: white !important;
+    border-bottom: 3px solid black !important;
+    padding: 0 0 1.5em 0 !important;
+    margin-bottom: 1.5em;
+  }
+  .hero-kicker {
+    background: white !important;
+    color: black !important;
+    border: 1.5pt solid black;
+    padding: 2pt 8pt;
+  }
+  .hero h1 { max-width: 100%; }
+
+  /* Sections colorées : on enlève le fond mais on garde une bordure */
+  .section--yellow,
+  .section--black {
+    background: white !important;
+    color: black !important;
+    border-top: 2pt solid black;
+    border-bottom: 2pt solid black;
+    padding: 1.5em 0 !important;
+  }
+  .section--black h1,
+  .section--black h2,
+  .section--black h3,
+  .section--black a {
+    color: black !important;
+  }
+
+  /* Callouts : bordure épaisse, pas de fond */
+  .callout,
+  .callout--yellow,
+  .callout--yellow-soft,
+  .callout--warning {
+    background: white !important;
+    border: 2pt solid black !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 0.8em !important;
+    margin: 1em 0;
+  }
+  .callout-label {
+    background: black !important;
+    color: white !important;
+    border: 1pt solid black;
+  }
+
+  /* Cartes : bordure simple, pas d'ombre */
+  .card,
+  .card--numbered {
+    border: 1.5pt solid black !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 0.8em !important;
+  }
+  .card-number {
+    position: static;
+    display: inline-block;
+    background: black !important;
+    color: white !important;
+    width: auto;
+    height: auto;
+    padding: 2pt 8pt;
+    font-size: 12pt;
+    margin-bottom: 0.5em;
+  }
+
+  /* Grid → flux vertical */
+  .card-grid {
+    display: block;
+    margin: 1em 0;
+  }
+  .card-grid > * {
+    margin-bottom: 0.8em;
+  }
+
+  /* Badges */
+  .badge {
+    background: white !important;
+    border: 1pt solid black;
+    color: black !important;
+  }
+  .badge--dark {
+    background: black !important;
+    color: white !important;
+  }
+
+  /* Tables */
+  .table-wrapper {
+    border: 1.5pt solid black;
+    overflow: visible;
+  }
+  table {
+    font-size: 10pt;
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  th {
+    background: black !important;
+    color: white !important;
+  }
+  tr:nth-child(even) td {
+    background: #EEEEEE !important;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border-bottom: 1pt solid black;
+    grid-template-columns: 90px 1fr;
+  }
+  .timeline-time {
+    background: white !important;
+    color: black !important;
+    border: 1.5pt solid black;
+    font-size: 10pt;
+  }
+
+  /* Checklists — les cases restent visibles pour cocher à la main */
+  .checklist-item {
+    border: 1pt solid black !important;
+    background: white !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 0.4em;
+  }
+  .checklist-item input[type="checkbox"] {
+    width: 14pt;
+    height: 14pt;
+  }
+  .checklist-progress { display: none; }
+
+  /* Blockquote */
+  blockquote {
+    background: white !important;
+    border-left: 3pt solid black !important;
+    page-break-inside: avoid;
+  }
+
+  /* Liens : afficher l'URL en note (optionnel, peut être désactivé) */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+    word-break: break-all;
+  }
+  /* mais pas pour les liens internes */
+  a[href^="#"]::after,
+  a[href^="/"]::after,
+  a[href^="./"]::after,
+  a[href^="../"]::after {
+    content: "";
+  }
+
+  /* Sauts de page explicites */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* En-tête / pied de page via @page */
+  @page {
+    size: A4;
+    margin: 18mm 15mm 20mm 15mm;
+  }
+
+  /* Ressources / downloads */
+  .resource-card {
+    border: 1.5pt solid black !important;
+    background: white !important;
+  }
+  .resource-icon {
+    background: black !important;
+    color: white !important;
+  }
+}

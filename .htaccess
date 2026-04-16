@@ -1,0 +1,75 @@
+# ==========================================================================
+# Agoriade — Séquence 6 — Configuration Apache
+# --------------------------------------------------------------------------
+# Ce fichier est un BONUS pour un déploiement sur hébergement Apache
+# (OVH, O2switch, mutualisé classique). Il n'est PAS utilisé par Vercel.
+#
+# Pour l'activer, il suffit de le laisser à la racine du site sur un
+# serveur Apache avec les modules mod_headers, mod_deflate, mod_rewrite
+# et mod_expires activés (standard sur OVH).
+# ==========================================================================
+
+# ----- 1. Encodage et type -----
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .txt
+
+# ----- 2. Forcer HTTPS -----
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ----- 3. Empêcher le listing de répertoires -----
+Options -Indexes
+
+# ----- 4. Page d'erreur personnalisée -----
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+# ----- 5. Headers de sécurité -----
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set X-Robots-Tag "noindex, nofollow"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+  # Cache long pour assets
+  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|gif|webp|woff|woff2|ttf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Pas de cache pour HTML
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ----- 6. Compression -----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ----- 7. Cache navigateur (si mod_headers absent) -----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+# ----- 8. Bloquer l'accès aux fichiers sensibles -----
+<FilesMatch "^\.(htaccess|htpasswd|env|git)">
+  Require all denied
+</FilesMatch>
+
+# ----- 9. Redirections propres -----
+# Les répertoires DJx doivent servir index.html
+DirectoryIndex index.html

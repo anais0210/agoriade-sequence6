@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ2 — Accessibilité &amp; Écoconception — Agoriade S6</title>
+  <meta name="description" content="Demi-journée 2 du bootcamp AI Product Builder — Séquence 6. Accessibilité numérique et écoconception d'une solution No-Code/IA.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade Séquence 6">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade <span style="color: var(--c-yellow);">—</span> S6</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">DJ1</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/" aria-current="page">DJ2</a></li>
+          <li><a href="/dj3-documentation/">DJ3</a></li>
+          <li><a href="/dj4-mise-en-situation/">DJ4</a></li>
+          <li><a href="/a-propos-anais/">À propos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero-kicker">DJ2 — Jeu. 30 avril — 13h30 à 17h00</span>
+        <h1 id="hero-title">Accessibilité &amp; Écoconception</h1>
+        <p class="hero-lead">
+          Rendre ton produit utilisable par tout le monde sans plomber la
+          planète. Les 4 principes POUR, audit a11y en binôme sur un vrai site,
+          mesure d'impact environnemental, 10 gestes d'écoconception à
+          appliquer dès demain.
+        </p>
+        <div class="hero-actions">
+          <a href="#sommaire" class="btn btn--large">Voir le déroulé</a>
+          <a href="#livrables" class="btn btn--secondary btn--large">Accéder aux livrables</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="sommaire" aria-labelledby="sommaire-title" style="padding-top: var(--sp-12);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li aria-current="page">DJ2 — Accessibilité &amp; Écoconception</li>
+        </ol>
+      </nav>
+
+      <h2 id="sommaire-title">Déroulé de la demi-journée</h2>
+      <p>8 séquences, 3h30 au total.</p>
+
+      <ol class="timeline" aria-label="Séquences de la DJ2">
+        <li class="timeline-item">
+          <span class="timeline-time">13h30<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-1-inclusion">① Inclusion — « Un site que je trouve hostile »</a></h4>
+            <p>Brise-glace pour faire émerger les représentations sur l'accessibilité.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">13h45<br><span class="timeline-duration">20 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-2-apport-a11y">② Apport 1 — Les 4 principes POUR de l'accessibilité</a></h4>
+            <p>Cadre RGAA/WCAG minimum, avec les pièges spécifiques au No-Code.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">14h05<br><span class="timeline-duration">40 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-3-audit-a11y">③ Pratique guidée 1 — Audit accessibilité en binôme</a></h4>
+            <p>Audit d'un site réel avec grille simplifiée et outils automatisés.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">14h45<br><span class="timeline-duration">25 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-4-apport-eco">④ Débrief + Apport 2 — Écoconception : le vrai impact</a></h4>
+            <p>Débrief de l'audit, puis apport sur l'impact environnemental du numérique et les leviers d'optimisation.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">15h10<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-5-pause">⑤ Pause</a></h4>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">15h25<br><span class="timeline-duration">60 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-6-pratique-eco">⑥ Pratique guidée 2 — Analyse d'impact sur ton projet</a></h4>
+            <p>Chacun·e mesure l'impact d'une fonctionnalité de son projet et propose 3 optimisations.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">16h25<br><span class="timeline-duration">20 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-7-consolidation">⑦ Consolidation — Carnet de bord DJ2</a></h4>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-time">16h45<br><span class="timeline-duration">15 min</span></span>
+          <div class="timeline-content">
+            <h4><a href="#seq-8-cloture">⑧ Clôture — « Je retiens, j'applique »</a></h4>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-1-inclusion" aria-labelledby="seq-1-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 1 · 13h30 · 15 min</span>
+      <h2 id="seq-1-title">Inclusion — « Un site que je trouve hostile »</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Faire émerger des exemples concrets vécus d'expériences utilisateurs dégradées, pour ancrer l'accessibilité dans le vécu plutôt que dans la norme.</p>
+      </div>
+
+      <h3>Consignes animation</h3>
+      <ol>
+        <li><strong>Accueillir (2 min)</strong> — Retour rapide sur DJ1 : « Combien ont coché au moins 5 cases de la checklist RGPD depuis hier ? » Petite victoire collective.</li>
+        <li><strong>Question brise-glace (3 min)</strong> — « Citez un site ou une app que vous trouvez hostile à utiliser — sans le nommer si c'est un client. »</li>
+        <li><strong>Tour de table (8 min)</strong> — Chacun·e donne un exemple + pourquoi. Noter au tableau les types d'hostilité (trop petit, trop de pop-ups, pas clair, lent…).</li>
+        <li><strong>Annoncer le cap (2 min)</strong> — « Aujourd'hui, on va apprendre à repérer et corriger ces hostilités — pour les humains comme pour la planète. »</li>
+      </ol>
+
+      <div class="callout">
+        <span class="callout-label">💡 Pour l'animation</span>
+        <p class="mb-0">Si quelqu'un dit « je n'ai jamais été gêné·e », relancer : « Vous n'avez jamais été sur un site sur téléphone avec une petite connexion, avec un enfant qui pleure à côté ? ». L'accessibilité concerne TOUT LE MONDE, ponctuellement ou durablement.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-2-apport-a11y" aria-labelledby="seq-2-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 2 · 13h45 · 20 min</span>
+      <h2 id="seq-2-title">Apport 1 — Les 4 principes POUR de l'accessibilité</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Donner un cadre simple et mémorisable pour aborder l'accessibilité : les 4 principes POUR qui structurent WCAG/RGAA.</p>
+      </div>
+
+      <h3>Contenu à transmettre</h3>
+
+      <h4>1. Pourquoi l'accessibilité, concrètement</h4>
+      <ul>
+        <li><strong>~20% de la population</strong> a un handicap (visuel, auditif, moteur, cognitif) — permanent, temporaire, ou situationnel.</li>
+        <li><strong>Tout le monde est concerné ponctuellement</strong> : connexion faible, bras cassé, écran éclairé par le soleil, tablette posée à l'envers sur un lit.</li>
+        <li><strong>Obligations légales</strong> : le RGAA s'applique à toutes les entreprises &gt; 250M€ de CA et à tout le secteur public. Amendes jusqu'à 25 000 € par manquement.</li>
+        <li><strong>Bon pour tout le monde</strong> : un site accessible est plus rapide, mieux référencé, plus convertissant.</li>
+      </ul>
+
+      <h4>2. Les 4 principes POUR (acronyme pour mémoriser)</h4>
+
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">P</span>
+          <h4 class="mt-0">Perceptible</h4>
+          <p>Tout le monde doit pouvoir percevoir l'information, avec tous les sens possibles.</p>
+          <p><em>Exemples :</em> textes alternatifs sur les images, sous-titres vidéo, contrastes suffisants, texte redimensionnable sans perte.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">O</span>
+          <h4 class="mt-0">Opérable</h4>
+          <p>Toute interaction doit être possible avec plusieurs modalités (souris, clavier, voix).</p>
+          <p><em>Exemples :</em> navigation complète au clavier, focus visible, pas de piège clavier, assez de temps pour lire.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">U</span>
+          <h4 class="mt-0">Utilisable (Compréhensible)</h4>
+          <p>Le contenu et l'interaction doivent être compréhensibles.</p>
+          <p><em>Exemples :</em> langue déclarée, vocabulaire clair, erreurs de formulaire explicites, cohérence de navigation.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">R</span>
+          <h4 class="mt-0">Robuste</h4>
+          <p>Le site doit fonctionner avec les technologies d'assistance (lecteurs d'écran, zoom, etc.).</p>
+          <p><em>Exemples :</em> HTML sémantique valide, ARIA bien utilisé, compatible avec NVDA/JAWS/VoiceOver.</p>
+        </div>
+      </div>
+
+      <h4>3. Les pièges spécifiques au No-Code</h4>
+
+      <div class="card-grid">
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ Piège 1 — Les templates</span>
+          <p class="mb-0">La plupart des templates No-Code (Webflow, Bubble, Softr…) ne sont PAS accessibles par défaut : contrastes insuffisants, polices fines sur fond clair, titres mal hiérarchisés. Toujours auditer avant de publier.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ Piège 2 — Les formulaires</span>
+          <p class="mb-0">Labels manquants, messages d'erreur « Erreur » sans détail, pas de regroupement logique. Les formulaires No-Code sont souvent les pires points.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ Piège 3 — Les chatbots IA</span>
+          <p class="mb-0">Un chatbot qui s'ouvre automatiquement, sans possibilité de fermer au clavier, sans étiquette sur le champ de saisie, sans label sur le bouton d'envoi = cauchemar a11y.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ Piège 4 — Les images générées par IA</span>
+          <p class="mb-0">Midjourney, DALL-E → pas d'alt text automatique. Il faut l'écrire soi-même, à la main, pour chaque image.</p>
+        </div>
+      </div>
+
+      <h3>Consignes animation</h3>
+      <ol>
+        <li>Projeter (ou montrer sur un portable) un exemple concret pour chaque principe : on démo avec le lecteur d'écran de macOS ou Windows si possible (VoiceOver : <code>Cmd+F5</code>, Narrator : <code>Ctrl+Win+Entrée</code>).</li>
+        <li>Ne pas entrer dans le détail des 106 critères RGAA. L'objectif ici : comprendre le cadre, savoir où chercher ensuite.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-3-audit-a11y" aria-labelledby="seq-3-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 3 · 14h05 · 40 min</span>
+      <h2 id="seq-3-title">Pratique guidée 1 — Audit accessibilité en binôme</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Réaliser un vrai audit a11y sur un vrai site, avec une grille simplifiée et les outils gratuits. Sortir de la théorie et apprendre à diagnostiquer.</p>
+      </div>
+
+      <h3>Consignes animation</h3>
+      <ol>
+        <li><strong>Constituer 3 binômes (2 min)</strong> — Un binôme = un site à auditer.</li>
+        <li><strong>Attribuer les sites (3 min)</strong> — Sites proposés (adaptables) :
+          <ul>
+            <li>Le site d'un service public local (mairie, région)</li>
+            <li>Le site d'une école / université proche</li>
+            <li>Un site e-commerce connu (le temps de la pédagogie)</li>
+          </ul>
+          <em>Pas de site privé/client d'un·e apprenant·e, pour éviter tout conflit.</em>
+        </li>
+        <li><strong>Montrer les outils (5 min)</strong> — Faire une démo rapide :
+          <ul>
+            <li><a href="https://www.deque.com/axe/devtools/" rel="noopener">axe DevTools</a> (extension Chrome/Firefox, gratuit) — détecte ~30% des erreurs</li>
+            <li><a href="https://wave.webaim.org/" rel="noopener">WAVE</a> (site en ligne ou extension)</li>
+            <li>Le lecteur d'écran intégré au système (VoiceOver ou Narrator)</li>
+            <li>La navigation <strong>clavier uniquement</strong> (Tab, Shift+Tab, Enter, Espace)</li>
+          </ul>
+        </li>
+        <li><strong>Audit en binôme (25 min)</strong> — Utiliser la <a href="#livrable-grille-a11y">grille d'audit simplifiée</a>. Produire une liste d'au moins 5 non-conformités avec pour chacune : critère, gravité (bloquant / majeur / mineur), description, proposition de correction.</li>
+        <li><strong>Mise en commun (5 min)</strong> — Chaque binôme partage le top 3 de ses trouvailles.</li>
+      </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">💡 Pour l'animation</span>
+        <p class="mb-0">Pour les sites publics, il est possible de ressortir des défauts gênants — c'est normal et instructif. Insister : « Ces erreurs ne sont pas des fautes, ce sont des chantiers. L'objectif n'est pas de pointer du doigt mais de comprendre ce qu'il faut éviter dans son propre produit. »</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-4-apport-eco" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 4 · 14h45 · 25 min</span>
+      <h2 id="seq-4-title">Débrief + Apport 2 — Écoconception : le vrai impact</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Boucler les trouvailles de l'audit a11y, puis poser le cadre de l'écoconception : d'où vient l'impact numérique, et quels sont les vrais leviers.</p>
+      </div>
+
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Débrief audit a11y (8 min)</strong> — Reprendre les trouvailles. Faire émerger les patterns : la plupart des erreurs sont concentrées sur 5-6 critères (contrastes, alt, labels, titres).</li>
+        <li><strong>Transition (2 min)</strong> — « Un produit utilisable, c'est bien. Un produit utilisable ET sobre, c'est mieux. Pourquoi ? »</li>
+        <li><strong>Apport écoconception (15 min)</strong> — Parcourir les 4 points ci-dessous.</li>
+      </ol>
+
+      <h3>1. D'où vient l'impact du numérique ?</h3>
+      <p>Selon l'ADEME (chiffres 2022) :</p>
+      <ul>
+        <li><strong>Le numérique = 4% des émissions GES mondiales</strong> (en croissance rapide : +6% par an).</li>
+        <li>Décomposition : <strong>fabrication des terminaux (78%)</strong> &gt;&gt; data centers (14%) &gt; réseaux (8%).</li>
+        <li>Le principal levier pour un·e product builder : <strong>allonger la durée de vie des équipements</strong> en évitant de les faire ramer.</li>
+      </ul>
+
+      <h3>2. Les 4 leviers d'un·e product builder</h3>
+
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">1</span>
+          <h4 class="mt-0">Moins de fonctionnalités</h4>
+          <p>45% des fonctionnalités d'un produit ne sont jamais utilisées (étude Standish Group). Question clé : « Cette feature, elle sert à qui exactement ? »</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">2</span>
+          <h4 class="mt-0">Moins de données</h4>
+          <p>Chaque requête LLM coûte 3-10 wh. Batch, cache, prompt court : gros impact. Préférer GPT-4o mini à GPT-4o quand ça suffit.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">3</span>
+          <h4 class="mt-0">Moins de ressources</h4>
+          <p>Images compressées (WebP), vidéos compressées, polices système, pas de polyfills inutiles, pas de vidéos en autoplay.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">4</span>
+          <h4 class="mt-0">Durée de vie des équipements</h4>
+          <p>Si ton produit est fluide sur un iPhone 8, il rallonge la durée de vie de cet iPhone. Tester sur du matériel ancien.</p>
+        </div>
+      </div>
+
+      <h3>3. Les faux amis</h3>
+      <div class="callout callout--yellow-soft">
+        <p class="mb-0"><strong>« Mon site est hébergé sur une énergie verte »</strong> → très marginal. La majorité de l'impact vient de la fabrication des terminaux utilisateurs.</p>
+      </div>
+      <div class="callout callout--yellow-soft">
+        <p class="mb-0"><strong>« On va planter des arbres pour compenser »</strong> → greenwashing. Réduire la source &gt; compenser.</p>
+      </div>
+      <div class="callout callout--yellow-soft">
+        <p class="mb-0"><strong>« L'IA va résoudre ça »</strong> → sauf que l'IA elle-même pèse. Entraîner GPT-3 = 550 tonnes CO2 équivalent.</p>
+      </div>
+
+      <h3>4. Un outil à connaître</h3>
+      <p><a href="https://www.websitecarbon.com/" rel="noopener">Website Carbon Calculator</a> — permet de mesurer l'impact carbone d'une page. À utiliser en séquence 6.</p>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-5-pause" aria-labelledby="seq-5-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 5 · 15h10 · 15 min</span>
+      <h2 id="seq-5-title">Pause</h2>
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Coupure. Reprise à 15h25.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-6-pratique-eco" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 6 · 15h25 · 60 min</span>
+      <h2 id="seq-6-title">Pratique guidée 2 — Analyse d'impact sur ton projet</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Objectif</span>
+        <p class="mb-0">Mesurer concrètement l'impact d'une fonctionnalité de son propre projet et identifier 3 optimisations réalistes, ni trop ambitieuses ni cosmétiques.</p>
+      </div>
+
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Distribuer la checklist éco (3 min)</strong> — Pointer la <a href="#livrable-checklist-eco">checklist écoconception (10 gestes)</a>.</li>
+        <li><strong>Mesurer l'impact actuel (15 min)</strong> — Chacun·e :
+          <ul>
+            <li>Mesure sa page d'accueil sur <a href="https://www.websitecarbon.com/" rel="noopener">websitecarbon.com</a> → note le g CO₂ par visite.</li>
+            <li>Liste les 3-5 appels LLM / API les plus fréquents dans son produit → estime une fréquence hebdo.</li>
+            <li>Liste les 3 plus grosses ressources (images, vidéos, polices custom).</li>
+          </ul>
+        </li>
+        <li><strong>Identifier 3 optimisations (30 min)</strong> — En s'appuyant sur la checklist, choisir 3 actions concrètes et chiffrer leur impact estimé (qualitativement). Exemple : « Remplacer les 12 images PNG par des WebP → -60% de poids de page → -50% CO₂ ».</li>
+        <li><strong>Partage (12 min)</strong> — Chacun·e partage son optimisation prioritaire et son engagement (dans la semaine ? dans le mois ?).</li>
+      </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">💡 Pour l'animation</span>
+        <p class="mb-0">Beaucoup vont vouloir « refaire tout l'UX ». Ramener au concret : « Une seule action, dans la semaine, qui fait vraiment une différence mesurable. » C'est la sobriété du petit pas.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-7-consolidation" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 7 · 16h25 · 20 min</span>
+      <h2 id="seq-7-title">Consolidation — Carnet de bord DJ2</h2>
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Parcourir les livrables (5 min)</strong> — <a href="#livrable-grille-a11y">Grille audit a11y</a>, <a href="#livrable-checklist-eco">Checklist écoconception</a>, <a href="#livrable-synthese-pour">Synthèse POUR</a>.</li>
+        <li><strong>Remplir la checklist éco (10 min)</strong> — Cocher ce qui est déjà OK sur son projet, identifier 3 points prioritaires.</li>
+        <li><strong>Écrire l'engagement (5 min)</strong> — « D'ici DJ3 (4 mai matin), j'aurai fait… »</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-8-cloture" aria-labelledby="seq-8-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Séquence 8 · 16h45 · 15 min</span>
+      <h2 id="seq-8-title">Clôture — « Je retiens, j'applique »</h2>
+      <h3>Déroulé</h3>
+      <ol>
+        <li><strong>Tour de table (10 min)</strong> — « Une chose que je retiens + une chose que je vais appliquer. »</li>
+        <li><strong>Teaser la DJ3 (3 min)</strong> — « Lundi matin : documentation technique et procédures de support. Le truc qui évite que tout s'écroule quand quelqu'un part. »</li>
+        <li><strong>Remercier et partager coordonnées (2 min)</strong></li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section class="section--yellow" id="livrables" aria-labelledby="livrables-title" style="margin-top: var(--sp-16);">
+      <div class="container">
+        <h2 id="livrables-title">Les livrables à emporter</h2>
+        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables utilisables dès demain sur ton projet.</p>
+      </div>
+    </section>
+
+    <section class="container" id="livrable-grille-a11y" aria-labelledby="livrable-1-title" style="padding-top: var(--sp-12);">
+      <span class="badge">📋 Livrable 1</span>
+      <h2 id="livrable-1-title">Grille d'audit accessibilité simplifiée</h2>
+      <p>15 critères essentiels pour un audit rapide d'une page ou d'un produit. Approche Pareto : ces 15 points couvrent ~80% des problèmes.</p>
+
+      <div class="checklist-wrapper" data-checklist-id="dj2-a11y">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 15 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <h3>🎨 Perceptible</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-1"><label for="a11y-1"><strong>Contrastes</strong> — Texte sur fond a un ratio ≥ 4.5:1 (≥ 3:1 pour grand texte). Vérifier avec Contrast Checker ou axe.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-2"><label for="a11y-2"><strong>Textes alternatifs</strong> — Toutes les images informatives ont un <code>alt</code>. Les décoratives ont <code>alt=""</code>.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-3"><label for="a11y-3"><strong>Taille du texte</strong> — Le texte est redimensionnable à 200% sans perte (tester avec Ctrl/Cmd+).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-4"><label for="a11y-4"><strong>Information par couleur seule</strong> — L'information n'est jamais véhiculée UNIQUEMENT par la couleur (ex : « les champs en rouge » → ajouter une icône).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-5"><label for="a11y-5"><strong>Vidéos</strong> — Les vidéos ont des sous-titres (et idéalement une transcription).</label></li>
+        </ul>
+
+        <h3>⌨️ Opérable</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-6"><label for="a11y-6"><strong>Navigation clavier</strong> — Toute la page est navigable avec Tab/Shift+Tab/Enter/Espace, sans souris.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-7"><label for="a11y-7"><strong>Focus visible</strong> — L'élément qui a le focus est VISIBLEMENT entouré (outline, bordure, fond).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-8"><label for="a11y-8"><strong>Skip link</strong> — Un lien « Aller au contenu principal » est le premier élément focusable.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-9"><label for="a11y-9"><strong>Pas de piège clavier</strong> — On peut toujours sortir d'un élément au clavier (ex : fermer une modale avec Échap).</label></li>
+        </ul>
+
+        <h3>🗣️ Compréhensible</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-10"><label for="a11y-10"><strong>Langue déclarée</strong> — <code>&lt;html lang="fr"&gt;</code> (ou la langue principale de la page).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-11"><label for="a11y-11"><strong>Titres hiérarchisés</strong> — Un seul <code>&lt;h1&gt;</code> par page. Pas de saut (h1→h3 sans h2).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-12"><label for="a11y-12"><strong>Formulaires labellés</strong> — Tout <code>&lt;input&gt;</code> a un <code>&lt;label&gt;</code> associé (pas juste un placeholder).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-13"><label for="a11y-13"><strong>Messages d'erreur explicites</strong> — « Email invalide, il doit contenir un @ » plutôt que « Erreur ».</label></li>
+        </ul>
+
+        <h3>🤖 Robuste</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-14"><label for="a11y-14"><strong>HTML sémantique</strong> — Utiliser <code>&lt;button&gt;</code> pour un bouton, <code>&lt;nav&gt;</code> pour la nav, <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-15"><label for="a11y-15"><strong>Test lecteur d'écran</strong> — Lancer VoiceOver / Narrator sur la page et écouter : l'info critique est-elle dite ?</label></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="livrable-checklist-eco" aria-labelledby="livrable-2-title" style="padding-top: var(--sp-8);">
+      <span class="badge">🌱 Livrable 2</span>
+      <h2 id="livrable-2-title">Checklist écoconception — 10 gestes</h2>
+      <p>10 gestes concrets d'écoconception, par ordre de rapport impact/effort.</p>
+
+      <div class="checklist-wrapper" data-checklist-id="dj2-eco">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 10 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="eco-1"><label for="eco-1"><strong>1. Images optimisées</strong> — WebP ou AVIF, dimensions réelles (pas une image 4000px affichée en 400px), lazy loading sur les images hors écran.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-2"><label for="eco-2"><strong>2. Polices système</strong> ou max 1 police custom — Chaque police custom = ~50Ko téléchargés.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-3"><label for="eco-3"><strong>3. Pas d'autoplay vidéo</strong> — Autoplay = ~5 Mo par visite pour rien.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-4"><label for="eco-4"><strong>4. LLM léger quand c'est possible</strong> — GPT-4o mini pour les tâches simples au lieu de GPT-4o (×10 moins cher, ~10× moins d'énergie).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-5"><label for="eco-5"><strong>5. Cache des réponses LLM fréquentes</strong> — Même question posée 100× → 1 seul appel + cache.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-6"><label for="eco-6"><strong>6. Prompts courts et précis</strong> — Chaque token coûte. Un prompt de 50 tokens vs 500 = ×10.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-7"><label for="eco-7"><strong>7. Pas de features fantômes</strong> — Auditer les features utilisées vs non-utilisées (analytics) et retirer les oubliées.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-8"><label for="eco-8"><strong>8. Données archivées / supprimées</strong> — Définir une stratégie d'archivage et de suppression plutôt que tout garder.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-9"><label for="eco-9"><strong>9. Mode sombre</strong> — Sur les écrans OLED, économise la batterie de l'utilisateur → allonge leur durée de vie.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-10"><label for="eco-10"><strong>10. Tester sur du vieux matériel</strong> — Si ça rame sur un iPhone 8 ou un Android 2019, ça force les gens à racheter. Optimiser.</label></li>
+        </ul>
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="container" id="livrable-synthese-pour" aria-labelledby="livrable-3-title" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <span class="badge">🎨 Livrable 3</span>
+      <h2 id="livrable-3-title">Synthèse visuelle — Les 4 principes POUR</h2>
+
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">P</span>
+          <h4 class="mt-0">Perceptible</h4>
+          <p><strong>Question-clé :</strong> « Si je ferme les yeux, ou si je désactive les couleurs, l'info est-elle encore là ? »</p>
+          <p><strong>À vérifier :</strong> contrastes, alt, sous-titres, infos pas uniquement couleur.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">O</span>
+          <h4 class="mt-0">Opérable</h4>
+          <p><strong>Question-clé :</strong> « Puis-je tout faire au clavier seul, sans souris ? »</p>
+          <p><strong>À vérifier :</strong> tab order, focus visible, skip link, pas de piège.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">U</span>
+          <h4 class="mt-0">Compréhensible</h4>
+          <p><strong>Question-clé :</strong> « Est-ce clair pour quelqu'un qui arrive pour la première fois ? »</p>
+          <p><strong>À vérifier :</strong> lang, titres hiérarchisés, labels, erreurs explicites.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">R</span>
+          <h4 class="mt-0">Robuste</h4>
+          <p><strong>Question-clé :</strong> « Est-ce que ça marche avec les technologies d'assistance ? »</p>
+          <p><strong>À vérifier :</strong> HTML sémantique, ARIA, test lecteur d'écran.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="section--black" aria-labelledby="fin-title">
+      <div class="container">
+        <h2 id="fin-title">Une question après la séance ?</h2>
+        <p style="margin-top: var(--sp-6);">
+          <a href="mailto:contact@agoriade.fr" class="btn">contact@agoriade.fr</a>
+          <a href="/dj3-documentation/" class="btn btn--secondary">DJ3 — Documentation →</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div>
+          <p><strong>Agoriade</strong><br>Bootcamp AI Product Builder<br>Séquence 6 — 27 avril au 13 mai 2026</p>
+        </div>
+        <div>
+          <p><strong>Contact formation</strong><br>Anaïs Sparesotto<br>
+          <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+        </div>
+        <div>
+          <p><strong>Navigation rapide</strong><br>
+          <a href="#sommaire">Déroulé</a><br>
+          <a href="#livrables">Livrables</a></p>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>© 2026 Agoriade — Espace pédagogique.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js"></script>
+</body>
+</html>
