@@ -58,49 +58,49 @@
       <div class="card-grid">
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">1</span>
-          <h4 class="mt-0">Clés API exposées</h4>
+          <h2 class="mt-0">Clés API exposées</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> facture OpenAI à 4 chiffres, comptes piratés.</p>
           <p><strong>La règle&nbsp;:</strong> une clé API n'est jamais dans le frontend ni sur un repo public.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">2</span>
-          <h4 class="mt-0">Prompt injection</h4>
+          <h2 class="mt-0">Prompt injection</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> ton LLM fait ce que l'utilisateur veut, pas ce que tu as prévu.</p>
           <p><strong>La règle&nbsp;:</strong> jamais de confiance aveugle dans l'input. Filtrage, guardrails, validation.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">3</span>
-          <h4 class="mt-0">Pas de rate limiting</h4>
+          <h2 class="mt-0">Pas de rate limiting</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> un bot abuse ton API → facture + déni de service.</p>
           <p><strong>La règle&nbsp;:</strong> plafonner les appels par IP, par utilisateur, par heure.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">4</span>
-          <h4 class="mt-0">Droits trop larges</h4>
+          <h2 class="mt-0">Droits trop larges</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> tout le monde peut tout casser, tout voir, tout exporter.</p>
           <p><strong>La règle&nbsp;:</strong> principe du moindre privilège. Un rôle = ce qu'il faut, rien de plus.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">5</span>
-          <h4 class="mt-0">Pas de sauvegarde</h4>
+          <h2 class="mt-0">Pas de sauvegarde</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> un Make qui dérape → base effacée, clients perdus.</p>
           <p><strong>La règle&nbsp;:</strong> backup automatique quotidien et test régulier de restauration.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">6</span>
-          <h4 class="mt-0">Logs bavards</h4>
+          <h2 class="mt-0">Logs bavards</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> fuite de données perso, non-conformité RGPD.</p>
           <p><strong>La règle&nbsp;:</strong> pas de data perso en clair, durée de rétention limitée, accès contrôlé.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">7</span>
-          <h4 class="mt-0">LLM tiers</h4>
+          <h2 class="mt-0">LLM tiers</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> tes données utilisées pour entraîner un modèle public.</p>
           <p><strong>La règle&nbsp;:</strong> DPA signé, lecture des CGU, data opt-out activé.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">8</span>
-          <h4 class="mt-0">Compte unique</h4>
+          <h2 class="mt-0">Compte unique</h2>
           <p><strong>Ce que tu risques&nbsp;:</strong> la personne clé part, plus d'accès, tout s'arrête.</p>
           <p><strong>La règle&nbsp;:</strong> comptes partagés via outil dédié, 2 admins minimum, procédure de récupération.</p>
         </div>

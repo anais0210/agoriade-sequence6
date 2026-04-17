@@ -57,7 +57,7 @@
         <p class="mb-0">Duplique ce template une fois par type d'incident probable (ex&nbsp;: panne Make, Airtable corrompu, clés API fuitées, utilisateur bloqué). Teste au moins une fois par trimestre en simulant l'incident et en suivant le runbook&nbsp;: si une étape ne marche pas, corrige à chaud.</p>
       </div>
 
-      <h3>📄 Template Runbook</h3>
+      <h2>📄 Template Runbook</h2>
       <div class="callout callout--yellow-soft">
         <ul class="flow">
           <li><strong>Titre de l'incident&nbsp;:</strong> [ex&nbsp;: « Le scénario Make ne s'exécute plus »]</li>
@@ -65,7 +65,7 @@
           <li><strong>Dernière fois testé&nbsp;:</strong> [date]</li>
         </ul>
 
-        <h4>🔎 Comment on sait qu'on est dans ce cas ?</h4>
+        <h3>🔎 Comment on sait qu'on est dans ce cas ?</h3>
         <p>Symptômes observables, dans l'ordre de probabilité&nbsp;:</p>
         <ul class="flow">
           <li>[Symptôme 1, ex&nbsp;: « Les emails automatiques ne partent plus depuis ce matin »]</li>
@@ -73,28 +73,28 @@
           <li>[Symptôme 3]</li>
         </ul>
 
-        <h4>🩺 Diagnostic (dans l'ordre)</h4>
+        <h3>🩺 Diagnostic (dans l'ordre)</h3>
         <ol>
           <li>[Action de diagnostic 1, ex&nbsp;: « Aller sur <a href="https://status.make.com" target="_blank" rel="noopener">status.make.com</a>, vérifier si Make a un incident », critère de réussite&nbsp;: réponse observable]</li>
           <li>[Action de diagnostic 2, ex&nbsp;: « Aller dans le dashboard Make, onglet Scenarios, vérifier si le scénario est ON et son dernier run »]</li>
           <li>[Action de diagnostic 3, ex&nbsp;: « Regarder les logs du dernier run pour voir le message d'erreur »]</li>
         </ol>
 
-        <h4>🛠️ Actions correctives (par ordre d'effort)</h4>
+        <h3>🛠️ Actions correctives (par ordre d'effort)</h3>
         <ol>
           <li>[Action 1, la plus simple, la plus rapide]</li>
           <li>[Action 2, si la 1 ne marche pas]</li>
           <li>[Action 3, rollback, plan B, dernier recours]</li>
         </ol>
 
-        <h4>📞 Qui alerter et quand</h4>
+        <h3>📞 Qui alerter et quand</h3>
         <ul class="flow">
           <li><strong>Si l'action 1 résout&nbsp;:</strong> [qui prévenir éventuellement, ex&nbsp;: message Slack]</li>
           <li><strong>Si on passe à l'action 2-3&nbsp;:</strong> [personne à alerter, canal]</li>
           <li><strong>Si aucune action ne résout (30 min sans solution)&nbsp;:</strong> [personne de dernier recours, téléphone]</li>
         </ul>
 
-        <h4>🔁 Après l'incident</h4>
+        <h3>🔁 Après l'incident</h3>
         <ul class="flow">
           <li>Noter l'incident dans le registre (date, cause, durée, action qui a résolu).</li>
           <li>Si l'incident était nouveau&nbsp;: mettre à jour ce runbook.</li>
