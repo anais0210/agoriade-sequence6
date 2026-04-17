@@ -1,14 +1,29 @@
-# Agoriade — Séquence 6 — Espace pédagogique
+# Agoriade, espace pédagogique du bootcamp AI Product Builder
 
-> Espace pédagogique conçu et développé par **Anaïs Sparesotto** pour l'**école Agoriade Nantes**, dans le cadre du bootcamp **AI Product Builder**.
+> Espace pédagogique open source conçu et développé par **Anaïs Sparesotto** pour l'**école Agoriade Nantes**, dans le cadre du bootcamp **AI Product Builder**.
 >
-> Ce site rassemble en un seul endroit tous les supports dont les apprenant·es ont besoin pendant les 4 demi-journées de la Séquence 6 : guides animateur, livrables à produire, checklists interactives, ressources externes et exports prêts à importer dans Modulo. L'objectif : que chacun·e puisse se concentrer sur la pratique, pas sur la recherche d'un PDF perdu dans un drive.
+> Ce site rassemble en un seul endroit tous les supports dont les apprenant·es ont besoin pendant le parcours&nbsp;: cadrage pédagogique, déroulé des modules, livrables interactifs (checklists cochables, templates), ressources externes et exports pour Modulo. L'objectif&nbsp;: que chacun·e puisse se concentrer sur la pratique, pas sur la recherche d'un PDF perdu dans un drive.
 >
-> Le site est pensé **accessibilité-first** (WCAG 2.1 AA, contrastes AAA, navigation clavier complète) — parce qu'un support de formation sur l'IA responsable doit l'être lui-même.
+> Le site est pensé **accessibilité-first** (WCAG 2.1 AA, contrastes AAA, navigation clavier complète) parce qu'un support de formation sur l'IA responsable doit l'être lui-même.
 
-**Formatrice :** Anaïs Sparesotto
-**Période :** 27 avril → 13 mai 2026
-**Format :** 4 demi-journées — RGPD & sécurité, accessibilité & écoconception, documentation, mise en situation
+- **Dépôt GitHub** : <https://github.com/anais0210/agoriade-sequence6>
+- **Site en ligne** : <https://agoriade-s6.vercel.app>
+- **Formatrice** : Anaïs Sparesotto
+- **Format** : 3 modules d'une demi-journée, présentiel à Nantes (Halles 1 &amp; 2, 5 Allée Frida Kahlo)
+
+---
+
+## 📚 Contenu pédagogique
+
+Le parcours couvre trois sujets indissociables pour livrer une solution No-Code/IA responsable&nbsp;:
+
+| Module | Thème | Livrables |
+|---|---|---|
+| [Module 1](dj1-rgpd-securite/) | RGPD &amp; sécurité en No-Code/IA | Checklist RGPD (24 points), Mini-AIPD, Synthèse 8 risques sécurité |
+| [Module 2](dj2-accessibilite-ecoconception/) | Accessibilité (a11y) &amp; écoconception | Grille d'audit a11y, Checklist écoconception, Synthèse POUR |
+| [Module 3](dj3-documentation/) | Documentation &amp; support | Trame doc technique, Template runbook, Checklist doc exploitable |
+
+Chaque livrable a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists.
 
 ---
 
@@ -19,28 +34,44 @@ agoriade-sequence6/
 ├── index.html                              Portail d'accueil
 ├── 404.html                                Page d'erreur
 ├── README.md                               Ce fichier
-├── vercel.json                             Config Vercel (headers)
-├── .htaccess                               Bonus — config Apache si migration hors Vercel
+├── vercel.json                             Config Vercel (headers, Cache-Control)
+├── .htaccess                               Bonus, config Apache si migration hors Vercel
+├── .gitignore                              Exclusions (DS_Store, éditeurs, .vercel, logs)
 │
 ├── assets/
 │   ├── css/
 │   │   ├── main.css                        Charte (jaune #FFF44F / noir / blanc, WCAG AAA)
 │   │   └── print.css                       Version imprimable / PDF
-│   └── js/
-│       └── checklist.js                    Checklists interactives (localStorage)
+│   ├── js/
+│   │   ├── checklist.js                    Checklists interactives (localStorage)
+│   │   ├── checklist-export.js             Export CSV (BOM UTF-8, séparateur point-virgule)
+│   │   └── carbon.js                       Affichage inline de l'empreinte carbone (API Website Carbon)
+│   └── downloads/
+│       ├── chatbotrh-brief.md              Brief du cas pratique Module 1
+│       ├── chatbotrh-audit-template.csv    Template d'audit prêt à remplir
+│       └── template-aipd.md                Template Mini-AIPD Markdown
 │
 ├── a-propos-anais/index.html               Présentation d'Anaïs
-├── dj1-rgpd-securite/index.html            DJ1 — Mer. 29 avril 13h30-17h
-├── dj2-accessibilite-ecoconception/        DJ2 — Jeu. 30 avril 13h30-17h
-├── dj3-documentation/index.html            DJ3 — Lun. 4 mai 9h-12h30
-├── dj4-mise-en-situation/index.html        DJ4 — Lun. 4 mai 13h30-17h
+├── dj1-rgpd-securite/index.html            Module 1, RGPD et sécurité
+├── dj2-accessibilite-ecoconception/        Module 2, accessibilité et écoconception
+├── dj3-documentation/index.html            Module 3, documentation et support
+│
+├── livrables/                              Pages dédiées aux livrables
+│   ├── checklist-rgpd/                     Checklist RGPD interactive (24 points)
+│   ├── template-aipd/                      Template Mini-AIPD viewable + download MD
+│   ├── synthese-8-risques/                 Fiche visuelle 8 risques sécurité
+│   ├── audit-a11y/                         Grille d'audit a11y (15 critères POUR)
+│   ├── checklist-ecoconception/            Checklist écoconception (10 gestes)
+│   ├── synthese-pour/                      Fiche visuelle POUR
+│   ├── trame-doc/                          Trame de doc technique (6 blocs)
+│   ├── runbook/                            Template de runbook d'incident
+│   └── checklist-doc/                      Checklist « ma doc est-elle exploitable »
 │
 └── modulo-export/                          Export pour app.modulo.io
     ├── DJ1-modulo.md                       Markdown DJ1 prêt pour copier-coller
     ├── DJ2-modulo.md                       Markdown DJ2
     ├── DJ3-modulo.md                       Markdown DJ3
-    ├── DJ4-modulo.md                       Markdown DJ4
-    └── sequences-global.csv                CSV des 32 séquences (import bulk)
+    └── sequences-global.csv                CSV des séquences (import bulk)
 ```
 
 ---
@@ -48,134 +79,53 @@ agoriade-sequence6/
 ## 🚀 Déploiement sur Vercel via GitHub
 
 ### Pré-requis
-- Un compte GitHub (gratuit — [github.com/signup](https://github.com/signup))
-- Un compte Vercel (gratuit — [vercel.com/signup](https://vercel.com/signup))
+- Un compte GitHub (gratuit, [github.com/signup](https://github.com/signup))
+- Un compte Vercel (gratuit, [vercel.com/signup](https://vercel.com/signup))
 
-### Étape 1 — Créer le dépôt GitHub
+### Étape 1, forker ou cloner le dépôt
 
-1. Sur GitHub, clic sur le bouton **New repository** (ou [ce lien](https://github.com/new))
-2. Nom du dépôt : `agoriade-sequence6` (ou autre, peu importe)
-3. Visibilité : **Public** (demandé par ton process — aucune donnée sensible dans ce projet)
-4. **Ne pas cocher** « Add a README » (il y en a déjà un)
-5. Clic sur **Create repository**
-
-### Étape 2 — Pousser le code
-
-Depuis ton ordinateur, à la racine du dossier `agoriade-sequence6/` :
+Ce projet est **open source**. Tu peux&nbsp;:
+- **Forker** le dépôt depuis <https://github.com/anais0210/agoriade-sequence6>
+- Ou **cloner** puis pousser vers ton propre dépôt&nbsp;:
 
 ```bash
+git clone https://github.com/anais0210/agoriade-sequence6.git mon-projet
+cd mon-projet
+rm -rf .git
 git init
 git add .
-git commit -m "Initial commit - Sequence 6 Agoriade"
+git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/TON-USERNAME/agoriade-sequence6.git
+git remote add origin https://github.com/TON-USERNAME/mon-projet.git
 git push -u origin main
 ```
 
-Remplace `TON-USERNAME` par ton nom d'utilisateur GitHub.
-
-### Étape 3 — Connecter Vercel au dépôt
+### Étape 2, connecter Vercel au dépôt
 
 1. Se connecter à [vercel.com](https://vercel.com)
 2. Clic sur **Add New → Project**
-3. Sélectionner le dépôt `agoriade-sequence6` dans la liste (autoriser l'accès GitHub si première fois)
-4. **Project Name** : `agoriade-s6` (c'est ce qui donne l'URL `agoriade-s6.vercel.app`)
+3. Sélectionner le dépôt (autoriser l'accès GitHub si première fois)
+4. **Project Name** : au choix (détermine l'URL `*.vercel.app`)
 5. **Framework Preset** : laisser `Other` (site statique)
 6. **Root Directory** : laisser `./`
-7. **Build Command** : laisser vide
-8. **Output Directory** : laisser vide
-9. Clic sur **Deploy**
+7. **Build Command** et **Output Directory** : laisser vides
+8. Clic sur **Deploy**
 
-**C'est tout.** En 20 secondes, ton site est en ligne à l'URL `https://agoriade-s6.vercel.app`.
+En 20 secondes, le site est en ligne.
 
-### Étape 4 — Déploiements suivants
+### Étape 3, déploiements suivants
 
-À chaque fois que tu modifies un fichier :
+À chaque `git push`, Vercel redéploie automatiquement. L'URL ne change pas.
 
-```bash
-git add .
-git commit -m "Description de la modification"
-git push
-```
-
-Vercel redéploie automatiquement. URL unchanged.
-
-### Étape 5 — Domaine personnalisé (optionnel)
+### Étape 4, domaine personnalisé (optionnel)
 
 Dans Vercel → ton projet → **Settings** → **Domains** → ajouter ton domaine et suivre les instructions DNS (généralement un `CNAME` vers `cname.vercel-dns.com`).
 
 ---
 
-## 📝 Utiliser les exports Modulo
+## 🛠️ Développement local
 
-Le dossier `modulo-export/` contient tout ce qu'il faut pour créer la séquence dans [app.modulo.io](https://app.modulo.io).
-
-### ⚠️ Avant toute chose : remplacer l'URL placeholder
-
-Les markdowns contiennent l'URL d'exemple `https://agoriade-s6.vercel.app`. **Une fois Vercel déployé, remplace cette URL par la vraie :**
-
-**Sur Mac (Terminal depuis le dossier modulo-export/) :**
-```bash
-# Remplace l'URL dans tous les fichiers .md
-sed -i '' 's|https://agoriade-s6.vercel.app|https://TON-VRAIE-URL.vercel.app|g' *.md *.csv
-```
-
-**Sur Linux :**
-```bash
-sed -i 's|https://agoriade-s6.vercel.app|https://TON-VRAIE-URL.vercel.app|g' *.md *.csv
-```
-
-**Sur Windows (ou si tu n'es pas à l'aise avec Terminal)** : ouvre chaque fichier `.md` et `.csv` dans un éditeur de texte (VS Code, Notepad++, Sublime), utilise **Ctrl+H** (Find & Replace), remplace `https://agoriade-s6.vercel.app` par ton URL.
-
-### Option A — Import par DJ (recommandé pour débuter)
-
-Pour chaque fichier `DJ1-modulo.md`, `DJ2-modulo.md`, etc. :
-
-1. Dans Modulo, créer un nouvel événement avec le titre et les métadonnées indiqués en haut du fichier
-2. Pour chaque séquence dans le fichier, créer une nouvelle séquence dans Modulo
-3. Copier-coller les champs du tableau markdown dans les champs Modulo correspondants
-4. Les liens **Pièces jointes** pointent vers les ancres précises du site — les apprenant·es accèdent directement à la bonne séquence
-
-### Option B — Import en masse via CSV
-
-Le fichier `sequences-global.csv` contient les 32 séquences (4 DJ × 8 séquences). Si Modulo supporte l'import CSV, utiliser ce fichier pour tout créer d'un coup. Colonnes : `DJ, Ordre, Heure, Duree_min, Titre, Format, Type, Objectif_pedagogique, URL_ancree`.
-
----
-
-## 🎨 Visuel et accessibilité
-
-Le site respecte **WCAG 2.1 AA** avec les contrastes principaux en **AAA** :
-
-- Contraste jaune `#FFF44F` / noir `#000` : **18.5:1** ✓ AAA
-- Contraste noir / blanc : **21:1** ✓ AAA
-- Navigation clavier complète avec focus visible épais
-- Skip link « Aller au contenu principal »
-- Hiérarchie des titres respectée, `lang="fr"` sur tous les documents
-- Images décoratives avec `alt=""`, informatives avec `alt` descriptif
-- `aria-current="page"` sur le lien actif de la nav
-- Respect de `prefers-reduced-motion`
-- Compatible `forced-colors` (Windows High Contrast)
-- Responsive dès 320px, texte redimensionnable à 200% sans casse
-
----
-
-## 🖨️ Impression / export PDF
-
-Chaque page est optimisée pour l'impression via `assets/css/print.css` :
-
-- Header/footer/nav retirés à l'impression
-- Fonds colorés remplacés par du noir & blanc
-- URLs des liens externes affichées en fin de ligne
-- Sauts de page intelligents (pas de coupe au milieu d'une carte)
-- Format A4 par défaut
-
-**Pour générer un PDF :** Ctrl/Cmd + P → Enregistrer en PDF.
-
----
-
-## 🛠️ Développement local (optionnel)
-
-Pas besoin de build : c'est du HTML/CSS/JS pur. Pour prévisualiser localement :
+Pas besoin de build, c'est du HTML/CSS/JS pur. Pour prévisualiser localement&nbsp;:
 
 ```bash
 # Python
@@ -186,9 +136,72 @@ python3 -m http.server 8000
 npx serve .
 ```
 
+Note&nbsp;: l'empreinte carbone inline et la revalidation des assets dépendent d'un hébergement réel. En local, un fallback s'affiche pour le badge carbone.
+
 ---
 
-## 🔄 Migration vers autre hébergement
+## 📝 Utiliser les exports Modulo
+
+Le dossier `modulo-export/` contient tout ce qu'il faut pour recréer le parcours dans [app.modulo.io](https://app.modulo.io).
+
+### Avant toute chose, remplacer l'URL placeholder
+
+Les markdowns contiennent l'URL `https://agoriade-s6.vercel.app`. Une fois ton Vercel déployé, remplace cette URL par la tienne&nbsp;:
+
+```bash
+# macOS
+sed -i '' 's|https://agoriade-s6.vercel.app|https://TON-URL.vercel.app|g' modulo-export/*.md modulo-export/*.csv
+
+# Linux
+sed -i 's|https://agoriade-s6.vercel.app|https://TON-URL.vercel.app|g' modulo-export/*.md modulo-export/*.csv
+```
+
+### Option A, import par module
+
+Ouvre `DJ1-modulo.md`, `DJ2-modulo.md`, `DJ3-modulo.md`&nbsp;:
+1. Dans Modulo, crée un nouvel événement avec le titre et les métadonnées indiqués.
+2. Pour chaque temps du fichier, crée une séquence Modulo correspondante.
+3. Copie-colle les champs du tableau dans Modulo. Les liens **Pièces jointes** pointent vers les ancres précises du site, les apprenant·es accèdent directement au bon contenu.
+
+### Option B, import en masse via CSV
+
+Le fichier `sequences-global.csv` contient toutes les séquences. Si Modulo supporte l'import CSV, utilise-le pour tout créer d'un coup. Colonnes&nbsp;: `DJ, Ordre, Heure, Duree_min, Titre, Format, Type, Objectif_pedagogique, URL_ancree`.
+
+---
+
+## 🎨 Visuel et accessibilité
+
+Le site respecte **WCAG 2.1 AA** avec les contrastes principaux en **AAA**&nbsp;:
+
+- Contraste jaune `#FFF44F` / noir `#000`&nbsp;: **18,5:1** ✓ AAA
+- Contraste noir / blanc&nbsp;: **21:1** ✓ AAA
+- Navigation clavier complète avec focus visible épais
+- Skip link « Aller au contenu principal »
+- Hiérarchie des titres respectée, `lang="fr"` sur tous les documents
+- Images décoratives avec `alt=""`, informatives avec `alt` descriptif
+- `aria-current="page"` sur le lien actif de la nav
+- Respect de `prefers-reduced-motion`
+- Compatible `forced-colors` (Windows High Contrast)
+- Responsive dès 320px, texte redimensionnable à 200&nbsp;% sans casse
+- Glossaire inline via `<abbr title="...">` sur les acronymes
+
+---
+
+## 🖨️ Impression / export PDF
+
+Chaque page est optimisée pour l'impression via `assets/css/print.css`&nbsp;:
+
+- Header, footer et nav retirés à l'impression
+- Fonds colorés remplacés par du noir et blanc
+- URLs des liens externes affichées en fin de ligne
+- Sauts de page intelligents (pas de coupe au milieu d'une carte)
+- Format A4 par défaut
+
+**Pour générer un PDF&nbsp;:** Ctrl ou Cmd + P → Enregistrer en PDF.
+
+---
+
+## 🔄 Migration vers un autre hébergement
 
 ### Hébergement Apache classique (OVH, O2switch, etc.)
 
@@ -196,14 +209,16 @@ Le fichier `.htaccess` à la racine est prêt à l'emploi. Upload tous les fichi
 
 ### Autre hébergement statique (Netlify, Cloudflare Pages, GitHub Pages)
 
-Le site ne nécessite aucun build — push le dossier racine et ça marche.
+Le site ne nécessite aucun build, pousse le dossier racine et ça marche.
 
 ---
 
-## 📝 Licence & crédits
+## 📝 Licence et crédits
 
-© 2026 Agoriade — Espace pédagogique. Les ressources sont destinées aux apprenant·es de la Séquence 6.
+© 2026 Agoriade. Espace pédagogique open source, destiné aux apprenant·es du bootcamp AI Product Builder et à toute personne qui souhaite s'en inspirer.
 
 - **Formatrice** : Anaïs Sparesotto
-- **Contact** : [contact@agoriade.fr](mailto:contact@agoriade.fr)
-- **Période** : 27 avril → 13 mai 2026
+- **Contact formation** : [contact@agoriade.fr](mailto:contact@agoriade.fr)
+- **Dépôt GitHub** : <https://github.com/anais0210/agoriade-sequence6>
+
+Les contributions (issues, pull requests) sont les bienvenues.
