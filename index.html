@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Séquence 6 — Bootcamp AI Product Builder — Agoriade</title>
-  <meta name="description" content="Espace de formation — Séquence 6 du bootcamp AI Product Builder. RGPD, accessibilité, écoconception, documentation, mise en production.">
+  <title>Bootcamp AI Product Builder — Agoriade</title>
+  <meta name="description" content="Espace de formation du bootcamp AI Product Builder Agoriade. RGPD, accessibilité, écoconception, documentation, mise en production.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/print.css">
@@ -15,9 +15,9 @@
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade Séquence 6">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
         <span class="site-logo-mark" aria-hidden="true"></span>
-        <span>Agoriade <span style="color: var(--c-yellow);">—</span> S6</span>
+        <span>Agoriade</span>
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
         <ul>
@@ -139,9 +139,8 @@
     <section class="container" aria-labelledby="methode-title" style="padding-top: var(--sp-16);">
       <h2 id="methode-title">Ce que tu vas vivre ici</h2>
       <p style="max-width: 65ch;">
-        Cet espace pédagogique est construit pour toi, apprenant·e de la
-        Séquence 6. Voici ce sur quoi tu peux compter pendant tout le
-        parcours.
+        Cet espace pédagogique est construit pour toi, apprenant·e.
+        Voici ce sur quoi tu peux compter pendant tout le parcours.
       </p>
       <div class="card-grid card-grid--modules">
         <div class="callout">
@@ -217,9 +216,9 @@
     <section class="container" aria-labelledby="formations-title" style="padding-top: var(--sp-16);">
       <h2 id="formations-title">Le catalogue IA d'Agoriade</h2>
       <p style="max-width: 65ch;">
-        En complément de ce bootcamp AI Product Builder dont la Séquence 6
-        est documentée ici, Agoriade propose un catalogue de formations IA
-        disponibles en inter-entreprises, intra-entreprise ou en sur-mesure.
+        En complément de ce bootcamp AI Product Builder documenté ici,
+        Agoriade propose un catalogue de formations IA disponibles en
+        inter-entreprises, intra-entreprise ou en sur-mesure.
       </p>
 
       <div class="card-grid" style="margin-top: var(--sp-6);">
@@ -267,9 +266,9 @@
         <div class="site-footer-brand">
           <span class="site-footer-brand-logo">
             <span class="site-logo-mark" aria-hidden="true"></span>
-            <span>Agoriade <span style="color: var(--c-yellow);">—</span> S6</span>
+            <span>Agoriade</span>
           </span>
-          <p>Bootcamp AI Product Builder, Édition 2026. Espace pédagogique de la Séquence 6.</p>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
         </div>
 
         <nav aria-label="Navigation pied de page">
@@ -305,11 +304,7 @@
             5 Allée Frida Kahlo<br>
             44200 Nantes
           </p>
-          <div class="site-footer-carbon">
-            <a class="carbon-badge" href="https://www.websitecarbon.com" target="_blank" rel="noopener" aria-label="Voir le calcul d'empreinte carbone de cette page sur Website Carbon">
-              <img alt="Empreinte carbone de cette page, Website Carbon" src="" width="180" height="70" loading="lazy" decoding="async">
-            </a>
-          </div>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
         </div>
 
       </div>
@@ -319,33 +314,12 @@
           <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
           <a href="/empreinte-carbone/">Empreinte carbone</a>
         </p>
-        <p>© 2026 Agoriade, Séquence 6. Espace pédagogique privé.</p>
+        <p>© 2026 Agoriade.</p>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var badge = document.querySelector('.carbon-badge');
-      if (!badge) return;
-      var host = window.location.hostname;
-      var isLocal = !host || host === 'localhost' || host === '127.0.0.1' || host.endsWith('.local');
-      var wrap = badge.parentElement;
-      if (isLocal) {
-        wrap.innerHTML = '<span class="site-footer-carbon-fallback">Badge Website Carbon actif une fois la page déployée.</span>';
-        return;
-      }
-      var url = encodeURIComponent(window.location.href);
-      badge.href = 'https://www.websitecarbon.com/website/?url=' + url;
-      var img = badge.querySelector('img');
-      if (img) {
-        img.addEventListener('error', function () {
-          wrap.innerHTML = '<a class="site-footer-carbon-fallback" href="https://www.websitecarbon.com" target="_blank" rel="noopener">Mesurer sur Website Carbon</a>';
-        });
-        img.src = 'https://api.websitecarbon.com/b?url=' + url + '&style=dark';
-      }
-    })();
-  </script>
+  <script src="/assets/js/carbon.js" defer></script>
 
 </body>
 </html>

@@ -428,23 +428,25 @@ main {
 .site-footer-carbon {
   margin-top: var(--sp-4);
 }
-.site-footer-carbon .carbon-badge {
-  display: inline-block;
-  line-height: 0;
-  border-radius: 4px;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  transition: outline-color 0.15s ease;
+.site-footer-carbon-live {
+  font-size: var(--fs-xs);
+  color: var(--c-grey-200);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 34ch;
 }
-.site-footer-carbon .carbon-badge:hover,
-.site-footer-carbon .carbon-badge:focus-visible {
-  background: transparent;
-  outline-color: var(--c-yellow);
+.site-footer-carbon-live strong {
+  color: var(--c-white);
+  font-size: var(--fs-sm);
+  font-weight: 700;
 }
-.site-footer-carbon .carbon-badge img {
+.site-footer-carbon-live .carbon-source {
   display: block;
-  height: auto;
-  max-width: 100%;
+  margin-top: var(--sp-1);
+  color: var(--c-grey-500);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 .site-footer-carbon-fallback {
   display: inline-block;
@@ -454,8 +456,9 @@ main {
   border: 1px dashed var(--c-grey-700);
   padding: var(--sp-3);
   border-radius: var(--r-sm);
-  max-width: 22ch;
+  max-width: 34ch;
   line-height: 1.4;
+  margin: 0;
 }
 .site-footer-bottom {
   border-top: 1px solid var(--c-grey-700);
