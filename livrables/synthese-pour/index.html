@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthèse POUR accessibilité, Livrable Module 2, Agoriade</title>
+  <meta name="description" content="Fiche visuelle des 4 principes POUR (Perceptible, Opérable, Compréhensible, Robuste), à afficher près de son poste.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Module 2 Accessibilité et Écoconception</a></li>
+          <li aria-current="page">Synthèse POUR</li>
+        </ol>
+      </nav>
+
+      <span class="badge">🎨 Livrable Module 2</span>
+      <h1>Synthèse visuelle, les 4 principes POUR</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Les 4 principes fondamentaux du RGAA et WCAG, résumés par une question-clé à se poser et un set de points à vérifier. À afficher près de ton poste, à garder en onglet, ou à imprimer.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">P</span>
+          <h4 class="mt-0">Perceptible</h4>
+          <p><strong>Question-clé&nbsp;:</strong> « Si je ferme les yeux, ou si je désactive les couleurs, l'info est-elle encore là&nbsp;? »</p>
+          <p><strong>À vérifier&nbsp;:</strong> contrastes, textes alternatifs, sous-titres vidéo, information pas uniquement véhiculée par la couleur.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">O</span>
+          <h4 class="mt-0">Opérable</h4>
+          <p><strong>Question-clé&nbsp;:</strong> « Puis-je tout faire au clavier seul, sans souris&nbsp;? »</p>
+          <p><strong>À vérifier&nbsp;:</strong> ordre de tabulation, focus visible, skip link, pas de piège clavier.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">U</span>
+          <h4 class="mt-0">Compréhensible</h4>
+          <p><strong>Question-clé&nbsp;:</strong> « Est-ce clair pour quelqu'un qui arrive pour la première fois&nbsp;? »</p>
+          <p><strong>À vérifier&nbsp;:</strong> lang déclarée, titres hiérarchisés, labels de formulaire, messages d'erreur explicites.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">R</span>
+          <h4 class="mt-0">Robuste</h4>
+          <p><strong>Question-clé&nbsp;:</strong> « Est-ce que ça marche avec les technologies d'assistance&nbsp;? »</p>
+          <p><strong>À vérifier&nbsp;:</strong> HTML sémantique, ARIA bien utilisé, test avec lecteur d'écran (VoiceOver, NVDA, JAWS).</p>
+        </div>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj2-accessibilite-ecoconception/" class="btn btn--secondary">← Retour au Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

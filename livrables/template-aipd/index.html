@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Mini-AIPD, Livrable Module 1, Agoriade</title>
+  <meta name="description" content="Template Mini-AIPD (Analyse d'Impact Protection des Données) téléchargeable en Markdown. Simplifié pour un projet No-Code/IA en phase de MVP.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">Module 1 RGPD</a></li>
+          <li aria-current="page">Template Mini-AIPD</li>
+        </ol>
+      </nav>
+
+      <span class="badge">📄 Livrable Module 1</span>
+      <h1>Template Mini-<abbr title="Analyse d'Impact relative à la Protection des Données">AIPD</abbr></h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Version simplifiée de l'AIPD officielle CNIL, adaptée à un projet No-Code/IA en phase de MVP. À remplir en 30 à 45 minutes pour un traitement à la fois. Duplique le fichier si tu as plusieurs traitements à analyser.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <a href="/assets/downloads/template-aipd.md" download class="btn">
+          <span aria-hidden="true">⬇️</span> Télécharger (Markdown)
+        </a>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+
+      <div class="callout">
+        <span class="callout-label">💡 Comment utiliser</span>
+        <p class="mb-0">Télécharge la version Markdown pour l'ouvrir dans ton éditeur préféré (Notion, Obsidian, VS Code, Typora…), ou copie-colle chaque bloc dans un doc à toi (Word, Google Doc). Remplis pour <em>un</em> traitement à la fois.</p>
+      </div>
+
+      <h3>📦 Bloc 1, Description du traitement</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Nom du traitement&nbsp;:</strong> [ex&nbsp;: « Pré-qualification automatique des candidatures »]</li>
+          <li><strong>Finalité(s)&nbsp;:</strong> [pourquoi je traite, ex&nbsp;: évaluer l'adéquation d'un profil au poste]</li>
+          <li><strong>Responsable&nbsp;:</strong> [nom + rôle]</li>
+          <li><strong>Personnes concernées&nbsp;:</strong> [ex&nbsp;: candidat·es externes]</li>
+          <li><strong>Catégories de données&nbsp;:</strong> [liste précise&nbsp;: nom, email, CV, réponses au questionnaire, score]</li>
+          <li><strong>Données sensibles&nbsp;:</strong> [oui / non, si oui, lesquelles et sur quel fondement]</li>
+          <li><strong>Flux de données&nbsp;:</strong> [schéma ou description&nbsp;: source → traitements → stockage → destinataires]</li>
+          <li><strong>Sous-traitants&nbsp;:</strong> [liste&nbsp;: outil + pays + DPA signé oui/non]</li>
+          <li><strong>Durée de conservation&nbsp;:</strong> [par catégorie de donnée]</li>
+        </ul>
+      </div>
+
+      <h3>⚖️ Bloc 2, Nécessité et proportionnalité</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Base légale retenue&nbsp;:</strong> [consentement / contrat / intérêt légitime / etc.], <em>Justification&nbsp;:</em> [pourquoi celle-ci]</li>
+          <li><strong>Données strictement nécessaires&nbsp;:</strong> [oui / non, si non, quoi enlever&nbsp;?]</li>
+          <li><strong>Information des personnes&nbsp;:</strong> [comment, quand, sur quoi]</li>
+          <li><strong>Droits&nbsp;:</strong> [comment une personne exerce ses droits, procédure concrète]</li>
+          <li><strong>Sous-traitants conformes&nbsp;:</strong> [DPA signés&nbsp;? Transferts hors UE encadrés&nbsp;?]</li>
+        </ul>
+      </div>
+
+      <h3>⚠️ Bloc 3, Identification des risques</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Pour chaque scénario ci-dessous, évaluer&nbsp;: <strong>Impact</strong> (faible/modéré/élevé) × <strong>Probabilité</strong> (faible/modérée/élevée).</p>
+        <ul class="flow">
+          <li><strong>Scénario 1, Accès illégitime&nbsp;:</strong> qu'est-ce qui se passe si les données fuitent&nbsp;? [impact × probabilité] [sources du risque]</li>
+          <li><strong>Scénario 2, Modification non désirée&nbsp;:</strong> si les données sont modifiées par erreur ou malveillance&nbsp;? [impact × probabilité]</li>
+          <li><strong>Scénario 3, Disparition&nbsp;:</strong> si les données sont perdues&nbsp;? [impact × probabilité]</li>
+        </ul>
+      </div>
+
+      <h3>🛡️ Bloc 4, Mesures de traitement des risques</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Pour chaque risque identifié, préciser les mesures de <strong>prévention</strong>, <strong>détection</strong> et <strong>réaction</strong>.</p>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Risque</th><th>Prévention</th><th>Détection</th><th>Réaction</th></tr></thead>
+            <tbody>
+              <tr><td>Accès illégitime</td><td>[ex&nbsp;: 2FA, droits restreints]</td><td>[ex&nbsp;: logs d'accès]</td><td>[ex&nbsp;: révocation, notif CNIL si nécessaire]</td></tr>
+              <tr><td>Modification</td><td>[ex&nbsp;: historique, validation]</td><td>[ex&nbsp;: alertes]</td><td>[ex&nbsp;: rollback backup]</td></tr>
+              <tr><td>Disparition</td><td>[ex&nbsp;: sauvegarde auto]</td><td>[ex&nbsp;: monitoring]</td><td>[ex&nbsp;: restauration + comm]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="callout-label">✅ Conclusion</span>
+        <p>Les risques résiduels sont-ils acceptables au regard de la finalité&nbsp;? [oui / non / à renforcer par…]</p>
+        <p class="mb-0"><strong>Validé le&nbsp;:</strong> [date], <strong>Par&nbsp;:</strong> [nom], <strong>Prochaine revue&nbsp;:</strong> [date]</p>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj1-rgpd-securite/" class="btn btn--secondary">← Retour au Module 1 RGPD</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

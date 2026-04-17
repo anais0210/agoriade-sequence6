@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist écoconception, Livrable Module 2, Agoriade</title>
+  <meta name="description" content="Checklist écoconception interactive et exportable en CSV. 10 gestes concrets par ordre d'impact.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Module 2 Accessibilité et Écoconception</a></li>
+          <li aria-current="page">Checklist écoconception</li>
+        </ol>
+      </nav>
+
+      <span class="badge">🌱 Livrable Module 2</span>
+      <h1>Checklist écoconception, 10 gestes</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        10 gestes d'écoconception concrets, classés par ordre de rapport impact/effort. L'état est sauvegardé dans ton navigateur, tu peux reprendre plus tard et exporter la version remplie en CSV.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions sur la checklist" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn checklist-export-csv" data-filename="checklist-ecoconception.csv">
+          <span aria-hidden="true">⬇️</span> Exporter en CSV
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="checklist-wrapper" data-checklist-id="dj2-eco">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 10 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <h3>📦 Ressources côté navigateur</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="eco-1"><label for="eco-1"><strong>1. Images optimisées</strong>, WebP ou AVIF, dimensions réelles (pas une image 4000px affichée en 400px), lazy loading sur les images hors écran.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-2"><label for="eco-2"><strong>2. Polices système</strong> ou 1 police custom max, chaque police custom = environ 50 Ko téléchargés par visiteur.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-3"><label for="eco-3"><strong>3. Pas d'autoplay vidéo</strong>, autoplay = environ 5 Mo par visite consommés pour rien.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-9"><label for="eco-9"><strong>9. Mode sombre</strong>, sur les écrans OLED, économise la batterie de l'utilisateur et allonge la durée de vie de l'appareil.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-10"><label for="eco-10"><strong>10. Tester sur du vieux matériel</strong>, si ça rame sur un iPhone 8 ou un Android 2019, tu pousses au rachat. Optimise.</label></li>
+        </ul>
+
+        <h3>🤖 Usage des LLM</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="eco-4"><label for="eco-4"><strong>4. LLM léger quand possible</strong>, GPT-4o mini pour les tâches simples au lieu de GPT-4o, environ 10 fois moins cher et 10 fois moins d'énergie.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-5"><label for="eco-5"><strong>5. Cache des réponses LLM fréquentes</strong>, même question posée 100 fois = 1 seul appel au modèle + cache.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-6"><label for="eco-6"><strong>6. Prompts courts et précis</strong>, chaque token coûte. 50 tokens au lieu de 500 = 10 fois moins d'impact.</label></li>
+        </ul>
+
+        <h3>📂 Gouvernance produit</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="eco-7"><label for="eco-7"><strong>7. Pas de features fantômes</strong>, auditer les features utilisées vs non-utilisées via analytics et retirer les oubliées.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="eco-8"><label for="eco-8"><strong>8. Données archivées ou supprimées</strong>, définir une stratégie d'archivage et de suppression plutôt que tout garder indéfiniment.</label></li>
+        </ul>
+
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj2-accessibilite-ecoconception/" class="btn btn--secondary">← Retour au Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js" defer></script>
+  <script src="/assets/js/checklist-export.js" defer></script>
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

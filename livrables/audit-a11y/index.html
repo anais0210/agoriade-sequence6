@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grille d'audit accessibilité, Livrable Module 2, Agoriade</title>
+  <meta name="description" content="Grille d'audit a11y interactive et exportable en CSV. 15 critères essentiels couvrant 80 % des problèmes.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Module 2 Accessibilité et Écoconception</a></li>
+          <li aria-current="page">Grille d'audit accessibilité</li>
+        </ol>
+      </nav>
+
+      <span class="badge">📋 Livrable Module 2</span>
+      <h1>Grille d'audit accessibilité, 15 critères</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        15 critères essentiels organisés selon les 4 principes POUR. Approche Pareto&nbsp;: ces 15 points couvrent environ 80&nbsp;% des problèmes d'accessibilité. L'état est sauvegardé dans ton navigateur, tu peux reprendre plus tard et exporter la version remplie en CSV.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions sur la grille" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn checklist-export-csv" data-filename="audit-a11y.csv">
+          <span aria-hidden="true">⬇️</span> Exporter en CSV
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="checklist-wrapper" data-checklist-id="dj2-a11y">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 15 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <h3>🎨 Perceptible</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-1"><label for="a11y-1"><strong>Contrastes</strong>, texte sur fond a un ratio ≥ 4.5:1 (≥ 3:1 pour grand texte). Vérifier avec Contrast Checker ou axe.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-2"><label for="a11y-2"><strong>Textes alternatifs</strong>, toutes les images informatives ont un <code>alt</code>. Les décoratives ont <code>alt=""</code>.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-3"><label for="a11y-3"><strong>Taille du texte</strong>, le texte est redimensionnable à 200&nbsp;% sans perte (tester avec Ctrl ou Cmd+).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-4"><label for="a11y-4"><strong>Information par couleur seule</strong>, l'information n'est jamais véhiculée UNIQUEMENT par la couleur (ex&nbsp;: « les champs en rouge » → ajouter une icône).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-5"><label for="a11y-5"><strong>Vidéos</strong>, les vidéos ont des sous-titres (et idéalement une transcription).</label></li>
+        </ul>
+
+        <h3>⌨️ Opérable</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-6"><label for="a11y-6"><strong>Navigation clavier</strong>, toute la page est navigable avec Tab, Shift+Tab, Enter et Espace, sans souris.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-7"><label for="a11y-7"><strong>Focus visible</strong>, l'élément qui a le focus est VISIBLEMENT entouré (outline, bordure, fond).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-8"><label for="a11y-8"><strong>Skip link</strong>, un lien « Aller au contenu principal » est le premier élément focusable.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-9"><label for="a11y-9"><strong>Pas de piège clavier</strong>, on peut toujours sortir d'un élément au clavier (ex&nbsp;: fermer une modale avec Échap).</label></li>
+        </ul>
+
+        <h3>🗣️ Compréhensible</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-10"><label for="a11y-10"><strong>Langue déclarée</strong>, <code>&lt;html lang="fr"&gt;</code> (ou la langue principale de la page).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-11"><label for="a11y-11"><strong>Titres hiérarchisés</strong>, un seul <code>&lt;h1&gt;</code> par page. Pas de saut (h1 → h3 sans h2).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-12"><label for="a11y-12"><strong>Formulaires labellés</strong>, tout <code>&lt;input&gt;</code> a un <code>&lt;label&gt;</code> associé (pas juste un placeholder).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-13"><label for="a11y-13"><strong>Messages d'erreur explicites</strong>, « Email invalide, il doit contenir un @ » plutôt que « Erreur ».</label></li>
+        </ul>
+
+        <h3>🤖 Robuste</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="a11y-14"><label for="a11y-14"><strong>HTML sémantique</strong>, utiliser <code>&lt;button&gt;</code> pour un bouton, <code>&lt;nav&gt;</code> pour la nav, <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="a11y-15"><label for="a11y-15"><strong>Test lecteur d'écran</strong>, lancer VoiceOver ou Narrator sur la page et écouter&nbsp;: l'info critique est-elle dite&nbsp;?</label></li>
+        </ul>
+
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj2-accessibilite-ecoconception/" class="btn btn--secondary">← Retour au Module 2</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js" defer></script>
+  <script src="/assets/js/checklist-export.js" defer></script>
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

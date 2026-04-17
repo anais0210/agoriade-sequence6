@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist RGPD No-Code/IA, Livrable Module 1, Agoriade</title>
+  <meta name="description" content="Checklist RGPD interactive et exportable en CSV. 24 points à vérifier sur un projet No-Code/IA.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">Module 1 RGPD</a></li>
+          <li aria-current="page">Checklist RGPD</li>
+        </ol>
+      </nav>
+
+      <span class="badge">📋 Livrable Module 1</span>
+      <h1>Checklist RGPD No-Code/IA</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        24 points à vérifier sur ton projet, organisés en 5 familles. L'état est sauvegardé dans ton navigateur, tu peux revenir plus tard et reprendre où tu en étais. Exporte la version remplie en CSV pour l'intégrer à ton outil de gestion de projet.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions sur la checklist" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn checklist-export-csv" data-filename="checklist-rgpd.csv">
+          <span aria-hidden="true">⬇️</span> Exporter en CSV
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="checklist-wrapper" data-checklist-id="dj1-rgpd">
+
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 24 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <h3>🎯 Cadrage du traitement</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="cl1-1"><label for="cl1-1">J'ai identifié et documenté la <strong>finalité précise</strong> de chaque traitement de données personnelles.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-2"><label for="cl1-2">J'ai choisi et justifié une <strong>base légale</strong> pour chaque traitement (consentement, contrat, intérêt légitime, etc.).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-3"><label for="cl1-3">Je collecte <strong>uniquement les données strictement nécessaires</strong> à la finalité (minimisation).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-4"><label for="cl1-4">J'ai défini une <strong>durée de conservation</strong> par type de donnée (pas « indéfini »).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-5"><label for="cl1-5">J'ai identifié si je traite des <strong>données sensibles</strong> (santé, religion, syndicat, biométrie, orientation sexuelle) et, si oui, j'ai un fondement spécifique.</label></li>
+        </ul>
+
+        <h3>👤 Droits des personnes</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="cl1-6"><label for="cl1-6">Une <strong>mention d'information</strong> est affichée AVANT la collecte (qui, pourquoi, combien de temps, quels droits).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-7"><label for="cl1-7">Ma <strong>politique de confidentialité</strong> est à jour et accessible.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-8"><label for="cl1-8">Il existe un canal clair pour exercer les <strong>droits</strong> (accès, rectification, suppression, opposition, portabilité).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-9"><label for="cl1-9">Si j'utilise une <strong>décision automatisée</strong> ou du profilage : j'ai prévu une intervention humaine, un droit d'explication et un droit de contestation.</label></li>
+        </ul>
+
+        <h3>🤝 Sous-traitants et transferts</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="cl1-10"><label for="cl1-10">J'ai listé <strong>tous les sous-traitants</strong> qui manipulent des données perso (OpenAI, Airtable, Make, Zapier, Vercel, etc.).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-11"><label for="cl1-11">J'ai signé un <strong>DPA (Data Processing Agreement)</strong> avec chaque sous-traitant.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-12"><label for="cl1-12">Pour les transferts <strong>hors UE</strong> : j'ai vérifié le Data Privacy Framework (pour les USA) ou activé les Clauses Contractuelles Types.</label></li>
+        </ul>
+
+        <h3>🔒 Sécurité technique</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="cl1-13"><label for="cl1-13">Les <strong>clés API</strong> ne sont nulle part en clair (pas dans le frontend, pas dans un repo public, pas dans un doc partagé).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-14"><label for="cl1-14">Les <strong>droits d'accès</strong> sont restreints au strict nécessaire (principe du moindre privilège).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-15"><label for="cl1-15">J'ai activé la <strong>double authentification (2FA)</strong> sur tous les outils critiques.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-16"><label for="cl1-16">Les données en base sont <strong>chiffrées au repos</strong> (vérifier les paramètres de l'outil).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-17"><label for="cl1-17">J'ai une <strong>stratégie de sauvegarde</strong> automatisée et je l'ai déjà testée (restore).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-18"><label for="cl1-18">J'ai mis un <strong>rate limiting</strong> sur les endpoints exposés (anti-abus, anti-facture explosive).</label></li>
+        </ul>
+
+        <h3>📝 Gouvernance</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="cl1-19"><label for="cl1-19">J'ai un <strong>registre des traitements</strong> (même simple, en tableur).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-20"><label for="cl1-20">Si mon traitement présente un risque élevé, j'ai fait (ou planifié) une <strong>AIPD</strong>.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-21"><label for="cl1-21">J'ai identifié qui sera contacté en cas de <strong>violation de données</strong> (DPO interne, CNIL sous 72h si nécessaire).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-22"><label for="cl1-22">Les <strong>logs</strong> ne contiennent pas de données perso en clair, ont une durée de rétention limitée et un accès contrôlé.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-23"><label for="cl1-23">Je ne dépends pas d'un <strong>compte unique</strong> (comptes partagés, secrets doublés, procédure de récupération).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="cl1-24"><label for="cl1-24">J'ai relu la liste des <strong>LLM tiers</strong> utilisés et vérifié leurs conditions sur l'entraînement avec mes données.</label></li>
+        </ul>
+
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj1-rgpd-securite/" class="btn btn--secondary">← Retour au Module 1 RGPD</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js" defer></script>
+  <script src="/assets/js/checklist-export.js" defer></script>
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

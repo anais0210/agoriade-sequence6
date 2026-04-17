@@ -862,203 +862,36 @@
     <section class="section--yellow" id="livrables" aria-labelledby="livrables-title" style="margin-top: var(--sp-16);">
       <div class="container">
         <h2 id="livrables-title">Les livrables à emporter</h2>
-        <p style="max-width: 60ch; font-size: var(--fs-md);">
-          Trois livrables opérationnels à utiliser dès demain sur ton projet.
-          Accessibles en ligne, imprimables, et cochables directement ici.
-        </p>
+        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables opérationnels, chacun sur sa page dédiée, consultable, cochable et exportable.</p>
       </div>
     </section>
 
-    <section class="container" id="livrable-checklist" aria-labelledby="livrable-1-title" style="padding-top: var(--sp-12);">
-      <span class="badge">📋 Livrable 1</span>
-      <h2 id="livrable-1-title">Checklist RGPD No-Code/IA</h2>
-      <p>24 points à vérifier sur ton projet. Coche au fur et à mesure, l'état est sauvegardé dans ton navigateur.</p>
+    <section class="container" style="padding-top: var(--sp-12); padding-bottom: var(--sp-12);">
+      <a href="/livrables/checklist-rgpd/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">📋</span>
+        <span class="resource-content">
+          <span class="resource-title">Checklist RGPD (24 points)</span>
+          <span class="resource-meta">Page interactive, cochable, exportable en CSV. État sauvegardé dans ton navigateur.</span>
+        </span>
+      </a>
 
-      <div class="checklist-wrapper" data-checklist-id="dj1-rgpd">
+      <a href="/livrables/template-aipd/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">📄</span>
+        <span class="resource-content">
+          <span class="resource-title">Template Mini-AIPD</span>
+          <span class="resource-meta">Page avec le template complet et lien de téléchargement (.md) pour l'utiliser dans ton éditeur.</span>
+        </span>
+      </a>
 
-        <div class="checklist-progress" role="status" aria-live="polite">
-          <span class="checklist-progress-text">0 sur 24 validés (0%)</span>
-          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="checklist-progress-fill" style="width: 0%;"></div>
-          </div>
-          <button type="button" class="checklist-reset">Réinitialiser</button>
-        </div>
-
-        <h3>🎯 Cadrage du traitement</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="cl1-1"><label for="cl1-1">J'ai identifié et documenté la <strong>finalité précise</strong> de chaque traitement de données personnelles.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-2"><label for="cl1-2">J'ai choisi et justifié une <strong>base légale</strong> pour chaque traitement (consentement, contrat, intérêt légitime, etc.).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-3"><label for="cl1-3">Je collecte <strong>uniquement les données strictement nécessaires</strong> à la finalité (minimisation).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-4"><label for="cl1-4">J'ai défini une <strong>durée de conservation</strong> par type de donnée (pas « indéfini »).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-5"><label for="cl1-5">J'ai identifié si je traite des <strong>données sensibles</strong> (santé, religion, syndicat, biométrie, orientation sexuelle) et, si oui, j'ai un fondement spécifique.</label></li>
-        </ul>
-
-        <h3>👤 Droits des personnes</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="cl1-6"><label for="cl1-6">Une <strong>mention d'information</strong> est affichée AVANT la collecte (qui, pourquoi, combien de temps, quels droits).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-7"><label for="cl1-7">Ma <strong>politique de confidentialité</strong> est à jour et accessible.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-8"><label for="cl1-8">Il existe un canal clair pour exercer les <strong>droits</strong> (accès, rectification, suppression, opposition, portabilité).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-9"><label for="cl1-9">Si j'utilise une <strong>décision automatisée</strong> ou du profilage : j'ai prévu une intervention humaine, un droit d'explication et un droit de contestation.</label></li>
-        </ul>
-
-        <h3>🤝 Sous-traitants &amp; transferts</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="cl1-10"><label for="cl1-10">J'ai listé <strong>tous les sous-traitants</strong> qui manipulent des données perso (OpenAI, Airtable, Make, Zapier, Vercel, etc.).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-11"><label for="cl1-11">J'ai signé un <strong>DPA (Data Processing Agreement)</strong> avec chaque sous-traitant.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-12"><label for="cl1-12">Pour les transferts <strong>hors UE</strong> : j'ai vérifié le Data Privacy Framework (pour les USA) ou activé les Clauses Contractuelles Types.</label></li>
-        </ul>
-
-        <h3>🔒 Sécurité technique</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="cl1-13"><label for="cl1-13">Les <strong>clés API</strong> ne sont nulle part en clair (pas dans le frontend, pas dans un repo public, pas dans un doc partagé).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-14"><label for="cl1-14">Les <strong>droits d'accès</strong> sont restreints au strict nécessaire (principe du moindre privilège).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-15"><label for="cl1-15">J'ai activé la <strong>double authentification (2FA)</strong> sur tous les outils critiques.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-16"><label for="cl1-16">Les données en base sont <strong>chiffrées au repos</strong> (vérifier les paramètres de l'outil).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-17"><label for="cl1-17">J'ai une <strong>stratégie de sauvegarde</strong> automatisée et je l'ai déjà testée (restore).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-18"><label for="cl1-18">J'ai mis un <strong>rate limiting</strong> sur les endpoints exposés (anti-abus, anti-facture explosive).</label></li>
-        </ul>
-
-        <h3>📝 Gouvernance</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="cl1-19"><label for="cl1-19">J'ai un <strong>registre des traitements</strong> (même simple, en tableur).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-20"><label for="cl1-20">Si mon traitement présente un risque élevé, j'ai fait (ou planifié) une <strong>AIPD</strong>.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-21"><label for="cl1-21">J'ai identifié qui sera contacté en cas de <strong>violation de données</strong> (DPO interne, CNIL sous 72h si nécessaire).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-22"><label for="cl1-22">Les <strong>logs</strong> ne contiennent pas de données perso en clair, ont une durée de rétention limitée et un accès contrôlé.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-23"><label for="cl1-23">Je ne dépends pas d'un <strong>compte unique</strong> (comptes partagés, secrets doublés, procédure de récupération).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="cl1-24"><label for="cl1-24">J'ai relu la liste des <strong>LLM tiers</strong> utilisés et vérifié leurs conditions sur l'entraînement avec mes données.</label></li>
-        </ul>
-
-      </div>
+      <a href="/livrables/synthese-8-risques/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">🎨</span>
+        <span class="resource-content">
+          <span class="resource-title">Synthèse visuelle, 8 risques sécurité</span>
+          <span class="resource-meta">Fiche à afficher près de ton poste. Imprimable ou enregistrable en PDF.</span>
+        </span>
+      </a>
     </section>
 
-    <hr>
-
-    <section class="container" id="livrable-aipd" aria-labelledby="livrable-2-title" style="padding-top: var(--sp-8);">
-      <span class="badge">📄 Livrable 2</span>
-      <h2 id="livrable-2-title">Template Mini-AIPD</h2>
-      <p>Une version simplifiée de l'AIPD officielle CNIL, adaptée à un projet No-Code/IA en phase de MVP. À remplir en 30-45 minutes.</p>
-
-      <div class="callout">
-        <span class="callout-label">💡 Comment utiliser</span>
-        <p class="mb-0">Copie-colle chaque bloc dans un document à toi (Notion, Word, Google Doc). Remplis pour <em>un</em> traitement à la fois. Tu peux ensuite dupliquer le doc par traitement.</p>
-      </div>
-
-      <h3>📦 Bloc 1, Description du traitement</h3>
-      <div class="callout callout--yellow-soft">
-        <ul class="flow">
-          <li><strong>Nom du traitement :</strong> [ex : « Pré-qualification automatique des candidatures »]</li>
-          <li><strong>Finalité(s) :</strong> [pourquoi je traite, ex : évaluer l'adéquation d'un profil au poste]</li>
-          <li><strong>Responsable :</strong> [nom + rôle]</li>
-          <li><strong>Personnes concernées :</strong> [ex : candidat·es externes]</li>
-          <li><strong>Catégories de données :</strong> [liste précise : nom, email, CV, réponses au questionnaire, score]</li>
-          <li><strong>Données sensibles :</strong> [oui / non, si oui, lesquelles et sur quel fondement]</li>
-          <li><strong>Flux de données :</strong> [schéma ou description : source → traitements → stockage → destinataires]</li>
-          <li><strong>Sous-traitants :</strong> [liste : outil + pays + DPA signé oui/non]</li>
-          <li><strong>Durée de conservation :</strong> [par catégorie de donnée]</li>
-        </ul>
-      </div>
-
-      <h3>⚖️ Bloc 2, Nécessité et proportionnalité</h3>
-      <div class="callout callout--yellow-soft">
-        <ul class="flow">
-          <li><strong>Base légale retenue :</strong> [consentement / contrat / intérêt légitime / etc.], <em>Justification :</em> [pourquoi celle-ci]</li>
-          <li><strong>Données strictement nécessaires :</strong> [oui / non, si non, quoi enlever ?]</li>
-          <li><strong>Information des personnes :</strong> [comment, quand, sur quoi]</li>
-          <li><strong>Droits :</strong> [comment une personne exerce ses droits, procédure concrète]</li>
-          <li><strong>Sous-traitants conformes :</strong> [DPA signés ? Transferts hors UE encadrés ?]</li>
-        </ul>
-      </div>
-
-      <h3>⚠️ Bloc 3, Identification des risques</h3>
-      <div class="callout callout--yellow-soft">
-        <p>Pour chaque scénario ci-dessous, évaluer : <strong>Impact</strong> (faible/modéré/élevé) × <strong>Probabilité</strong> (faible/modérée/élevée).</p>
-        <ul class="flow">
-          <li><strong>Scénario 1, Accès illégitime :</strong> Qu'est-ce qui se passe si les données fuitent ? [impact × probabilité] [sources du risque]</li>
-          <li><strong>Scénario 2, Modification non désirée :</strong> Si les données sont modifiées par erreur ou malveillance ? [impact × probabilité]</li>
-          <li><strong>Scénario 3, Disparition :</strong> Si les données sont perdues ? [impact × probabilité]</li>
-        </ul>
-      </div>
-
-      <h3>🛡️ Bloc 4, Mesures de traitement des risques</h3>
-      <div class="callout callout--yellow-soft">
-        <p>Pour chaque risque identifié, préciser les mesures de <strong>prévention</strong>, <strong>détection</strong> et <strong>réaction</strong>.</p>
-        <div class="table-wrapper">
-          <table>
-            <thead><tr><th>Risque</th><th>Prévention</th><th>Détection</th><th>Réaction</th></tr></thead>
-            <tbody>
-              <tr><td>Accès illégitime</td><td>[ex : 2FA, droits restreints]</td><td>[ex : logs d'accès]</td><td>[ex : révocation, notif CNIL si nécessaire]</td></tr>
-              <tr><td>Modification</td><td>[ex : historique, validation]</td><td>[ex : alertes]</td><td>[ex : rollback backup]</td></tr>
-              <tr><td>Disparition</td><td>[ex : sauvegarde auto]</td><td>[ex : monitoring]</td><td>[ex : restauration + comm]</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="callout">
-        <span class="callout-label">✅ Conclusion</span>
-        <p>Les risques résiduels sont-ils acceptables au regard de la finalité ? [oui / non / à renforcer par…]</p>
-        <p class="mb-0"><strong>Validé le :</strong> [date], <strong>Par :</strong> [nom], <strong>Prochaine revue :</strong> [date]</p>
-      </div>
-    </section>
-
-    <hr>
-
-    <section class="container" id="livrable-synthese" aria-labelledby="livrable-3-title" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
-      <span class="badge">🎨 Livrable 3</span>
-      <h2 id="livrable-3-title">Synthèse visuelle, 8 risques sécurité No-Code/IA</h2>
-      <p>Une fiche à afficher près de ton poste. À imprimer ou garder en onglet.</p>
-
-      <div class="card-grid">
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">1</span>
-          <h4 class="mt-0">Clés API exposées</h4>
-          <p><strong>Ce que tu risques :</strong> facture OpenAI à 4 chiffres, comptes piratés.</p>
-          <p><strong>La règle :</strong> une clé API n'est jamais dans le frontend ni sur un repo public.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">2</span>
-          <h4 class="mt-0">Prompt injection</h4>
-          <p><strong>Ce que tu risques :</strong> ton LLM fait ce que l'utilisateur veut, pas ce que tu as prévu.</p>
-          <p><strong>La règle :</strong> jamais de confiance aveugle dans l'input. Filtrage, guardrails, validation.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">3</span>
-          <h4 class="mt-0">Pas de rate limiting</h4>
-          <p><strong>Ce que tu risques :</strong> un bot abuse ton API → facture + déni de service.</p>
-          <p><strong>La règle :</strong> plafonner les appels par IP / par utilisateur / par heure.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">4</span>
-          <h4 class="mt-0">Droits trop larges</h4>
-          <p><strong>Ce que tu risques :</strong> tout le monde peut tout casser, tout voir, tout exporter.</p>
-          <p><strong>La règle :</strong> principe du moindre privilège. Un rôle = ce qu'il faut, rien de plus.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">5</span>
-          <h4 class="mt-0">Pas de sauvegarde</h4>
-          <p><strong>Ce que tu risques :</strong> un Make qui dérape → base effacée, clients perdus.</p>
-          <p><strong>La règle :</strong> backup automatique quotidien + test régulier de restauration.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">6</span>
-          <h4 class="mt-0">Logs bavards</h4>
-          <p><strong>Ce que tu risques :</strong> fuite de données perso, non-conformité RGPD.</p>
-          <p><strong>La règle :</strong> pas de data perso en clair, durée de rétention limitée, accès contrôlé.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">7</span>
-          <h4 class="mt-0">LLM tiers</h4>
-          <p><strong>Ce que tu risques :</strong> tes données utilisées pour entraîner un modèle public.</p>
-          <p><strong>La règle :</strong> DPA signé + lecture des CGU + data opt-out activé.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">8</span>
-          <h4 class="mt-0">Compte unique</h4>
-          <p><strong>Ce que tu risques :</strong> la personne clé part → plus d'accès, tout s'arrête.</p>
-          <p><strong>La règle :</strong> comptes partagés via outil dédié, 2 admins minimum, procédure de récup.</p>
-        </div>
-      </div>
-    </section>
 
     <hr>
 

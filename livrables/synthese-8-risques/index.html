@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synthèse 8 risques sécurité, Livrable Module 1, Agoriade</title>
+  <meta name="description" content="Fiche visuelle des 8 risques sécurité typiques en No-Code/IA, à afficher près de son poste.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">Module 1 RGPD</a></li>
+          <li aria-current="page">Synthèse 8 risques sécurité</li>
+        </ol>
+      </nav>
+
+      <span class="badge">🎨 Livrable Module 1</span>
+      <h1>Synthèse visuelle, 8 risques sécurité No-Code/IA</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Une fiche à afficher près de ton poste, à garder en onglet, ou à imprimer. Chaque risque est exprimé sous la forme <strong>Ce que tu risques</strong> + <strong>La règle</strong>, pour un rappel rapide en situation.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="card-grid">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">1</span>
+          <h4 class="mt-0">Clés API exposées</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> facture OpenAI à 4 chiffres, comptes piratés.</p>
+          <p><strong>La règle&nbsp;:</strong> une clé API n'est jamais dans le frontend ni sur un repo public.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">2</span>
+          <h4 class="mt-0">Prompt injection</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> ton LLM fait ce que l'utilisateur veut, pas ce que tu as prévu.</p>
+          <p><strong>La règle&nbsp;:</strong> jamais de confiance aveugle dans l'input. Filtrage, guardrails, validation.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">3</span>
+          <h4 class="mt-0">Pas de rate limiting</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> un bot abuse ton API → facture + déni de service.</p>
+          <p><strong>La règle&nbsp;:</strong> plafonner les appels par IP, par utilisateur, par heure.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">4</span>
+          <h4 class="mt-0">Droits trop larges</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> tout le monde peut tout casser, tout voir, tout exporter.</p>
+          <p><strong>La règle&nbsp;:</strong> principe du moindre privilège. Un rôle = ce qu'il faut, rien de plus.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">5</span>
+          <h4 class="mt-0">Pas de sauvegarde</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> un Make qui dérape → base effacée, clients perdus.</p>
+          <p><strong>La règle&nbsp;:</strong> backup automatique quotidien et test régulier de restauration.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">6</span>
+          <h4 class="mt-0">Logs bavards</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> fuite de données perso, non-conformité RGPD.</p>
+          <p><strong>La règle&nbsp;:</strong> pas de data perso en clair, durée de rétention limitée, accès contrôlé.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">7</span>
+          <h4 class="mt-0">LLM tiers</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> tes données utilisées pour entraîner un modèle public.</p>
+          <p><strong>La règle&nbsp;:</strong> DPA signé, lecture des CGU, data opt-out activé.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">8</span>
+          <h4 class="mt-0">Compte unique</h4>
+          <p><strong>Ce que tu risques&nbsp;:</strong> la personne clé part, plus d'accès, tout s'arrête.</p>
+          <p><strong>La règle&nbsp;:</strong> comptes partagés via outil dédié, 2 admins minimum, procédure de récupération.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj1-rgpd-securite/" class="btn btn--secondary">← Retour au Module 1 RGPD</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>
