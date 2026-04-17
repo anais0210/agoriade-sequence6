@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Runbook d'incident, Livrable Module 3, Agoriade</title>
+  <meta name="description" content="Template de runbook d'incident à dupliquer par type de panne. Livrable Module 3 Agoriade.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj3-documentation/">Module 3 Documentation</a></li>
+          <li aria-current="page">Template Runbook d'incident</li>
+        </ol>
+      </nav>
+
+      <span class="badge">🚨 Livrable Module 3</span>
+      <h1>Template Runbook d'incident</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Fiche à remplir <strong>avant</strong> l'incident. Une fiche par type de panne probable. Copie ce template dans ton wiki projet (Notion, README), duplique par scénario, teste au moins une fois par trimestre.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="callout">
+        <span class="callout-label">💡 Comment utiliser</span>
+        <p class="mb-0">Duplique ce template une fois par type d'incident probable (ex&nbsp;: panne Make, Airtable corrompu, clés API fuitées, utilisateur bloqué). Teste au moins une fois par trimestre en simulant l'incident et en suivant le runbook&nbsp;: si une étape ne marche pas, corrige à chaud.</p>
+      </div>
+
+      <h3>📄 Template Runbook</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Titre de l'incident&nbsp;:</strong> [ex&nbsp;: « Le scénario Make ne s'exécute plus »]</li>
+          <li><strong>Dernière mise à jour&nbsp;:</strong> [date], <strong>Par&nbsp;:</strong> [nom]</li>
+          <li><strong>Dernière fois testé&nbsp;:</strong> [date]</li>
+        </ul>
+
+        <h4>🔎 Comment on sait qu'on est dans ce cas ?</h4>
+        <p>Symptômes observables, dans l'ordre de probabilité&nbsp;:</p>
+        <ul class="flow">
+          <li>[Symptôme 1, ex&nbsp;: « Les emails automatiques ne partent plus depuis ce matin »]</li>
+          <li>[Symptôme 2]</li>
+          <li>[Symptôme 3]</li>
+        </ul>
+
+        <h4>🩺 Diagnostic (dans l'ordre)</h4>
+        <ol>
+          <li>[Action de diagnostic 1, ex&nbsp;: « Aller sur <a href="https://status.make.com" target="_blank" rel="noopener">status.make.com</a>, vérifier si Make a un incident », critère de réussite&nbsp;: réponse observable]</li>
+          <li>[Action de diagnostic 2, ex&nbsp;: « Aller dans le dashboard Make, onglet Scenarios, vérifier si le scénario est ON et son dernier run »]</li>
+          <li>[Action de diagnostic 3, ex&nbsp;: « Regarder les logs du dernier run pour voir le message d'erreur »]</li>
+        </ol>
+
+        <h4>🛠️ Actions correctives (par ordre d'effort)</h4>
+        <ol>
+          <li>[Action 1, la plus simple, la plus rapide]</li>
+          <li>[Action 2, si la 1 ne marche pas]</li>
+          <li>[Action 3, rollback, plan B, dernier recours]</li>
+        </ol>
+
+        <h4>📞 Qui alerter et quand</h4>
+        <ul class="flow">
+          <li><strong>Si l'action 1 résout&nbsp;:</strong> [qui prévenir éventuellement, ex&nbsp;: message Slack]</li>
+          <li><strong>Si on passe à l'action 2-3&nbsp;:</strong> [personne à alerter, canal]</li>
+          <li><strong>Si aucune action ne résout (30 min sans solution)&nbsp;:</strong> [personne de dernier recours, téléphone]</li>
+        </ul>
+
+        <h4>🔁 Après l'incident</h4>
+        <ul class="flow">
+          <li>Noter l'incident dans le registre (date, cause, durée, action qui a résolu).</li>
+          <li>Si l'incident était nouveau&nbsp;: mettre à jour ce runbook.</li>
+          <li>Si l'incident est récurrent&nbsp;: prévoir une vraie correction structurelle (pas juste un patch).</li>
+          <li>Si impact utilisateur&nbsp;: préparer la communication (ce qu'on dit, quand, à qui).</li>
+        </ul>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj3-documentation/" class="btn btn--secondary">← Retour au Module 3</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo"><span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span></span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact"><strong>Formation</strong>Anaïs Sparesotto<br><a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+          <p class="site-footer-contact"><strong>École Agoriade</strong>Goulven<br><a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a></p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">Halles 1 &amp; 2<br>5 Allée Frida Kahlo<br>44200 Nantes</p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p><a href="/mentions-legales/">Mentions légales</a> · <a href="/accessibilite/">Déclaration d'accessibilité</a> · <a href="/empreinte-carbone/">Empreinte carbone</a></p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist « Ma doc est-elle exploitable ? », Livrable Module 3, Agoriade</title>
+  <meta name="description" content="12 points pour auditer la qualité de ta documentation actuelle. Interactive, cochable, exportable en CSV.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj3-documentation/">Module 3 Documentation</a></li>
+          <li aria-current="page">Checklist « Ma doc est-elle exploitable ? »</li>
+        </ol>
+      </nav>
+
+      <span class="badge">✅ Livrable Module 3</span>
+      <h1>Checklist, « Ma doc est-elle exploitable ? »</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        12 points pour auditer rapidement la qualité de ta documentation actuelle. L'état est sauvegardé dans ton navigateur, tu peux reprendre plus tard et exporter la version remplie en CSV.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn checklist-export-csv" data-filename="checklist-doc.csv">
+          <span aria-hidden="true">⬇️</span> Exporter en CSV
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <div class="checklist-wrapper" data-checklist-id="dj3-doc">
+        <div class="checklist-progress" role="status" aria-live="polite">
+          <span class="checklist-progress-text">0 sur 12 validés (0%)</span>
+          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="checklist-progress-fill" style="width: 0%;"></div>
+          </div>
+          <button type="button" class="checklist-reset">Réinitialiser</button>
+        </div>
+
+        <h3>📍 Où et comment</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="doc-1"><label for="doc-1">Ma doc est à un <strong>seul endroit connu</strong> de toute l'équipe (pas dispersée dans 4 outils).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-2"><label for="doc-2">L'endroit où est la doc fait partie de mon <strong>outil de travail quotidien</strong> (Notion, Slack bookmarks, README).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-11"><label for="doc-11">La doc est <strong>mise à jour</strong> dans les 7 jours qui suivent une modification majeure (convention équipe).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-12"><label for="doc-12">Une personne tierce (collègue, pair·e) pourrait <strong>se débrouiller sans moi</strong> avec ma doc.</label></li>
+        </ul>
+
+        <h3>📦 Contenu minimum</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="doc-3"><label for="doc-3">La <strong>vue d'ensemble</strong> du produit (1 page) existe et est récente (moins de 3 mois).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-4"><label for="doc-4">La <strong>stack technique</strong> est inventoriée (outils, plans, rôles).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-5"><label for="doc-5">Les <strong>comptes et accès</strong> sont documentés (qui a quoi, où sont les secrets).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-6"><label for="doc-6">Les <strong>flux de données principaux</strong> (3-5) sont schématisés ou décrits.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-7"><label for="doc-7">Les <strong>procédures courantes</strong> sont rédigées pas à pas (ajouter user, modifier prompt, etc.).</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-10"><label for="doc-10">Les <strong>décisions structurantes</strong> sont tracées (ADR ou équivalent).</label></li>
+        </ul>
+
+        <h3>🚨 Support et incidents</h3>
+        <ul class="checklist">
+          <li class="checklist-item"><input type="checkbox" id="doc-8"><label for="doc-8">Au moins <strong>un runbook d'incident</strong> existe et a été testé dans les 6 derniers mois.</label></li>
+          <li class="checklist-item"><input type="checkbox" id="doc-9"><label for="doc-9">Une <strong>procédure d'escalade</strong> existe (qui contacter pour quel type de problème).</label></li>
+        </ul>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj3-documentation/" class="btn btn--secondary">← Retour au Module 3</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo"><span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span></span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact"><strong>Formation</strong>Anaïs Sparesotto<br><a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+          <p class="site-footer-contact"><strong>École Agoriade</strong>Goulven<br><a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a></p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">Halles 1 &amp; 2<br>5 Allée Frida Kahlo<br>44200 Nantes</p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p><a href="/mentions-legales/">Mentions légales</a> · <a href="/accessibilite/">Déclaration d'accessibilité</a> · <a href="/empreinte-carbone/">Empreinte carbone</a></p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/checklist.js" defer></script>
+  <script src="/assets/js/checklist-export.js" defer></script>
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>

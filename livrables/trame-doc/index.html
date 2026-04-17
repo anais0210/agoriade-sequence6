@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trame de doc technique No-Code/IA, Livrable Module 3, Agoriade</title>
+  <meta name="description" content="Trame de documentation technique en 6 blocs pour un projet No-Code/IA. Livrable Module 3 Agoriade.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj3-documentation/">Module 3 Documentation</a></li>
+          <li aria-current="page">Trame de doc technique</li>
+        </ol>
+      </nav>
+
+      <span class="badge">📋 Livrable Module 3</span>
+      <h1>Trame de doc technique No-Code/IA</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Structure en 6 blocs pour documenter un produit No-Code/IA. À copier-coller dans Notion, Google Doc ou README. Commence par les blocs 2 et 3 (stack, accès)&nbsp;: c'est ce qui te sauve en premier.
+      </p>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer ou enregistrer en PDF
+        </button>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <h3>📦 Bloc 1, Vue d'ensemble</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Nom du produit&nbsp;:</strong> [nom]</li>
+          <li><strong>Pitch en 1 phrase&nbsp;:</strong> [ex&nbsp;: « Application qui aide les RH à pré-qualifier les candidatures via IA »]</li>
+          <li><strong>Utilisateurs cibles&nbsp;:</strong> [qui utilise, combien]</li>
+          <li><strong>Fonctions principales&nbsp;:</strong> [liste à puces, 3-5 items]</li>
+          <li><strong>Schéma d'architecture&nbsp;:</strong> [image ou description&nbsp;: frontend → backend → services tiers]</li>
+        </ul>
+      </div>
+
+      <h3>🛠️ Bloc 2, Stack technique</h3>
+      <div class="callout callout--yellow-soft">
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Couche</th><th>Outil</th><th>Version / plan</th><th>Rôle</th></tr></thead>
+            <tbody>
+              <tr><td>Frontend / UI</td><td>[ex&nbsp;: Softr, Bubble, Webflow]</td><td>[plan payé]</td><td>[rôle]</td></tr>
+              <tr><td>Base de données</td><td>[ex&nbsp;: Airtable]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>Automation</td><td>[ex&nbsp;: Make, n8n]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>IA / LLM</td><td>[ex&nbsp;: OpenAI GPT-4o]</td><td>[version API]</td><td>[rôle]</td></tr>
+              <tr><td>Hébergement</td><td>[ex&nbsp;: Vercel]</td><td>[plan]</td><td>[rôle]</td></tr>
+              <tr><td>Auth</td><td>[ex&nbsp;: Supabase auth]</td><td>[plan]</td><td>[rôle]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>🔑 Bloc 3, Comptes et accès</h3>
+      <div class="callout callout--yellow-soft">
+        <ul class="flow">
+          <li><strong>Liste des comptes&nbsp;:</strong> [outil + email du compte owner + qui a accès]</li>
+          <li><strong>Gestionnaire de secrets&nbsp;:</strong> [ex&nbsp;: 1Password, Bitwarden, où sont les clés API]</li>
+          <li><strong>Double authentification&nbsp;:</strong> [activée sur quels outils&nbsp;? avec quel téléphone de secours&nbsp;?]</li>
+          <li><strong>Procédure de récupération&nbsp;:</strong> [si la personne principale est indisponible, comment accéder]</li>
+        </ul>
+      </div>
+
+      <h3>🌊 Bloc 4, Flux de données principaux</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Pour les 3-5 flux les plus importants, documenter&nbsp;:</p>
+        <ul class="flow">
+          <li><strong>Déclencheur&nbsp;:</strong> [ex&nbsp;: utilisateur soumet formulaire sur Softr]</li>
+          <li><strong>Étapes&nbsp;:</strong> [numérotées, pas à pas]</li>
+          <li><strong>Données manipulées&nbsp;:</strong> [quelles données, où elles vont]</li>
+          <li><strong>Résultat attendu&nbsp;:</strong> [quoi en sortie, dans quel délai]</li>
+          <li><strong>Cas d'échec&nbsp;:</strong> [que se passe-t-il si ça rate]</li>
+        </ul>
+      </div>
+
+      <h3>📝 Bloc 5, Procédures courantes</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Comment faire les tâches récurrentes. Une fiche par tâche&nbsp;:</p>
+        <ul class="flow">
+          <li><strong>Ajouter un nouvel utilisateur</strong></li>
+          <li><strong>Modifier un prompt IA</strong></li>
+          <li><strong>Ajouter un champ à la base</strong></li>
+          <li><strong>Déployer une nouvelle version</strong></li>
+          <li><strong>Faire une sauvegarde manuelle</strong></li>
+        </ul>
+      </div>
+
+      <h3>🧭 Bloc 6, Décisions (ADR)</h3>
+      <div class="callout callout--yellow-soft">
+        <p>Une entrée par décision structurante. Pour chacune&nbsp;:</p>
+        <ul class="flow">
+          <li><strong>Titre&nbsp;:</strong> [ex&nbsp;: « Pourquoi Airtable plutôt que Notion »]</li>
+          <li><strong>Date&nbsp;:</strong> [AAAA-MM-JJ]</li>
+          <li><strong>Contexte&nbsp;:</strong> [quel problème on résolvait]</li>
+          <li><strong>Alternatives étudiées&nbsp;:</strong> [option A, option B, option C]</li>
+          <li><strong>Décision retenue&nbsp;:</strong> [option + justification courte]</li>
+          <li><strong>Conséquences&nbsp;:</strong> [ce que ça implique, limites connues]</li>
+        </ul>
+      </div>
+
+      <p style="margin-top: var(--sp-8);"><a href="/dj3-documentation/" class="btn btn--secondary">← Retour au Module 3</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo"><span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span></span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact"><strong>Formation</strong>Anaïs Sparesotto<br><a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+          <p class="site-footer-contact"><strong>École Agoriade</strong>Goulven<br><a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a></p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">Halles 1 &amp; 2<br>5 Allée Frida Kahlo<br>44200 Nantes</p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p><a href="/mentions-legales/">Mentions légales</a> · <a href="/accessibilite/">Déclaration d'accessibilité</a> · <a href="/empreinte-carbone/">Empreinte carbone</a></p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>
