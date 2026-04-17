@@ -247,6 +247,12 @@ hr {
 /* Petits textes */
 small, .text-small { font-size: var(--fs-xs); color: var(--c-grey-700); }
 
+abbr[title] {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+}
+
 /* ----- 6. Layout ----- */
 .page-wrapper {
   min-height: 100vh;
