@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 2, Accessibilité et Écoconception — Agoriade</title>
-  <meta name="description" content="Module 2 du bootcamp AI Product Builder. Accessibilité numérique et écoconception d'une solution No-Code/IA.">
+  <title>Module 2, Accessibilité et Écoconception, Agoriade</title>
+  <meta name="description" content="Module 2 du bootcamp AI Product Builder. Accessibilité numérique avant la pause, écoconception après la pause.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/print.css">
@@ -35,12 +35,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <span class="hero-kicker">Module 2 · Accessibilité et Écoconception</span>
-        <h1 id="hero-title">Accessibilité &amp; Écoconception</h1>
+        <h1 id="hero-title">Accessibilité &amp; Écoconception en No-Code/IA</h1>
         <p class="hero-lead">
-          Rendre ton produit utilisable par tout le monde sans plomber la
-          planète. Les 4 principes POUR, audit a11y en binôme sur un vrai site,
-          mesure d'impact environnemental, 10 gestes d'écoconception à
-          appliquer dès demain.
+          Deux sujets, une même conviction&nbsp;: ton produit doit être utilisable par tout le monde et ne pas peser inutilement sur la planète. Avant la pause, on pose l'<strong>accessibilité numérique</strong> (<abbr title="Accessibility, 11 lettres entre le A et le Y">a11y</abbr>), les obligations, et on audite un vrai site. Après la pause, on bascule sur l'<strong>écoconception</strong>&nbsp;: d'où vient vraiment l'impact et quels sont les leviers concrets d'un·e product builder.
         </p>
         <div class="hero-actions">
           <a href="#sommaire" class="btn btn--large">Voir le déroulé</a>
@@ -58,340 +55,591 @@
       </nav>
 
       <h2 id="sommaire-title">Déroulé de la demi-journée</h2>
-      <p>8 séquences, 3h30 au total.</p>
+      <p>8 temps pédagogiques, 3h30 au total. Clique sur un temps pour y accéder directement.</p>
 
-      <ol class="timeline" aria-label="Séquences de la DJ2">
+      <div class="callout" style="margin-top: var(--sp-4);">
+        <span class="callout-label">👀 Comment lire cette page</span>
+        <p class="mb-0">Cette page est ton support pédagogique : elle décrit, pour chaque temps, ce que tu vas apprendre et faire. Les <strong>« Notes réservées à la formatrice »</strong> sont repliées en pointillés, tu peux les ignorer, elles servent au cadrage d'animation.</p>
+      </div>
+
+      <ol class="timeline" aria-label="Temps du module">
         <li class="timeline-item">
           <span class="timeline-time">13h30<br><span class="timeline-duration">15 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-1-inclusion">① Inclusion — « Un site que je trouve hostile »</a></h4>
-            <p>Brise-glace pour faire émerger les représentations sur l'accessibilité.</p>
+            <h4><a href="#seq-1-inclusion">① Inclusion, « Qu'est-ce que c'est pour toi l'a11y ? »</a></h4>
+            <p>Tour d'ouverture, exploration des représentations sur l'accessibilité numérique.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">13h45<br><span class="timeline-duration">20 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-2-apport-a11y">② Apport 1 — Les 4 principes POUR de l'accessibilité</a></h4>
-            <p>Cadre RGAA/WCAG minimum, avec les pièges spécifiques au No-Code.</p>
+            <h4><a href="#seq-2-apport-a11y">② Apport 1, Accessibilité numérique</a></h4>
+            <p>Les 4 principes POUR, les obligations légales, les pièges spécifiques au No-Code/IA.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">14h05<br><span class="timeline-duration">40 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-3-audit-a11y">③ Pratique guidée 1 — Audit accessibilité en binôme</a></h4>
-            <p>Audit d'un site réel avec grille simplifiée et outils automatisés.</p>
+            <h4><a href="#seq-3-audit-a11y">③ Pratique guidée 1, Audit a11y en binôme ou trio</a></h4>
+            <p>Audit d'un site réel avec grille simplifiée et outils gratuits (ARA, axe, WAVE, navigation clavier).</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">14h45<br><span class="timeline-duration">25 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-4-apport-eco">④ Débrief + Apport 2 — Écoconception : le vrai impact</a></h4>
-            <p>Débrief de l'audit, puis apport sur l'impact environnemental du numérique et les leviers d'optimisation.</p>
+            <h4><a href="#seq-4-debrief-a11y">④ Débrief audit et actualité a11y</a></h4>
+            <p>Mise en commun des trouvailles, retour sur les critères qui reviennent le plus, affaires récentes dans la presse.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">15h10<br><span class="timeline-duration">15 min</span></span>
           <div class="timeline-content">
             <h4><a href="#seq-5-pause">⑤ Pause</a></h4>
+            <p>Coupure franche, on bascule ensuite sur l'écoconception.</p>
           </div>
         </li>
         <li class="timeline-item">
-          <span class="timeline-time">15h25<br><span class="timeline-duration">60 min</span></span>
+          <span class="timeline-time">15h25<br><span class="timeline-duration">25 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-6-pratique-eco">⑥ Pratique guidée 2 — Analyse d'impact sur ton projet</a></h4>
-            <p>Chacun·e mesure l'impact d'une fonctionnalité de son projet et propose 3 optimisations.</p>
+            <h4><a href="#seq-6-apport-eco">⑥ Apport 2, Écoconception des services numériques</a></h4>
+            <p>D'où vient l'impact, les 3 démarches (IT for Green, Green IT, Éco-conception), les 4 leviers, les faux amis.</p>
           </div>
         </li>
         <li class="timeline-item">
-          <span class="timeline-time">16h25<br><span class="timeline-duration">20 min</span></span>
+          <span class="timeline-time">15h50<br><span class="timeline-duration">45 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-7-consolidation">⑦ Consolidation — Carnet de bord DJ2</a></h4>
+            <h4><a href="#seq-7-pratique-eco">⑦ Pratique guidée 2, Analyse d'impact sur un persona</a></h4>
+            <p>Mesurer l'impact d'une fonctionnalité de BigCorp ou StartupTech et proposer 3 optimisations.</p>
           </div>
         </li>
         <li class="timeline-item">
-          <span class="timeline-time">16h45<br><span class="timeline-duration">15 min</span></span>
+          <span class="timeline-time">16h35<br><span class="timeline-duration">25 min</span></span>
           <div class="timeline-content">
-            <h4><a href="#seq-8-cloture">⑧ Clôture — « Je retiens, j'applique »</a></h4>
+            <h4><a href="#seq-8-cloture">⑧ Consolidation et clôture</a></h4>
+            <p>Tu planifies tes actions dans ton outil de gestion de projet, météo de sortie, sondage retour, teaser Module 3.</p>
           </div>
         </li>
       </ol>
+
+      <p style="margin-top: var(--sp-6);">
+        <a href="#livrables" class="btn">📎 Accéder aux livrables</a>
+        <a href="#glossaire" class="btn btn--secondary">🔤 Glossaire</a>
+      </p>
     </section>
 
     <hr>
 
     <section class="container" id="seq-1-inclusion" aria-labelledby="seq-1-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 1 · 13h30 · 15 min</span>
-      <h2 id="seq-1-title">Inclusion — « Un site que je trouve hostile »</h2>
+      <span class="badge badge--dark">Temps 1 · 13h30 · 15 min</span>
+      <h2 id="seq-1-title">Inclusion, « Qu'est-ce que c'est pour toi l'a11y ? »</h2>
 
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Faire émerger des exemples concrets vécus d'expériences utilisateurs dégradées, pour ancrer l'accessibilité dans le vécu plutôt que dans la norme.</p>
+        <span class="callout-label">🎯 Ce que tu vas vivre</span>
+        <p class="mb-0">Un tour d'ouverture pour poser ce que chacun·e met derrière le mot <strong>accessibilité</strong>, sans jugement ni hiérarchie. L'objectif&nbsp;: faire émerger les représentations, les préjugés utiles et les zones de flou, pour que l'apport qui suit parte de là où tu es, pas d'un manuel abstrait.</p>
       </div>
 
-      <h3>Consignes animation</h3>
+      <h3>Comment ça se passe</h3>
       <ol>
-        <li><strong>Accueillir (2 min)</strong> — Retour rapide sur DJ1 : « Combien ont coché au moins 5 cases de la checklist RGPD depuis hier ? » Petite victoire collective.</li>
-        <li><strong>Question brise-glace (3 min)</strong> — « Citez un site ou une app que vous trouvez hostile à utiliser — sans le nommer si c'est un client. »</li>
-        <li><strong>Tour de table (8 min)</strong> — Chacun·e donne un exemple + pourquoi. Noter au tableau les types d'hostilité (trop petit, trop de pop-ups, pas clair, lent…).</li>
-        <li><strong>Annoncer le cap (2 min)</strong> — « Aujourd'hui, on va apprendre à repérer et corriger ces hostilités — pour les humains comme pour la planète. »</li>
+        <li>On s'installe en cercle, 2 minutes pour se poser.</li>
+        <li>Tu réponds librement, en 1 à 2 phrases, à&nbsp;: <strong>« Qu'est-ce que c'est pour toi, l'accessibilité (ou a11y) ? »</strong></li>
+        <li>Tu peux enchaîner&nbsp;: <em>ça parle à qui ? pour qui ? et comment ?</em></li>
+        <li>La formatrice note les mots-clés au tableau, sans corriger ni hiérarchiser.</li>
+        <li>On fixe le cap&nbsp;: à la fin de la matinée, tu sais auditer l'a11y d'un site et repérer les obligations qui s'y appliquent. Puis on bascule sur l'écoconception.</li>
       </ol>
 
-      <div class="callout">
-        <span class="callout-label">💡 Pour l'animation</span>
-        <p class="mb-0">Si quelqu'un dit « je n'ai jamais été gêné·e », relancer : « Vous n'avez jamais été sur un site sur téléphone avec une petite connexion, avec un enfant qui pleure à côté ? ». L'accessibilité concerne TOUT LE MONDE, ponctuellement ou durablement.</p>
-      </div>
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 1</summary>
+        <div class="trainer-notes-body">
+          <h4 class="mt-0">Méthode de travail suggérée</h4>
+          <ol>
+            <li><strong>Accueillir (2 min)</strong>, retour court sur le Module 1 (« combien de cases cochées sur la checklist RGPD depuis hier&nbsp;? »), petite victoire collective.</li>
+            <li><strong>Poser la question (2 min)</strong>, l'écrire au tableau. Rappeler qu'il n'y a pas de bonne réponse.</li>
+            <li><strong>Tour de table (8 min)</strong>, 1 à 2 phrases par personne. Noter les mots-clés, sans corriger.</li>
+            <li><strong>Annoncer le cap (3 min)</strong>, A11Y avant la pause (principes, obligations, audit), éco-conception après la pause.</li>
+          </ol>
+
+          <p><strong>💡 Posture&nbsp;:</strong> si quelqu'un dit « j'ai jamais été gêné·e », relancer doucement : « sur téléphone avec peu de connexion&nbsp;? au soleil&nbsp;? avec un bras dans le plâtre&nbsp;? ». L'a11y concerne tout le monde, ponctuellement ou durablement. À réutiliser pour introduire le cas « handicap situationnel ».</p>
+        </div>
+      </details>
     </section>
 
     <hr>
 
     <section class="container" id="seq-2-apport-a11y" aria-labelledby="seq-2-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 2 · 13h45 · 20 min</span>
-      <h2 id="seq-2-title">Apport 1 — Les 4 principes POUR de l'accessibilité</h2>
+      <span class="badge badge--dark">Temps 2 · 13h45 · 20 min</span>
+      <h2 id="seq-2-title">Apport 1, Accessibilité numérique</h2>
 
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Donner un cadre simple et mémorisable pour aborder l'accessibilité : les 4 principes POUR qui structurent WCAG/RGAA.</p>
+        <span class="callout-label">🎯 Ce que tu vas apprendre</span>
+        <p class="mb-0">Le cadre minimum pour concevoir ton produit accessible&nbsp;: à qui ça profite vraiment, ce que la loi impose aujourd'hui, les 4 principes mémorisables, et les pièges typiques dans un environnement No-Code/IA.</p>
       </div>
 
-      <h3>Contenu à transmettre</h3>
-
-      <h4>1. Pourquoi l'accessibilité, concrètement</h4>
+      <h3>1. L'a11y, c'est pour qui ?</h3>
+      <p>Le sigle <strong><abbr title="Accessibility, 11 lettres entre A et Y">a11y</abbr></strong> désigne l'accessibilité numérique. Qui est concerné&nbsp;?</p>
       <ul>
-        <li><strong>~20% de la population</strong> a un handicap (visuel, auditif, moteur, cognitif) — permanent, temporaire, ou situationnel.</li>
-        <li><strong>Tout le monde est concerné ponctuellement</strong> : connexion faible, bras cassé, écran éclairé par le soleil, tablette posée à l'envers sur un lit.</li>
-        <li><strong>Obligations légales</strong> : le RGAA s'applique à toutes les entreprises &gt; 250M€ de CA et à tout le secteur public. Amendes jusqu'à 25 000 € par manquement.</li>
-        <li><strong>Bon pour tout le monde</strong> : un site accessible est plus rapide, mieux référencé, plus convertissant.</li>
+        <li>Les personnes en situation de <strong>handicap permanent</strong>, environ <strong>20 % de la population</strong> (visuel, auditif, moteur, cognitif).</li>
+        <li>Les personnes en situation de <strong>handicap temporaire</strong>, bras dans le plâtre, fatigue visuelle, migraine.</li>
+        <li>Les personnes en situation de <strong>handicap situationnel</strong>, soleil sur l'écran, environnement bruyant, enfant dans les bras, connexion faible, téléphone à une main.</li>
       </ul>
+      <p>Conclusion&nbsp;: l'accessibilité concerne <strong>tout le monde, tôt ou tard</strong>. Un produit accessible est plus rapide, mieux référencé, plus convertissant.</p>
 
-      <h4>2. Les 4 principes POUR (acronyme pour mémoriser)</h4>
-
+      <h3>2. Les obligations légales, ce que tu dois savoir</h3>
       <div class="card-grid">
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">🇫🇷 RGAA (France)</span>
+          <p class="mb-0">Le <abbr title="Référentiel Général d'Amélioration de l'Accessibilité">RGAA</abbr> est le référentiel français, basé sur <abbr title="Web Content Accessibility Guidelines, standard international">WCAG</abbr> 2.1 niveau AA. Il s'applique aux services de l'État, collectivités, organismes délégataires de service public, et entreprises dont le CA en France dépasse <strong>250 M€</strong>.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">🇪🇺 European Accessibility Act (EAA)</span>
+          <p class="mb-0">Depuis le <strong>28 juin 2025</strong>, l'<abbr title="European Accessibility Act, directive européenne 2019/882">EAA</abbr> élargit les obligations à la plupart des produits et services numériques B2C vendus dans l'UE&nbsp;: e-commerce, banque en ligne, transports, e-books, smartphones, apps mobiles. Les TPE/PME sont partiellement exemptées mais la tendance est à l'élargissement.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">📝 Déclaration d'accessibilité</span>
+          <p class="mb-0">Les entités concernées doivent publier une <strong>déclaration d'accessibilité</strong> sur leur site&nbsp;: niveau de conformité, contenus non accessibles, moyen de signaler un problème. Format standardisé, obligatoire pour le RGAA.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ Sanctions</span>
+          <p class="mb-0">Amende administrative jusqu'à <strong>25 000 € par manquement</strong> en France. En 2024-2025, plusieurs grandes enseignes ont été assignées en référé (voir la section <a href="#presse-a11y">presse</a> ci-dessous).</p>
+        </div>
+      </div>
+
+      <h3>3. Les 4 principes POUR, à mémoriser</h3>
+      <p>Les référentiels RGAA et WCAG s'organisent autour de 4 principes, faciles à retenir avec l'acronyme <strong>POUR</strong>.</p>
+
+      <div class="card-grid card-grid--modules">
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">P</span>
           <h4 class="mt-0">Perceptible</h4>
-          <p>Tout le monde doit pouvoir percevoir l'information, avec tous les sens possibles.</p>
-          <p><em>Exemples :</em> textes alternatifs sur les images, sous-titres vidéo, contrastes suffisants, texte redimensionnable sans perte.</p>
+          <p>Tout le monde doit pouvoir <strong>percevoir</strong> l'information, via tous les sens possibles.</p>
+          <p class="text-small mb-0"><em>Exemples&nbsp;:</em> textes alternatifs sur les images, sous-titres vidéo, contrastes suffisants, texte redimensionnable à 200 % sans perte.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">O</span>
           <h4 class="mt-0">Opérable</h4>
-          <p>Toute interaction doit être possible avec plusieurs modalités (souris, clavier, voix).</p>
-          <p><em>Exemples :</em> navigation complète au clavier, focus visible, pas de piège clavier, assez de temps pour lire.</p>
+          <p>Toute interaction doit être <strong>possible avec plusieurs modalités</strong> (souris, clavier, voix, tactile).</p>
+          <p class="text-small mb-0"><em>Exemples&nbsp;:</em> navigation clavier complète, focus visible, pas de piège clavier, temps suffisant pour lire.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">U</span>
-          <h4 class="mt-0">Utilisable (Compréhensible)</h4>
-          <p>Le contenu et l'interaction doivent être compréhensibles.</p>
-          <p><em>Exemples :</em> langue déclarée, vocabulaire clair, erreurs de formulaire explicites, cohérence de navigation.</p>
+          <h4 class="mt-0">Compréhensible</h4>
+          <p>Le contenu et l'interaction doivent être <strong>compréhensibles</strong> pour un public large.</p>
+          <p class="text-small mb-0"><em>Exemples&nbsp;:</em> langue déclarée, vocabulaire clair, erreurs de formulaire explicites, cohérence de navigation.</p>
         </div>
         <div class="card card--numbered">
           <span class="card-number" aria-hidden="true">R</span>
           <h4 class="mt-0">Robuste</h4>
-          <p>Le site doit fonctionner avec les technologies d'assistance (lecteurs d'écran, zoom, etc.).</p>
-          <p><em>Exemples :</em> HTML sémantique valide, ARIA bien utilisé, compatible avec NVDA/JAWS/VoiceOver.</p>
+          <p>Le site doit fonctionner avec les <strong>technologies d'assistance</strong> (lecteurs d'écran, zoom, commande vocale).</p>
+          <p class="text-small mb-0"><em>Exemples&nbsp;:</em> HTML sémantique valide, <abbr title="Accessible Rich Internet Applications, attributs HTML pour enrichir la sémantique accessibilité">ARIA</abbr> bien utilisé, compatible NVDA / JAWS / VoiceOver.</p>
         </div>
       </div>
 
-      <h4>3. Les pièges spécifiques au No-Code</h4>
-
+      <h3>4. Les pièges spécifiques au No-Code/IA</h3>
       <div class="card-grid">
         <div class="callout callout--yellow-soft">
-          <span class="callout-label">⚠️ Piège 1 — Les templates</span>
-          <p class="mb-0">La plupart des templates No-Code (Webflow, Bubble, Softr…) ne sont PAS accessibles par défaut : contrastes insuffisants, polices fines sur fond clair, titres mal hiérarchisés. Toujours auditer avant de publier.</p>
+          <span class="callout-label">⚠️ Piège 1, Les templates</span>
+          <p class="mb-0">Les templates No-Code (Webflow, Bubble, Softr, Framer…) ne sont généralement <strong>pas accessibles par défaut</strong>&nbsp;: contrastes insuffisants, polices fines sur fond clair, titres mal hiérarchisés. Toujours auditer avant de publier.</p>
         </div>
         <div class="callout callout--yellow-soft">
-          <span class="callout-label">⚠️ Piège 2 — Les formulaires</span>
-          <p class="mb-0">Labels manquants, messages d'erreur « Erreur » sans détail, pas de regroupement logique. Les formulaires No-Code sont souvent les pires points.</p>
+          <span class="callout-label">⚠️ Piège 2, Les formulaires</span>
+          <p class="mb-0">Labels manquants, messages d'erreur génériques («&nbsp;Erreur&nbsp;»), pas de regroupement logique. Les formulaires No-Code sont souvent les pires points d'un audit.</p>
         </div>
         <div class="callout callout--yellow-soft">
-          <span class="callout-label">⚠️ Piège 3 — Les chatbots IA</span>
+          <span class="callout-label">⚠️ Piège 3, Les chatbots IA</span>
           <p class="mb-0">Un chatbot qui s'ouvre automatiquement, sans possibilité de fermer au clavier, sans étiquette sur le champ de saisie, sans label sur le bouton d'envoi = cauchemar a11y.</p>
         </div>
         <div class="callout callout--yellow-soft">
-          <span class="callout-label">⚠️ Piège 4 — Les images générées par IA</span>
-          <p class="mb-0">Midjourney, DALL-E → pas d'alt text automatique. Il faut l'écrire soi-même, à la main, pour chaque image.</p>
+          <span class="callout-label">⚠️ Piège 4, Les images générées par IA</span>
+          <p class="mb-0">Midjourney, DALL-E, Stable Diffusion&hellip; aucune n'ajoute de texte alternatif automatique. Il faut l'écrire soi-même, à la main, pour chaque image publiée.</p>
         </div>
       </div>
 
-      <h3>Consignes animation</h3>
-      <ol>
-        <li>Projeter (ou montrer sur un portable) un exemple concret pour chaque principe : on démo avec le lecteur d'écran de macOS ou Windows si possible (VoiceOver : <code>Cmd+F5</code>, Narrator : <code>Ctrl+Win+Entrée</code>).</li>
-        <li>Ne pas entrer dans le détail des 106 critères RGAA. L'objectif ici : comprendre le cadre, savoir où chercher ensuite.</li>
-      </ol>
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 2</summary>
+        <div class="trainer-notes-body">
+          <h4 class="mt-0">Méthode de travail suggérée</h4>
+          <ol>
+            <li>Rester à <strong>20 min chrono</strong>. Si on déborde, on enlève un piège.</li>
+            <li>Projeter (ou montrer sur un portable) un exemple pour chaque principe&nbsp;: démo lecteur d'écran (VoiceOver&nbsp;<code>⌘F5</code>, Narrator&nbsp;<code>Ctrl+Win+Entrée</code>) si possible.</li>
+            <li>Ne pas entrer dans le détail des 106 critères RGAA. L'objectif&nbsp;: comprendre le cadre, savoir où chercher ensuite.</li>
+            <li>À la fin, 2-3 questions rapides, puis on passe à la pratique.</li>
+          </ol>
+        </div>
+      </details>
+    </section>
+
+    <hr>
+
+    <section class="container" id="ressources-a11y" aria-labelledby="ressources-a11y-title" style="padding-top: var(--sp-12);">
+      <span class="badge">📚 Ressources A11Y</span>
+      <h2 id="ressources-a11y-title">Aller plus loin, ressources accessibilité</h2>
+      <p>Quatre portes d'entrée pour outiller ton audit et approfondir le sujet après la séance.</p>
+
+      <a href="https://ara.numerique.gouv.fr/" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">ARA</span>
+        <span class="resource-content">
+          <span class="resource-title">ARA, outil d'audit en ligne de la DINUM</span>
+          <span class="resource-meta">ara.numerique.gouv.fr, auditer une page contre les critères RGAA avec export automatique.</span>
+        </span>
+      </a>
+
+      <a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">RGAA</span>
+        <span class="resource-content">
+          <span class="resource-title">RGAA, les 106 critères et leurs tests</span>
+          <span class="resource-meta">accessibilite.numerique.gouv.fr, le référentiel officiel français, avec méthode de test pour chaque critère.</span>
+        </span>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=fhdtXVVyAR0" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">VIDÉO</span>
+        <span class="resource-content">
+          <span class="resource-title">Emmanuelle Aboaf, développeuse front-end et experte a11y (femme sourde)</span>
+          <span class="resource-meta">Conférence YouTube, témoignage et expertise sur l'accessibilité du point de vue d'une personne directement concernée.</span>
+        </span>
+      </a>
+
+      <a href="https://www.paris-web.fr/" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">PARIS</span>
+        <span class="resource-content">
+          <span class="resource-title">Paris Web, conférences en replay</span>
+          <span class="resource-meta">paris-web.fr, conférence francophone de référence sur l'accessibilité, la qualité web et les standards. Archives gratuites en vidéo.</span>
+        </span>
+      </a>
+    </section>
+
+    <hr>
+
+    <section class="container" id="presse-a11y" aria-labelledby="presse-a11y-title" style="padding-top: var(--sp-12);">
+      <span class="badge">📰 La presse en parle</span>
+      <h2 id="presse-a11y-title">L'accessibilité numérique, sujet très actuel</h2>
+      <p>L'inaccessibilité numérique n'est plus un sujet marginal&nbsp;: les autorités et les associations attaquent, les juges condamnent. Deux affaires récentes qui éclairent les enjeux.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge badge--dark" style="margin-bottom: var(--sp-2);">PdV Business</span>
+          <h4 class="mt-0">Auchan, Carrefour, E.Leclerc et Picard assignés pour inaccessibilité numérique</h4>
+          <p>Quatre enseignes de la grande distribution assignées en référé pour non-conformité de leurs services numériques aux obligations d'accessibilité.</p>
+          <p><strong>Pour ton projet&nbsp;:</strong> le contentieux progresse vite sur le B2C. Publier un produit sans audit a11y expose l'entreprise à une mise en demeure et à des amendes administratives.</p>
+          <p><a href="https://pointsdevente.fr/pdv-business/actualites-business/auchan-carrefour-e-leclerc-et-picard-surgeles-assignes-en-refere-pour-inaccessibilite-numerique/" target="_blank" rel="noopener noreferrer">Lire sur pointsdevente.fr ↗</a></p>
+        </div>
+
+        <div class="card">
+          <span class="badge badge--dark" style="margin-bottom: var(--sp-2);">Handicap.fr</span>
+          <h4 class="mt-0">Inaccessibilité numérique à l'école, l'État condamné</h4>
+          <p>L'État a été condamné pour défaut d'accessibilité des outils numériques scolaires, qui privaient des élèves en situation de handicap d'un accès équitable à l'enseignement.</p>
+          <p><strong>Pour ton projet&nbsp;:</strong> l'accessibilité n'est pas seulement une case à cocher juridique, c'est un droit fondamental. Une interface inaccessible peut créer des discriminations directes.</p>
+          <p><a href="https://informations.handicap.fr/a-inaccessibilite-numerique-a-l-ecole-l-etat-condamne-37255.php" target="_blank" rel="noopener noreferrer">Lire sur handicap.fr ↗</a></p>
+        </div>
+      </div>
     </section>
 
     <hr>
 
     <section class="container" id="seq-3-audit-a11y" aria-labelledby="seq-3-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 3 · 14h05 · 40 min</span>
-      <h2 id="seq-3-title">Pratique guidée 1 — Audit accessibilité en binôme</h2>
+      <span class="badge badge--dark">Temps 3 · 14h05 · 40 min</span>
+      <h2 id="seq-3-title">Pratique guidée 1, Audit a11y en binôme ou trio</h2>
 
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Réaliser un vrai audit a11y sur un vrai site, avec une grille simplifiée et les outils gratuits. Sortir de la théorie et apprendre à diagnostiquer.</p>
+        <span class="callout-label">🎯 Ce que tu vas faire</span>
+        <p class="mb-0">Réaliser un vrai audit a11y sur un vrai site, avec une grille simplifiée et les outils gratuits. Sortir de la théorie, apprendre à diagnostiquer par toi-même, identifier les 5 non-conformités les plus gênantes.</p>
       </div>
 
-      <h3>Consignes animation</h3>
+      <h3>Ta mission, en binôme ou en trio</h3>
       <ol>
-        <li><strong>Constituer 3 binômes (2 min)</strong> — Un binôme = un site à auditer.</li>
-        <li><strong>Attribuer les sites (3 min)</strong> — Sites proposés (adaptables) :
+        <li>Tu te mets en <strong>binôme ou en trio</strong>, un groupe audite un site.</li>
+        <li>Choix du site parmi 3 options (ou attribution aléatoire)&nbsp;:
           <ul>
-            <li>Le site d'un service public local (mairie, région)</li>
-            <li>Le site d'une école / université proche</li>
-            <li>Un site e-commerce connu (le temps de la pédagogie)</li>
+            <li>Un site de service public local (mairie, région).</li>
+            <li>Un site d'école ou d'université proche.</li>
+            <li>Un site e-commerce connu.</li>
           </ul>
-          <em>Pas de site privé/client d'un·e apprenant·e, pour éviter tout conflit.</em>
+          <em>Pas de site client d'un·e apprenant·e, pour éviter tout conflit.</em>
         </li>
-        <li><strong>Montrer les outils (5 min)</strong> — Faire une démo rapide :
-          <ul>
-            <li><a href="https://www.deque.com/axe/devtools/" rel="noopener">axe DevTools</a> (extension Chrome/Firefox, gratuit) — détecte ~30% des erreurs</li>
-            <li><a href="https://wave.webaim.org/" rel="noopener">WAVE</a> (site en ligne ou extension)</li>
-            <li>Le lecteur d'écran intégré au système (VoiceOver ou Narrator)</li>
-            <li>La navigation <strong>clavier uniquement</strong> (Tab, Shift+Tab, Enter, Espace)</li>
-          </ul>
-        </li>
-        <li><strong>Audit en binôme (25 min)</strong> — Utiliser la <a href="#livrable-grille-a11y">grille d'audit simplifiée</a>. Produire une liste d'au moins 5 non-conformités avec pour chacune : critère, gravité (bloquant / majeur / mineur), description, proposition de correction.</li>
-        <li><strong>Mise en commun (5 min)</strong> — Chaque binôme partage le top 3 de ses trouvailles.</li>
+        <li>Tu t'équipes avec les outils gratuits&nbsp;: <a href="https://ara.numerique.gouv.fr/" target="_blank" rel="noopener noreferrer">ARA</a>, <a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer">axe DevTools</a>, <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">WAVE</a>, lecteur d'écran système (VoiceOver ou Narrator), navigation <strong>clavier uniquement</strong> (Tab / Shift+Tab / Enter / Espace).</li>
+        <li>Pendant <strong>25 minutes</strong>, vous listez au moins <strong>5 non-conformités</strong> avec, pour chacune&nbsp;: critère POUR concerné, gravité (bloquant / majeur / mineur), description, correction proposée.</li>
+        <li>Mise en commun&nbsp;: chaque groupe partage son top 3.</li>
       </ol>
 
       <div class="callout callout--yellow-soft">
-        <span class="callout-label">💡 Pour l'animation</span>
-        <p class="mb-0">Pour les sites publics, il est possible de ressortir des défauts gênants — c'est normal et instructif. Insister : « Ces erreurs ne sont pas des fautes, ce sont des chantiers. L'objectif n'est pas de pointer du doigt mais de comprendre ce qu'il faut éviter dans son propre produit. »</p>
+        <span class="callout-label">🧭 Pour t'aider si tu bloques</span>
+        <p class="mb-0">Commence toujours par <strong>3 tests simples</strong>&nbsp;: (1) navigue la page sans toucher la souris, (2) redimensionne le texte à 200 %, (3) lance un lecteur d'écran sur une page formulaire. Ces 3 tests révèlent la majorité des non-conformités bloquantes.</p>
       </div>
+
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 3</summary>
+        <div class="trainer-notes-body">
+          <h4 class="mt-0">Méthode de travail suggérée</h4>
+          <ol>
+            <li><strong>Constituer les groupes (2 min)</strong>, binômes ou trios selon l'effectif.</li>
+            <li><strong>Attribuer les sites (3 min)</strong>, 3 sites proposés (adaptables au contexte local).</li>
+            <li><strong>Démo outils (5 min)</strong>, ARA en direct sur une page d'exemple, axe DevTools, lecteur d'écran.</li>
+            <li><strong>Audit en groupe (25 min)</strong>, utiliser la grille livrable.</li>
+            <li><strong>Mise en commun (5 min)</strong>, top 3 par groupe.</li>
+          </ol>
+
+          <p><strong>💡 Posture&nbsp;:</strong> circuler, ne pas donner la réponse, relancer par des questions&nbsp;: <em>« tu peux atteindre ce bouton au clavier&nbsp;?&nbsp;», « que dit ton lecteur d'écran sur cette image&nbsp;?&nbsp;»</em>. Sur les sites publics, les erreurs sont souvent nombreuses, insister&nbsp;: « ce ne sont pas des fautes, ce sont des chantiers à ouvrir dans ton propre produit ».</p>
+
+          <p><strong>🧰 Matériel&nbsp;:</strong> ordinateurs personnels avec extension axe installée, casque audio pour tester le lecteur d'écran, tableau pour mise en commun.</p>
+        </div>
+      </details>
     </section>
 
     <hr>
 
-    <section class="container" id="seq-4-apport-eco" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 4 · 14h45 · 25 min</span>
-      <h2 id="seq-4-title">Débrief + Apport 2 — Écoconception : le vrai impact</h2>
+    <section class="container" id="seq-4-debrief-a11y" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 4 · 14h45 · 25 min</span>
+      <h2 id="seq-4-title">Débrief audit et actualité a11y</h2>
 
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Boucler les trouvailles de l'audit a11y, puis poser le cadre de l'écoconception : d'où vient l'impact numérique, et quels sont les vrais leviers.</p>
+        <span class="callout-label">🎯 Ce que tu vas consolider</span>
+        <p class="mb-0">Mettre en commun les trouvailles de l'audit pour faire émerger les patterns (les mêmes erreurs reviennent sur tous les sites), et replacer l'enjeu dans l'actualité juridique récente.</p>
       </div>
 
-      <h3>Déroulé</h3>
+      <h3>Comment ça se passe</h3>
       <ol>
-        <li><strong>Débrief audit a11y (8 min)</strong> — Reprendre les trouvailles. Faire émerger les patterns : la plupart des erreurs sont concentrées sur 5-6 critères (contrastes, alt, labels, titres).</li>
-        <li><strong>Transition (2 min)</strong> — « Un produit utilisable, c'est bien. Un produit utilisable ET sobre, c'est mieux. Pourquoi ? »</li>
-        <li><strong>Apport écoconception (15 min)</strong> — Parcourir les 4 points ci-dessous.</li>
+        <li><strong>Partage des trouvailles (10 min)</strong>, chaque groupe présente son top 3. On note au tableau. On identifie les critères qui reviennent le plus souvent (contrastes, alt, labels, titres).</li>
+        <li><strong>Actualité a11y (10 min)</strong>, on regarde ensemble les <a href="#presse-a11y">deux affaires récentes</a>. Ce que ça change pour ton projet, ce que ça n'est pas (un simple formalisme).</li>
+        <li><strong>Transition (5 min)</strong>, on fait le lien avec l'après-pause&nbsp;: «&nbsp;un produit utilisable, c'est bien. Un produit utilisable ET sobre, c'est mieux.&nbsp;»</li>
       </ol>
 
-      <h3>1. D'où vient l'impact du numérique ?</h3>
-      <p>Selon l'ADEME (chiffres 2022) :</p>
-      <ul>
-        <li><strong>Le numérique = 4% des émissions GES mondiales</strong> (en croissance rapide : +6% par an).</li>
-        <li>Décomposition : <strong>fabrication des terminaux (78%)</strong> &gt;&gt; data centers (14%) &gt; réseaux (8%).</li>
-        <li>Le principal levier pour un·e product builder : <strong>allonger la durée de vie des équipements</strong> en évitant de les faire ramer.</li>
-      </ul>
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 4</summary>
+        <div class="trainer-notes-body">
+          <p><strong>💡 Posture&nbsp;:</strong> valoriser les trouvailles, pas la quantité. Mieux vaut 3 violations bien comprises que 15 cochées sans réflexion. Faire émerger le pattern&nbsp;: <strong>5-6 critères causent 80 % des non-conformités</strong>.</p>
 
-      <h3>2. Les 4 leviers d'un·e product builder</h3>
-
-      <div class="card-grid">
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">1</span>
-          <h4 class="mt-0">Moins de fonctionnalités</h4>
-          <p>45% des fonctionnalités d'un produit ne sont jamais utilisées (étude Standish Group). Question clé : « Cette feature, elle sert à qui exactement ? »</p>
+          <p><strong>🔗 Références à avoir sous la main&nbsp;:</strong> les 2 articles de presse, le RGAA en ligne, la déclaration d'accessibilité d'un site public (ex&nbsp;: service-public.fr) pour montrer le format attendu.</p>
         </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">2</span>
-          <h4 class="mt-0">Moins de données</h4>
-          <p>Chaque requête LLM coûte 3-10 wh. Batch, cache, prompt court : gros impact. Préférer GPT-4o mini à GPT-4o quand ça suffit.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">3</span>
-          <h4 class="mt-0">Moins de ressources</h4>
-          <p>Images compressées (WebP), vidéos compressées, polices système, pas de polyfills inutiles, pas de vidéos en autoplay.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">4</span>
-          <h4 class="mt-0">Durée de vie des équipements</h4>
-          <p>Si ton produit est fluide sur un iPhone 8, il rallonge la durée de vie de cet iPhone. Tester sur du matériel ancien.</p>
-        </div>
-      </div>
-
-      <h3>3. Les faux amis</h3>
-      <div class="callout callout--yellow-soft">
-        <p class="mb-0"><strong>« Mon site est hébergé sur une énergie verte »</strong> → très marginal. La majorité de l'impact vient de la fabrication des terminaux utilisateurs.</p>
-      </div>
-      <div class="callout callout--yellow-soft">
-        <p class="mb-0"><strong>« On va planter des arbres pour compenser »</strong> → greenwashing. Réduire la source &gt; compenser.</p>
-      </div>
-      <div class="callout callout--yellow-soft">
-        <p class="mb-0"><strong>« L'IA va résoudre ça »</strong> → sauf que l'IA elle-même pèse. Entraîner GPT-3 = 550 tonnes CO2 équivalent.</p>
-      </div>
-
-      <h3>4. Un outil à connaître</h3>
-      <p><a href="https://www.websitecarbon.com/" rel="noopener">Website Carbon Calculator</a> — permet de mesurer l'impact carbone d'une page. À utiliser en séquence 6.</p>
+      </details>
     </section>
 
     <hr>
 
     <section class="container" id="seq-5-pause" aria-labelledby="seq-5-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 5 · 15h10 · 15 min</span>
+      <span class="badge badge--dark">Temps 5 · 15h10 · 15 min</span>
       <h2 id="seq-5-title">Pause</h2>
+
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Coupure. Reprise à 15h25.</p>
+        <span class="callout-label">☕ Coupure</span>
+        <p class="mb-0">15 minutes pour sortir, bouger, boire ou grignoter. On reprend à <strong>15h25</strong>, on bascule sur l'écoconception.</p>
       </div>
     </section>
 
     <hr>
 
-    <section class="container" id="seq-6-pratique-eco" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 6 · 15h25 · 60 min</span>
-      <h2 id="seq-6-title">Pratique guidée 2 — Analyse d'impact sur ton projet</h2>
+    <section class="container" id="seq-6-apport-eco" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 6 · 15h25 · 25 min</span>
+      <h2 id="seq-6-title">Apport 2, Écoconception des services numériques</h2>
 
       <div class="callout callout--yellow">
-        <span class="callout-label">🎯 Objectif</span>
-        <p class="mb-0">Mesurer concrètement l'impact d'une fonctionnalité de son propre projet et identifier 3 optimisations réalistes, ni trop ambitieuses ni cosmétiques.</p>
+        <span class="callout-label">🎯 Ce que tu vas apprendre</span>
+        <p class="mb-0">D'où vient vraiment l'impact du numérique, les trois démarches qu'on confond souvent (IT for Green, Green IT, Éco-conception), les 4 leviers concrets d'un·e product builder, et les faux amis du greenwashing numérique.</p>
       </div>
 
-      <h3>Déroulé</h3>
+      <h3>1. D'où vient l'impact du numérique ?</h3>
+      <p>Selon l'ADEME et le collectif <strong>GreenIT</strong>, le numérique représente aujourd'hui environ <strong>4 % des émissions mondiales de <abbr title="Gaz à Effet de Serre">GES</abbr></strong> (chiffres 2022-2024), en croissance de 6 % par an.</p>
+      <ul>
+        <li><strong>Fabrication des terminaux</strong> (smartphones, ordinateurs, tablettes) : <strong>≈ 78 %</strong> de l'impact.</li>
+        <li><strong>Data centers</strong> : ≈ 14 %.</li>
+        <li><strong>Réseaux</strong> : ≈ 8 %.</li>
+      </ul>
+      <p>Le principal levier pour un·e product builder&nbsp;: <strong>allonger la durée de vie des équipements</strong> de tes utilisateurs en évitant de les faire ramer.</p>
+
+      <h3>2. Trois démarches, à ne pas confondre</h3>
+      <div class="card-grid">
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">🌍 IT for Green</span>
+          <p class="mb-0">Utiliser le numérique <strong>pour répondre à un problème environnemental</strong>. Exemples&nbsp;: cartographie par drones, domotique, optimisation énergétique par IA.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">♻️ Green IT</span>
+          <p class="mb-0">Démarche d'<strong>amélioration continue d'un système d'information</strong> pour minimiser ses impacts. Vise le juste système informatique nécessaire.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">🎯 Éco-conception</span>
+          <p class="mb-0">Intégration de la <strong>réduction des impacts dès la phase de conception</strong> d'un service numérique, avec une vision sur tout le cycle de vie. Le même service rendu génère moins d'impacts s'il est éco-conçu.</p>
+        </div>
+      </div>
+
+      <h3>3. Les 4 leviers d'un·e product builder</h3>
+      <div class="card-grid card-grid--modules">
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">1</span>
+          <h4 class="mt-0">Moins de fonctionnalités</h4>
+          <p>45 % des fonctionnalités d'un produit ne sont jamais utilisées (étude Standish Group). Question clé&nbsp;: <em>« Cette feature, elle sert à qui, exactement&nbsp;?&nbsp;»</em></p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">2</span>
+          <h4 class="mt-0">Moins de données</h4>
+          <p>Chaque requête LLM coûte 3-10 Wh. Batch, cache, prompt court&nbsp;: gros impact. Préférer GPT-4o mini à GPT-4o quand ça suffit.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">3</span>
+          <h4 class="mt-0">Moins de ressources</h4>
+          <p>Images compressées (WebP, AVIF), vidéos compressées, polices système, pas de polyfills inutiles, pas de vidéos en autoplay.</p>
+        </div>
+        <div class="card card--numbered">
+          <span class="card-number" aria-hidden="true">4</span>
+          <h4 class="mt-0">Durée de vie des équipements</h4>
+          <p>Si ton produit est fluide sur un iPhone 8, tu prolonges la durée de vie de cet iPhone. Tester sur du matériel ancien.</p>
+        </div>
+      </div>
+
+      <h3>4. Les faux amis</h3>
+      <div class="card-grid">
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ « Mon site est hébergé sur de l'énergie verte »</span>
+          <p class="mb-0">Marginal. La majorité de l'impact vient de la fabrication des terminaux utilisateurs, pas du data center.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ « On va planter des arbres pour compenser »</span>
+          <p class="mb-0">Greenwashing. <strong>Réduire à la source &gt; compenser.</strong> La compensation ne doit jamais remplacer l'effort de sobriété.</p>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">⚠️ « L'IA va résoudre ça »</span>
+          <p class="mb-0">L'IA elle-même pèse. Entraîner GPT-3, par exemple, a émis environ 550 tonnes de CO₂ équivalent.</p>
+        </div>
+      </div>
+
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 6</summary>
+        <div class="trainer-notes-body">
+          <p><strong>💡 Posture&nbsp;:</strong> rester factuel et chiffré, ne pas moraliser. L'écoconception est d'abord un sujet de qualité produit (performance, sobriété, robustesse), pas un sujet militant. Les chiffres viennent de l'ADEME, de GreenIT et du Pôle Éco-conception (voir ressources).</p>
+
+          <p><strong>🔗 Références utiles&nbsp;:</strong> RGESN pour le cadre officiel français, guide « 115 bonnes pratiques » de Frédéric Bordage (GreenIT) pour les recettes concrètes.</p>
+        </div>
+      </details>
+    </section>
+
+    <hr>
+
+    <section class="container" id="ressources-eco" aria-labelledby="ressources-eco-title" style="padding-top: var(--sp-12);">
+      <span class="badge">📚 Ressources éco-conception</span>
+      <h2 id="ressources-eco-title">Aller plus loin, ressources éco-conception</h2>
+      <p>Cinq ressources de référence pour outiller ta démarche et te former au numérique responsable.</p>
+
+      <a href="https://www.ecoindex.fr/" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">ECO</span>
+        <span class="resource-content">
+          <span class="resource-title">EcoIndex, mesure de l'empreinte environnementale d'une page</span>
+          <span class="resource-meta">ecoindex.fr, outil open source du collectif GreenIT. Donne une note et estime g CO₂ par visite.</span>
+        </span>
+      </a>
+
+      <a href="https://www.eco-conception.fr/static/eco-conception-de-service-numerique.html" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">PÔLE</span>
+        <span class="resource-content">
+          <span class="resource-title">Pôle Éco-conception, note de synthèse sur les services numériques</span>
+          <span class="resource-meta">eco-conception.fr, cycle de vie d'un service numérique, cartographie des outils, niveaux d'éco-conception.</span>
+        </span>
+      </a>
+
+      <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">RGESN</span>
+        <span class="resource-content">
+          <span class="resource-title">RGESN, le référentiel officiel français</span>
+          <span class="resource-meta">ecoresponsable.numerique.gouv.fr, <abbr title="Référentiel Général d'Écoconception des Services Numériques">RGESN</abbr> publié par la DINUM. Critères et méthode de test.</span>
+        </span>
+      </a>
+
+      <a href="https://agirpourlatransition.ademe.fr/entreprises/conseils/transverse/numerique-responsable" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">ADEME</span>
+        <span class="resource-content">
+          <span class="resource-title">ADEME, numérique responsable pour les entreprises</span>
+          <span class="resource-meta">agirpourlatransition.ademe.fr, conseils opérationnels pour entreprises de toute taille, chiffres et outils.</span>
+        </span>
+      </a>
+
+      <a href="https://www.academie-nr.org/index.html" target="_blank" rel="noopener noreferrer" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">MOOC</span>
+        <span class="resource-content">
+          <span class="resource-title">Académie du Numérique Responsable, MOOC gratuits</span>
+          <span class="resource-meta">academie-nr.org, parcours d'auto-formation sur le numérique responsable, accessible à tous les publics.</span>
+        </span>
+      </a>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-7-pratique-eco" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 7 · 15h50 · 45 min</span>
+      <h2 id="seq-7-title">Pratique guidée 2, Analyse d'impact sur un persona</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Ce que tu vas faire</span>
+        <p class="mb-0">Appliquer les 4 leviers à l'un des deux personas introduits au Module 1 (<strong>BigCorp</strong> ou <strong>StartupTech</strong>), mesurer l'impact actuel d'une fonctionnalité, et proposer <strong>3 optimisations</strong> chiffrées. Tu pourras refaire l'exercice sur ton propre projet en autonomie après la séance.</p>
+      </div>
+
+      <h3>Choisis ton persona</h3>
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge badge--dark" style="margin-bottom: var(--sp-2);">🏢 Option 1, grand groupe</span>
+          <h5 class="mt-0">BigCorp SA, outil IA de pré-qualification interne</h5>
+          <p>Plateforme web qui analyse CV et extraits d'entretiens vidéo pour les recruteurs internes. 5000 utilisateurs potentiels en interne, appels à GPT-4o systématiques sur chaque candidature.</p>
+          <p class="text-small mb-0"><strong>Zones d'impact&nbsp;:</strong> vidéos enregistrées et stockées longtemps, appels LLM volumineux, interface utilisée sur postes fixes anciens.</p>
+        </div>
+        <div class="card">
+          <span class="badge badge--dark" style="margin-bottom: var(--sp-2);">🚀 Option 2, TPE/PME</span>
+          <h5 class="mt-0">StartupTech, app mobile de recommandations géolocalisées</h5>
+          <p>App mobile grand public, géolocalisation en continu, appels fréquents à OpenAI pour générer des recommandations personnalisées, images riches, autoplay des stories.</p>
+          <p class="text-small mb-0"><strong>Zones d'impact&nbsp;:</strong> batterie utilisateur (géoloc continue, autoplay), LLM appelés à chaque session, images non-optimisées, polices custom.</p>
+        </div>
+      </div>
+
+      <h3>Comment on procède</h3>
       <ol>
-        <li><strong>Distribuer la checklist éco (3 min)</strong> — Pointer la <a href="#livrable-checklist-eco">checklist écoconception (10 gestes)</a>.</li>
-        <li><strong>Mesurer l'impact actuel (15 min)</strong> — Chacun·e :
-          <ul>
-            <li>Mesure sa page d'accueil sur <a href="https://www.websitecarbon.com/" rel="noopener">websitecarbon.com</a> → note le g CO₂ par visite.</li>
-            <li>Liste les 3-5 appels LLM / API les plus fréquents dans son produit → estime une fréquence hebdo.</li>
-            <li>Liste les 3 plus grosses ressources (images, vidéos, polices custom).</li>
-          </ul>
-        </li>
-        <li><strong>Identifier 3 optimisations (30 min)</strong> — En s'appuyant sur la checklist, choisir 3 actions concrètes et chiffrer leur impact estimé (qualitativement). Exemple : « Remplacer les 12 images PNG par des WebP → -60% de poids de page → -50% CO₂ ».</li>
-        <li><strong>Partage (12 min)</strong> — Chacun·e partage son optimisation prioritaire et son engagement (dans la semaine ? dans le mois ?).</li>
+        <li><strong>Choix et mesure (15 min)</strong>, tu choisis ton persona, tu ouvres la <a href="#livrable-checklist-eco">checklist écoconception</a>, tu estimes l'impact actuel de la fonctionnalité principale (appels LLM, poids de page, autoplay, etc.).</li>
+        <li><strong>Identification de 3 optimisations (20 min)</strong>, tu sélectionnes <strong>3 actions concrètes</strong> et tu chiffres leur impact attendu (quantitatif ou qualitatif). Exemple&nbsp;: « Passer de GPT-4o à GPT-4o mini pour le résumé de CV → coût ÷10, énergie ≈÷10, latence ÷3. »</li>
+        <li><strong>Partage (10 min)</strong>, chaque personne partage son optimisation prioritaire et son engagement (cette semaine&nbsp;? ce mois-ci&nbsp;?).</li>
       </ol>
 
       <div class="callout callout--yellow-soft">
-        <span class="callout-label">💡 Pour l'animation</span>
-        <p class="mb-0">Beaucoup vont vouloir « refaire tout l'UX ». Ramener au concret : « Une seule action, dans la semaine, qui fait vraiment une différence mesurable. » C'est la sobriété du petit pas.</p>
+        <span class="callout-label">🧭 Pour rester concret</span>
+        <p class="mb-0">Beaucoup vont vouloir « tout refaire l'UX ». Ramener au petit pas&nbsp;: <strong>une seule action, dans la semaine, qui fait vraiment une différence mesurable</strong>. C'est la sobriété du minimum viable.</p>
       </div>
-    </section>
 
-    <hr>
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 7</summary>
+        <div class="trainer-notes-body">
+          <p><strong>💡 Posture&nbsp;:</strong> insister sur les <strong>3 optimisations chiffrées</strong>, pas sur la vision. Le biais classique&nbsp;: trop de personnes veulent réécrire tout. On veut repartir avec 3 gestes concrets applicables dans la semaine.</p>
 
-    <section class="container" id="seq-7-consolidation" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 7 · 16h25 · 20 min</span>
-      <h2 id="seq-7-title">Consolidation — Carnet de bord DJ2</h2>
-      <h3>Déroulé</h3>
-      <ol>
-        <li><strong>Parcourir les livrables (5 min)</strong> — <a href="#livrable-grille-a11y">Grille audit a11y</a>, <a href="#livrable-checklist-eco">Checklist écoconception</a>, <a href="#livrable-synthese-pour">Synthèse POUR</a>.</li>
-        <li><strong>Remplir la checklist éco (10 min)</strong> — Cocher ce qui est déjà OK sur son projet, identifier 3 points prioritaires.</li>
-        <li><strong>Écrire l'engagement (5 min)</strong> — « D'ici DJ3 (4 mai matin), j'aurai fait… »</li>
-      </ol>
+          <p><strong>🧰 Matériel&nbsp;:</strong> ordinateurs personnels, checklist écoconception (livrable), EcoIndex ouvert pour mesurer une page type. La formatrice circule et coache individuellement sur le chiffrage.</p>
+        </div>
+      </details>
     </section>
 
     <hr>
 
     <section class="container" id="seq-8-cloture" aria-labelledby="seq-8-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Séquence 8 · 16h45 · 15 min</span>
-      <h2 id="seq-8-title">Clôture — « Je retiens, j'applique »</h2>
-      <h3>Déroulé</h3>
+      <span class="badge badge--dark">Temps 8 · 16h35 · 25 min</span>
+      <h2 id="seq-8-title">Consolidation et clôture</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Ce que tu vas faire</span>
+        <p class="mb-0">Transformer ce que tu as vu en actions planifiées dans ton outil de gestion de projet, puis clore la séance avec une météo de sortie et un teasing du Module 3.</p>
+      </div>
+
+      <h3>Tes livrables à emporter</h3>
+      <p>Trois livrables accessibles via des pages dédiées, que tu peux consulter, imprimer ou télécharger à tout moment.</p>
+      <ul>
+        <li><a href="#livrables">📋 Grille d'audit a11y</a> (15 critères essentiels couvrant 80 % des problèmes)</li>
+        <li><a href="#livrables">🌱 Checklist écoconception</a> (10 gestes, cochable et exportable)</li>
+        <li><a href="#livrables">🎨 Synthèse visuelle POUR</a> (fiche à imprimer ou garder en onglet)</li>
+      </ul>
+
+      <h3>Comment ça se passe</h3>
       <ol>
-        <li><strong>Tour de table (10 min)</strong> — « Une chose que je retiens + une chose que je vais appliquer. »</li>
-        <li><strong>Teaser la DJ3 (3 min)</strong> — « Lundi matin : documentation technique et procédures de support. Le truc qui évite que tout s'écroule quand quelqu'un part. »</li>
-        <li><strong>Remercier et partager coordonnées (2 min)</strong></li>
+        <li><strong>Parcours rapide des livrables (3 min)</strong>, tu repères ceux sur lesquels tu veux revenir.</li>
+        <li><strong>Tu coches la checklist éco (8 min)</strong>, tu identifies les 3 points prioritaires pour ton projet.</li>
+        <li><strong>Tu planifies dans ton outil de gestion (7 min)</strong>, chaque action devient une tâche dans Notion, Linear, Jira, Trello, ClickUp, Todoist&hellip; avec titre, échéance et lien vers la ressource utile.</li>
+        <li><strong>Tour de table « je retiens, j'applique » (5 min)</strong>, 1 chose retenue, 1 chose appliquée avant la prochaine séance.</li>
+        <li><strong>Météo de sortie (2 min)</strong>, un mot et une emoji pour dire comment tu sors du module.</li>
       </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">📊 Ton retour sur la demi-journée</span>
+        <p>Un court sondage permet de nous dire ce qui a marché et ce qu'il faudrait améliorer. Tes retours nourrissent les prochaines itérations du module.</p>
+        <p class="mb-0"><a href="mailto:contact@agoriade.fr?subject=Retour%20sur%20le%20Module%202%20Accessibilit%C3%A9%20et%20%C3%89coconception" class="btn btn--secondary">✉️ Envoyer mon retour</a></p>
+      </div>
     </section>
 
     <hr>
@@ -399,123 +647,67 @@
     <section class="section--yellow" id="livrables" aria-labelledby="livrables-title" style="margin-top: var(--sp-16);">
       <div class="container">
         <h2 id="livrables-title">Les livrables à emporter</h2>
-        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables utilisables dès demain sur ton projet.</p>
+        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables utilisables dès demain sur ton projet. Chacun a sa page dédiée pour être consulté, imprimé ou téléchargé.</p>
       </div>
     </section>
 
-    <section class="container" id="livrable-grille-a11y" aria-labelledby="livrable-1-title" style="padding-top: var(--sp-12);">
-      <span class="badge">📋 Livrable 1</span>
-      <h2 id="livrable-1-title">Grille d'audit accessibilité simplifiée</h2>
-      <p>15 critères essentiels pour un audit rapide d'une page ou d'un produit. Approche Pareto : ces 15 points couvrent ~80% des problèmes.</p>
+    <section class="container" style="padding-top: var(--sp-12);">
+      <a href="/livrables/audit-a11y/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">A11Y</span>
+        <span class="resource-content">
+          <span class="resource-title">Grille d'audit accessibilité (15 critères)</span>
+          <span class="resource-meta">Page interactive, cochable, exportable. Les 15 critères qui couvrent 80 % des problèmes.</span>
+        </span>
+      </a>
 
-      <div class="checklist-wrapper" data-checklist-id="dj2-a11y">
+      <a href="/livrables/checklist-ecoconception/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">ECO</span>
+        <span class="resource-content">
+          <span class="resource-title">Checklist écoconception, 10 gestes</span>
+          <span class="resource-meta">Page interactive, cochable, exportable. 10 gestes par ordre de rapport impact/effort.</span>
+        </span>
+      </a>
 
-        <div class="checklist-progress" role="status" aria-live="polite">
-          <span class="checklist-progress-text">0 sur 15 validés (0%)</span>
-          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="checklist-progress-fill" style="width: 0%;"></div>
-          </div>
-          <button type="button" class="checklist-reset">Réinitialiser</button>
-        </div>
-
-        <h3>🎨 Perceptible</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="a11y-1"><label for="a11y-1"><strong>Contrastes</strong> — Texte sur fond a un ratio ≥ 4.5:1 (≥ 3:1 pour grand texte). Vérifier avec Contrast Checker ou axe.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-2"><label for="a11y-2"><strong>Textes alternatifs</strong> — Toutes les images informatives ont un <code>alt</code>. Les décoratives ont <code>alt=""</code>.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-3"><label for="a11y-3"><strong>Taille du texte</strong> — Le texte est redimensionnable à 200% sans perte (tester avec Ctrl/Cmd+).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-4"><label for="a11y-4"><strong>Information par couleur seule</strong> — L'information n'est jamais véhiculée UNIQUEMENT par la couleur (ex : « les champs en rouge » → ajouter une icône).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-5"><label for="a11y-5"><strong>Vidéos</strong> — Les vidéos ont des sous-titres (et idéalement une transcription).</label></li>
-        </ul>
-
-        <h3>⌨️ Opérable</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="a11y-6"><label for="a11y-6"><strong>Navigation clavier</strong> — Toute la page est navigable avec Tab/Shift+Tab/Enter/Espace, sans souris.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-7"><label for="a11y-7"><strong>Focus visible</strong> — L'élément qui a le focus est VISIBLEMENT entouré (outline, bordure, fond).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-8"><label for="a11y-8"><strong>Skip link</strong> — Un lien « Aller au contenu principal » est le premier élément focusable.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-9"><label for="a11y-9"><strong>Pas de piège clavier</strong> — On peut toujours sortir d'un élément au clavier (ex : fermer une modale avec Échap).</label></li>
-        </ul>
-
-        <h3>🗣️ Compréhensible</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="a11y-10"><label for="a11y-10"><strong>Langue déclarée</strong> — <code>&lt;html lang="fr"&gt;</code> (ou la langue principale de la page).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-11"><label for="a11y-11"><strong>Titres hiérarchisés</strong> — Un seul <code>&lt;h1&gt;</code> par page. Pas de saut (h1→h3 sans h2).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-12"><label for="a11y-12"><strong>Formulaires labellés</strong> — Tout <code>&lt;input&gt;</code> a un <code>&lt;label&gt;</code> associé (pas juste un placeholder).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-13"><label for="a11y-13"><strong>Messages d'erreur explicites</strong> — « Email invalide, il doit contenir un @ » plutôt que « Erreur ».</label></li>
-        </ul>
-
-        <h3>🤖 Robuste</h3>
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="a11y-14"><label for="a11y-14"><strong>HTML sémantique</strong> — Utiliser <code>&lt;button&gt;</code> pour un bouton, <code>&lt;nav&gt;</code> pour la nav, <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="a11y-15"><label for="a11y-15"><strong>Test lecteur d'écran</strong> — Lancer VoiceOver / Narrator sur la page et écouter : l'info critique est-elle dite ?</label></li>
-        </ul>
-
-      </div>
+      <a href="/livrables/synthese-pour/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">POUR</span>
+        <span class="resource-content">
+          <span class="resource-title">Synthèse visuelle, les 4 principes POUR</span>
+          <span class="resource-meta">Fiche à imprimer ou garder en onglet près de ton poste.</span>
+        </span>
+      </a>
     </section>
 
     <hr>
 
-    <section class="container" id="livrable-checklist-eco" aria-labelledby="livrable-2-title" style="padding-top: var(--sp-8);">
-      <span class="badge">🌱 Livrable 2</span>
-      <h2 id="livrable-2-title">Checklist écoconception — 10 gestes</h2>
-      <p>10 gestes concrets d'écoconception, par ordre de rapport impact/effort.</p>
+    <section class="container" id="glossaire" aria-labelledby="glossaire-title" style="padding-top: var(--sp-12); padding-bottom: var(--sp-12);">
+      <span class="badge">🔤 Glossaire</span>
+      <h2 id="glossaire-title">Petits mots, grands sigles</h2>
+      <p>Les acronymes qui traversent ce module, expliqués simplement.</p>
 
-      <div class="checklist-wrapper" data-checklist-id="dj2-eco">
-
-        <div class="checklist-progress" role="status" aria-live="polite">
-          <span class="checklist-progress-text">0 sur 10 validés (0%)</span>
-          <div class="checklist-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="checklist-progress-fill" style="width: 0%;"></div>
-          </div>
-          <button type="button" class="checklist-reset">Réinitialiser</button>
-        </div>
-
-        <ul class="checklist">
-          <li class="checklist-item"><input type="checkbox" id="eco-1"><label for="eco-1"><strong>1. Images optimisées</strong> — WebP ou AVIF, dimensions réelles (pas une image 4000px affichée en 400px), lazy loading sur les images hors écran.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-2"><label for="eco-2"><strong>2. Polices système</strong> ou max 1 police custom — Chaque police custom = ~50Ko téléchargés.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-3"><label for="eco-3"><strong>3. Pas d'autoplay vidéo</strong> — Autoplay = ~5 Mo par visite pour rien.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-4"><label for="eco-4"><strong>4. LLM léger quand c'est possible</strong> — GPT-4o mini pour les tâches simples au lieu de GPT-4o (×10 moins cher, ~10× moins d'énergie).</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-5"><label for="eco-5"><strong>5. Cache des réponses LLM fréquentes</strong> — Même question posée 100× → 1 seul appel + cache.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-6"><label for="eco-6"><strong>6. Prompts courts et précis</strong> — Chaque token coûte. Un prompt de 50 tokens vs 500 = ×10.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-7"><label for="eco-7"><strong>7. Pas de features fantômes</strong> — Auditer les features utilisées vs non-utilisées (analytics) et retirer les oubliées.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-8"><label for="eco-8"><strong>8. Données archivées / supprimées</strong> — Définir une stratégie d'archivage et de suppression plutôt que tout garder.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-9"><label for="eco-9"><strong>9. Mode sombre</strong> — Sur les écrans OLED, économise la batterie de l'utilisateur → allonge leur durée de vie.</label></li>
-          <li class="checklist-item"><input type="checkbox" id="eco-10"><label for="eco-10"><strong>10. Tester sur du vieux matériel</strong> — Si ça rame sur un iPhone 8 ou un Android 2019, ça force les gens à racheter. Optimiser.</label></li>
-        </ul>
-
-      </div>
-    </section>
-
-    <hr>
-
-    <section class="container" id="livrable-synthese-pour" aria-labelledby="livrable-3-title" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
-      <span class="badge">🎨 Livrable 3</span>
-      <h2 id="livrable-3-title">Synthèse visuelle — Les 4 principes POUR</h2>
-
-      <div class="card-grid">
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">P</span>
-          <h4 class="mt-0">Perceptible</h4>
-          <p><strong>Question-clé :</strong> « Si je ferme les yeux, ou si je désactive les couleurs, l'info est-elle encore là ? »</p>
-          <p><strong>À vérifier :</strong> contrastes, alt, sous-titres, infos pas uniquement couleur.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">O</span>
-          <h4 class="mt-0">Opérable</h4>
-          <p><strong>Question-clé :</strong> « Puis-je tout faire au clavier seul, sans souris ? »</p>
-          <p><strong>À vérifier :</strong> tab order, focus visible, skip link, pas de piège.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">U</span>
-          <h4 class="mt-0">Compréhensible</h4>
-          <p><strong>Question-clé :</strong> « Est-ce clair pour quelqu'un qui arrive pour la première fois ? »</p>
-          <p><strong>À vérifier :</strong> lang, titres hiérarchisés, labels, erreurs explicites.</p>
-        </div>
-        <div class="card card--numbered">
-          <span class="card-number" aria-hidden="true">R</span>
-          <h4 class="mt-0">Robuste</h4>
-          <p><strong>Question-clé :</strong> « Est-ce que ça marche avec les technologies d'assistance ? »</p>
-          <p><strong>À vérifier :</strong> HTML sémantique, ARIA, test lecteur d'écran.</p>
-        </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Sigle</th><th>Ça veut dire quoi</th><th>En clair</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>a11y</strong></td><td>Accessibility</td><td>Abréviation de <em>accessibility</em>, il y a 11 lettres entre le A et le Y. Désigne l'accessibilité numérique.</td></tr>
+            <tr><td><strong>WCAG</strong></td><td>Web Content Accessibility Guidelines</td><td>Standard international du W3C pour l'accessibilité du web. La version courante est 2.1, niveau AA.</td></tr>
+            <tr><td><strong>RGAA</strong></td><td>Référentiel Général d'Amélioration de l'Accessibilité</td><td>Le référentiel français, basé sur WCAG. Contient 106 critères et leurs méthodes de test, obligatoire pour le secteur public et les très grandes entreprises.</td></tr>
+            <tr><td><strong>EAA</strong></td><td>European Accessibility Act</td><td>Directive européenne (2019/882), applicable depuis juin 2025, qui étend les obligations d'accessibilité à la plupart des produits et services numériques B2C.</td></tr>
+            <tr><td><strong>ARIA</strong></td><td>Accessible Rich Internet Applications</td><td>Attributs HTML supplémentaires pour enrichir la sémantique d'une page (rôles, états, propriétés) et la rendre plus accessible.</td></tr>
+            <tr><td><strong>POUR</strong></td><td>Perceptible, Opérable, Compréhensible, Robuste</td><td>Moyen mnémotechnique français pour les 4 principes fondamentaux du RGAA et de WCAG.</td></tr>
+            <tr><td><strong>NVDA</strong></td><td>NonVisual Desktop Access</td><td>Lecteur d'écran gratuit et open source, très utilisé sous Windows.</td></tr>
+            <tr><td><strong>JAWS</strong></td><td>Job Access With Speech</td><td>Lecteur d'écran payant historique sous Windows, très présent en milieu pro et administratif.</td></tr>
+            <tr><td><strong>VoiceOver</strong></td><td>&mdash;</td><td>Lecteur d'écran intégré à macOS et iOS. Se lance avec <code>Cmd+F5</code> sur Mac.</td></tr>
+            <tr><td><strong>ARA</strong></td><td>Accessibility Reports Assistant</td><td>Outil en ligne de la DINUM pour réaliser un audit RGAA et exporter un rapport. ara.numerique.gouv.fr.</td></tr>
+            <tr><td><strong>RGESN</strong></td><td>Référentiel Général d'Écoconception des Services Numériques</td><td>Le référentiel français officiel pour l'éco-conception, publié par la DINUM. Critères et méthode de test pour concevoir sobrement.</td></tr>
+            <tr><td><strong>ACV</strong></td><td>Analyse de Cycle de Vie</td><td>Méthode d'évaluation des impacts environnementaux d'un produit ou service sur toutes ses étapes, de la fabrication à la fin de vie.</td></tr>
+            <tr><td><strong>GES</strong></td><td>Gaz à Effet de Serre</td><td>Gaz qui piègent la chaleur dans l'atmosphère (CO₂, méthane, etc.). L'impact climatique du numérique se mesure en général en équivalent CO₂.</td></tr>
+            <tr><td><strong>GreenIT</strong></td><td>&mdash;</td><td>Collectif francophone de référence sur le numérique responsable. Publie le guide « 115 bonnes pratiques », animé par Frédéric Bordage.</td></tr>
+            <tr><td><strong>IT for Green</strong></td><td>&mdash;</td><td>Démarche qui utilise le numérique pour répondre à un enjeu environnemental (ex&nbsp;: optimisation énergétique par IA).</td></tr>
+            <tr><td><strong>MOOC</strong></td><td>Massive Open Online Course</td><td>Formation en ligne ouverte à un large public, gratuite dans la plupart des cas. Ex&nbsp;: Académie du Numérique Responsable.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -524,13 +716,16 @@
     <section class="section--black" aria-labelledby="fin-title">
       <div class="container">
         <h2 id="fin-title">Une question après la séance ?</h2>
+        <p style="font-size: var(--fs-md); max-width: 60ch;">
+          Les livrables et ressources restent disponibles sur cet espace. Si tu as une question sur l'application à ton projet, contacte Anaïs.
+        </p>
         <div class="btn-group" role="group" aria-label="Actions de fin de séance">
           <a href="mailto:contact@agoriade.fr" class="btn">
             <span aria-hidden="true">✉</span>
             Écrire à la formatrice
           </a>
-          <a href="/dj3-documentation/" class="btn btn--secondary" aria-label="Aller à la séance suivante, DJ3 Documentation">
-            Séance suivante, DJ3 Documentation
+          <a href="/dj3-documentation/" class="btn btn--secondary" aria-label="Aller au module suivant, Documentation et Support">
+            Module suivant, Documentation et Support
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -558,7 +753,7 @@
             <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
             <li><a href="/dj2-accessibilite-ecoconception/" aria-current="page">Accessibilité et Écoconception</a></li>
             <li><a href="/dj3-documentation/">Documentation et Support</a></li>
-              <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
           </ul>
         </nav>
 
@@ -598,7 +793,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/checklist.js"></script>
+  <script src="/assets/js/checklist.js" defer></script>
   <script src="/assets/js/carbon.js" defer></script>
 </body>
 </html>
