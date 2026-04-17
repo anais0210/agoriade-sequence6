@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empreinte carbone, Agoriade</title>
+  <meta name="description" content="Mesure et engagement éco-conception du site Agoriade.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container" style="padding-top: var(--sp-8); padding-bottom: var(--sp-16);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li aria-current="page">Empreinte carbone</li>
+        </ol>
+      </nav>
+
+      <h1>Empreinte carbone du site</h1>
+      <p style="font-size: var(--fs-md); max-width: 65ch;">
+        Cet espace pédagogique parle d'éco-conception. On se doit d'en appliquer les principes à soi-même. Voici nos choix et ce qu'on mesure.
+      </p>
+
+      <h2>Mesure en direct</h2>
+      <p>Le pied de page de chaque page affiche&nbsp;:</p>
+      <ul>
+        <li><strong>Grammes de CO₂ émis par visite</strong>, calculé via l'API publique de <a href="https://www.websitecarbon.com" target="_blank" rel="noopener noreferrer">Website Carbon</a>.</li>
+        <li>Pourcentage de pages testées par Website Carbon qui sont <strong>plus polluantes que celle-ci</strong>.</li>
+        <li>Indication d'<strong>hébergement sur énergie renouvelable</strong> (si applicable).</li>
+      </ul>
+      <p>Le résultat est mis en cache dans <code>sessionStorage</code> pour éviter un appel API à chaque navigation. Pour le rafraîchir, ferme et rouvre l'onglet.</p>
+
+      <h2>Principes d'éco-conception appliqués ici</h2>
+      <div class="card-grid card-grid--modules">
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">📦 Ressources minimales</span>
+          <ul class="mb-0">
+            <li><strong>Aucune image bitmap</strong>, icônes en emoji ou SVG inline</li>
+            <li><strong>Polices système</strong> uniquement (pas de WOFF custom)</li>
+            <li><strong>CSS et JS maison</strong>, sans framework ni dépendance</li>
+            <li>Pas de bundler, pas de tracker</li>
+          </ul>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">🔋 Sobriété d'exécution</span>
+          <ul class="mb-0">
+            <li><strong>Pas de JavaScript bloquant</strong>, tous les scripts sont <code>defer</code></li>
+            <li><strong>Pas d'animation lourde</strong>, respect de <code>prefers-reduced-motion</code></li>
+            <li><strong>Aucun autoplay</strong></li>
+            <li>Cache agressif sur les assets statiques</li>
+          </ul>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">📡 Réseau</span>
+          <ul class="mb-0">
+            <li><strong>Taille de page</strong>&nbsp;: inférieure à 200 Ko par page courante</li>
+            <li><strong>HTTPS</strong> obligatoire (HSTS activé)</li>
+            <li>Pas de CDN tiers inutile, ressources servies depuis Vercel</li>
+          </ul>
+        </div>
+        <div class="callout callout--yellow-soft">
+          <span class="callout-label">♿ Durabilité d'usage</span>
+          <ul class="mb-0">
+            <li><strong>Fonctionne sur du vieux matériel</strong> et petits écrans (320 px)</li>
+            <li>Fonctionne sur <strong>connexion lente</strong> (HTML rendu sans JS)</li>
+            <li><strong>Aucun compte requis</strong>, aucun téléchargement forcé</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Nos limites assumées</h2>
+      <ul>
+        <li>L'hébergeur Vercel utilise des data centers principalement aux USA et en Europe. Nous n'avons pas le contrôle direct sur leur mix énergétique.</li>
+        <li>L'API Website Carbon est un service tiers (coût réseau marginal, appel mis en cache).</li>
+        <li>Nous n'avons pas encore réalisé d'<abbr title="Analyse de Cycle de Vie">ACV</abbr> complète au sens <abbr title="Référentiel Général d'Écoconception des Services Numériques">RGESN</abbr>, c'est un chantier ouvert pour une future itération.</li>
+      </ul>
+
+      <h2>Ressources citées</h2>
+      <ul>
+        <li><a href="https://www.websitecarbon.com" target="_blank" rel="noopener noreferrer">Website Carbon</a> (mesure inline)</li>
+        <li><a href="https://www.ecoindex.fr/" target="_blank" rel="noopener noreferrer">EcoIndex</a> (collectif GreenIT)</li>
+        <li><a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/" target="_blank" rel="noopener noreferrer">RGESN</a> (DINUM)</li>
+        <li><a href="https://www.academie-nr.org/" target="_blank" rel="noopener noreferrer">Académie du Numérique Responsable</a></li>
+      </ul>
+
+      <p style="margin-top: var(--sp-8);"><a href="/" class="btn btn--secondary">← Retour à l'accueil</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo"><span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span></span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact"><strong>Formation</strong>Anaïs Sparesotto<br><a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a></p>
+          <p class="site-footer-contact"><strong>École Agoriade</strong>Goulven<br><a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a></p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">Halles 1 &amp; 2<br>5 Allée Frida Kahlo<br>44200 Nantes</p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p><a href="/mentions-legales/">Mentions légales</a> · <a href="/accessibilite/">Déclaration d'accessibilité</a> · <a href="/empreinte-carbone/" aria-current="page">Empreinte carbone</a></p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>
