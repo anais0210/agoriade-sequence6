@@ -26,7 +26,6 @@
           <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
           <li><a href="/dj3-documentation/">Documentation</a></li>
           <li><a href="/dj4-mise-en-situation/">Mise en situation</a></li>
-          <li><a href="/a-propos-anais/" aria-current="page">À propos</a></li>
         </ul>
       </nav>
     </div>
@@ -221,22 +220,55 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="site-footer-grid">
-        <div>
-          <p><strong>Agoriade</strong><br>Bootcamp AI Product Builder<br>Séquence 6, Édition 2026</p>
+
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade <span style="color: var(--c-yellow);">—</span> S6</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026. Espace pédagogique de la Séquence 6.</p>
         </div>
+
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/dj4-mise-en-situation/">Mise en situation</a></li>
+            <li><a href="/a-propos-anais/" aria-current="page">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+
         <div>
-          <p><strong>Contact formation</strong><br>
-          Anaïs Sparesotto<br>
-          <a href="mailto:anais.camille.sparesotto@gmail.com">anais.camille.sparesotto@gmail.com</a></p>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:anais.camille.sparesotto@gmail.com">anais.camille.sparesotto@gmail.com</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
         </div>
+
         <div>
-          <p><strong>Navigation</strong><br>
-          <a href="/index.html">Accueil</a><br>
-          <a href="/dj1-rgpd-securite/">RGPD et Sécurité</a><br>
-          <a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a><br>
-          <a href="/dj3-documentation/">Documentation</a><br>
-          <a href="/dj4-mise-en-situation/">Mise en situation</a></p>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon">
+            <a class="carbon-badge" href="https://www.websitecarbon.com" target="_blank" rel="noopener" aria-label="Voir le calcul d'empreinte carbone de cette page sur Website Carbon">
+              <img alt="Empreinte carbone de cette page, Website Carbon" src="" width="180" height="70" loading="lazy" decoding="async">
+            </a>
+          </div>
         </div>
+
       </div>
       <div class="site-footer-bottom">
         <p>
@@ -244,10 +276,33 @@
           <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
           <a href="/empreinte-carbone/">Empreinte carbone</a>
         </p>
-        <p>© 2026 Agoriade. Espace pédagogique privé.</p>
+        <p>© 2026 Agoriade, Séquence 6. Espace pédagogique privé.</p>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var badge = document.querySelector('.carbon-badge');
+      if (!badge) return;
+      var host = window.location.hostname;
+      var isLocal = !host || host === 'localhost' || host === '127.0.0.1' || host.endsWith('.local');
+      var wrap = badge.parentElement;
+      if (isLocal) {
+        wrap.innerHTML = '<span class="site-footer-carbon-fallback">Badge Website Carbon actif une fois la page déployée.</span>';
+        return;
+      }
+      var url = encodeURIComponent(window.location.href);
+      badge.href = 'https://www.websitecarbon.com/website/?url=' + url;
+      var img = badge.querySelector('img');
+      if (img) {
+        img.addEventListener('error', function () {
+          wrap.innerHTML = '<a class="site-footer-carbon-fallback" href="https://www.websitecarbon.com" target="_blank" rel="noopener">Mesurer sur Website Carbon</a>';
+        });
+        img.src = 'https://api.websitecarbon.com/b?url=' + url + '&style=dark';
+      }
+    })();
+  </script>
 
 </body>
 </html>
