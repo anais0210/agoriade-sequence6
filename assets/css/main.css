@@ -419,6 +419,13 @@ main {
   font-size: var(--fs-base);
   min-height: 56px;
 }
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+.btn-group .btn { min-height: 48px; }
 
 /* Hero */
 .hero {
