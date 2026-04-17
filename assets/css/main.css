@@ -878,7 +878,13 @@ tr:nth-child(even) td { background: var(--c-grey-100); }
   padding: var(--sp-16) 0;
 }
 .section--black h1, .section--black h2, .section--black h3 { color: var(--c-white); }
-.section--black a { color: var(--c-yellow); }
+.section--black a:not(.btn) { color: var(--c-yellow); }
+.section--black .btn { color: var(--c-black); }
+.section--black .btn:hover,
+.section--black .btn:focus-visible { color: var(--c-yellow); }
+.section--black .btn--secondary { color: var(--c-black); }
+.section--black .btn--secondary:hover,
+.section--black .btn--secondary:focus-visible { color: var(--c-white); }
 
 /* Breadcrumb */
 .breadcrumb {
