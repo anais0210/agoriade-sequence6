@@ -22,9 +22,9 @@ Le parcours couvre trois sujets d'apport indissociables pour livrer une solution
 | [Module 1](dj1-rgpd-securite/) | RGPD &amp; sécurité en No-Code/IA | Checklist RGPD (24 points), Mini-AIPD, Synthèse 8 risques sécurité |
 | [Module 2](dj2-accessibilite-ecoconception/) | Accessibilité (a11y) &amp; écoconception | Grille d'audit a11y, Checklist écoconception, Synthèse POUR |
 | [Module 3](dj3-documentation/) | Documentation &amp; support | Trame doc technique, Template runbook, Checklist doc exploitable |
-| [Module 4](dj4-simulation/) | Simulation transversale, Bureau de crise responsable | 4 briefs de scénarios (contrôle CNIL, plainte a11y, panne dimanche, audit RSE) |
+| [Module 4](dj4-simulation/) | Atelier de consolidation individuelle, Ton projet au crible du parcours | Auto-diagnostic + atelier 3 niveaux + 6 briefs de scénarios au choix |
 
-Chaque livrable des modules 1 à 3 a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists. Les briefs de scénario du Module 4 sont des Markdown téléchargeables dans [`assets/downloads/`](assets/downloads/).
+Chaque livrable des modules 1 à 3 a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists. Les 6 briefs de scénario du Module 4 sont des Markdown téléchargeables dans [`assets/downloads/`](assets/downloads/).
 
 ---
 
@@ -54,13 +54,15 @@ agoriade-sequence6/
 │       ├── simulation-scenario-1-cnil.md   Brief Module 4, contrôle CNIL inopiné
 │       ├── simulation-scenario-2-a11y.md   Brief Module 4, plainte pour discrimination
 │       ├── simulation-scenario-3-panne.md  Brief Module 4, panne critique dimanche 23h
-│       └── simulation-scenario-4-eco.md    Brief Module 4, audit RSE grand compte
+│       ├── simulation-scenario-4-eco.md    Brief Module 4, audit RSE grand compte
+│       ├── simulation-scenario-5-breach.md Brief Module 4, fuite de données / notif CNIL 72h
+│       └── simulation-scenario-6-reprise.md Brief Module 4, reprise de projet à chaud
 │
 ├── a-propos-anais/index.html               Présentation d'Anaïs
 ├── dj1-rgpd-securite/index.html            Module 1, RGPD et sécurité
 ├── dj2-accessibilite-ecoconception/        Module 2, accessibilité et écoconception
 ├── dj3-documentation/index.html            Module 3, documentation et support
-├── dj4-simulation/index.html               Module 4, simulation « Bureau de crise responsable »
+├── dj4-simulation/index.html               Module 4, atelier de consolidation individuelle
 │
 ├── livrables/                              Pages dédiées aux livrables
 │   ├── checklist-rgpd/                     Checklist RGPD interactive (24 points)

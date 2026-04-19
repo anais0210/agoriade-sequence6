@@ -1,6 +1,6 @@
 # Scénario 1, Contrôle CNIL inopiné
 
-Simulation Agoriade, Module 4 « Bureau de crise responsable ». Durée en équipe : 75 minutes de préparation + 10 min de restitution.
+Simulation Agoriade, Module 4 « Atelier de consolidation ». Brief adaptable en solo sur ton propre projet. Durée indicative : 75 minutes de travail individuel.
 
 ## Le pitch
 
@@ -21,14 +21,16 @@ Le dispositif ChatBotRH est celui que tu as audité en Module 1. Il est **en pro
 - **Personnes concernées** : candidat·es aux offres d'emploi (données CV + questionnaire + décision automatisée).
 - **Situation actuelle** : aucun registre formalisé, pas d'AIPD, mentions d'information absentes, clés API en clair dans le scénario Make.
 
-## Ta mission (en équipe)
+## Ta mission (en solo, sur ton propre projet)
 
-1. **Diagnostic rapide (15 min)** — lister tout ce qui vous manque. Risque encouru (sanctions max RGPD).
-2. **Plan de mise en conformité d'urgence (35 min)** — que peut-on produire en 24h&nbsp;? Que va-t-on honnêtement admettre à la CNIL&nbsp;?
-3. **Livrables à remettre aux contrôleurs (25 min)** — produire un **dossier de contrôle** contenant au minimum&nbsp;:
+Adapte ce scénario à ton produit. Imagine que la CNIL te prévient demain d'un contrôle sur place sous 24h.
+
+1. **Diagnostic rapide (15 min)** — lister tout ce qui te manque. Risque encouru (sanctions max RGPD).
+2. **Plan de mise en conformité d'urgence (25 min)** — que peux-tu produire en 24h&nbsp;? Que vas-tu honnêtement admettre à la CNIL&nbsp;?
+3. **Livrables à remettre aux contrôleurs (35 min)** — produire un **dossier de contrôle** contenant au minimum&nbsp;:
    - Registre des traitements v1 (tableau avec les 8 colonnes CNIL)
    - Mini-AIPD (utiliser le template du Module 1)
-   - Mentions d'information candidat·es (texte prêt à afficher)
+   - Mentions d'information utilisateur·rices (texte prêt à afficher)
    - Procédure de violation de données (runbook style, qui fait quoi en 72h)
    - Liste des sous-traitants + statut DPA
    - Tableau des mesures de sécurité prises / à prendre (utiliser la synthèse 8 risques)
@@ -41,19 +43,16 @@ Le dispositif ChatBotRH est celui que tu as audité en Module 1. Il est **en pro
 - [Trame de doc technique](/livrables/trame-doc/)
 - [Template Runbook](/livrables/runbook/)
 
-## Critères d'évaluation par le jury (les autres équipes + formatrice)
+## Critères d'auto-évaluation
 
-Votre dossier est-il&nbsp;:
-- **Honnête** — vous distinguez clairement ce qui est fait, ce qui est en cours, ce qui manque.
-- **Actionnable** — un contrôleur peut suivre les procédures sans vous poser de questions.
+Ton dossier est-il&nbsp;:
+- **Honnête** — tu distingues clairement ce qui est fait, ce qui est en cours, ce qui manque.
+- **Actionnable** — un contrôleur pourrait suivre les procédures sans te poser de questions.
 - **Priorisé** — les 3 chantiers les plus critiques sont identifiés et planifiés.
 
-## Restitution (10 min)
+## Pour aller plus loin avec la formatrice
 
-Vous recevez le jury « contrôleur CNIL ». Format&nbsp;:
-1. Pitch d'ouverture (2 min) — contexte, posture.
-2. Présentation du dossier (5 min) — quoi conforme, quoi à corriger, quel délai.
-3. Questions du jury (3 min).
+Quand tu l'appelles en 1:1, elle joue le rôle du contrôleur CNIL exigeant, cherche les trous du dossier, te renvoie en production sur les points faibles.
 
 ---
 

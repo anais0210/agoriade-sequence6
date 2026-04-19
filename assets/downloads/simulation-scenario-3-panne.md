@@ -1,6 +1,6 @@
 # Scénario 3, Panne critique, dimanche 23h07
 
-Simulation Agoriade, Module 4 « Bureau de crise responsable ». Durée en équipe : 75 minutes de préparation + 10 min de restitution.
+Simulation Agoriade, Module 4 « Atelier de consolidation ». Brief adaptable en solo sur ton propre projet. Durée indicative : 75 minutes de travail individuel.
 
 ## Le pitch
 
@@ -25,11 +25,13 @@ Il est 23h07. Anne-Laure attend une réponse.
 - **Dernières 2 semaines** : 3 déploiements, aucun post-déploiement validé.
 - **SLA client** : aucun écrit. Promesse orale « on est là si ça casse ».
 
-## Ta mission (en équipe)
+## Ta mission (en solo, sur ton propre projet)
 
-1. **Premiers gestes, 0-30 min (15 min de prépa)** — lister dans l'ordre strict ce que **toi** tu fais entre 23h07 et 23h37. Objectif&nbsp;: diagnostic rapide + communication au client.
+Adapte ce scénario à ton produit. Imagine que ton produit est HS ce soir à 23h07, un client clé attend lundi matin, tu es seul·e.
+
+1. **Premiers gestes, 0-30 min (15 min)** — lister dans l'ordre strict ce que **toi** tu fais entre 23h07 et 23h37. Objectif&nbsp;: diagnostic rapide + communication au client.
 2. **Écriture du runbook définitif (35 min)** — en utilisant le template, produire un runbook complet pour ce type de panne. Contrainte&nbsp;: il doit être **utilisable par quelqu'un d'autre que toi**, à 3h du matin, sans te réveiller.
-3. **Post-mortem préventif (15 min)** — remplir un post-mortem basé sur l'hypothèse la plus probable (fuite de quota OpenAI). Règles du blameless post-mortem appliquées.
+3. **Post-mortem préventif (15 min)** — remplir un post-mortem basé sur l'hypothèse la plus probable de la panne sur ton projet. Règles du blameless post-mortem appliquées.
 4. **Plan de prévention (10 min)** — 5 actions pour ne plus revivre ce dimanche soir, chacune avec un coût estimé et une date d'échéance.
 
 ## Livrables utiles
@@ -39,18 +41,15 @@ Il est 23h07. Anne-Laure attend une réponse.
 - [Checklist « ma doc est-elle exploitable »](/livrables/checklist-doc/)
 - [Synthèse 8 risques sécurité](/livrables/synthese-8-risques/)
 
-## Critères d'évaluation par le jury
+## Critères d'auto-évaluation
 
-- **Utilisabilité en panique** — le runbook tient-il la route à 3h du matin, sans ambiguïté, sans « ça dépend »&nbsp;?
+- **Utilisabilité en panique** — ton runbook tient-il la route à 3h du matin, sans ambiguïté, sans « ça dépend »&nbsp;?
 - **Blameless** — le post-mortem vise le système, pas une personne.
-- **Transparence client** — la communication à Anne-Laure est tenue à 23h18 et pas le lendemain à 9h.
+- **Transparence client** — la communication au client est tenue dans les 15 min, pas le lendemain matin.
 
-## Restitution (10 min)
+## Pour aller plus loin avec la formatrice
 
-Le jury joue Anne-Laure (cliente) + un·e dev freelance à qui tu passes la main la semaine suivante. Format&nbsp;:
-1. Pitch d'ouverture (2 min) — chronologie du dimanche soir, ce qui a été bien fait / mal fait.
-2. Présentation du runbook + post-mortem (5 min).
-3. Questions du jury (3 min), dont&nbsp;: « si ça recasse cette nuit, qu'est-ce qui sera différent&nbsp;? »
+Quand tu l'appelles en 1:1, elle joue la cliente qui attend lundi matin + ton·ta dev à qui tu repasses la main la semaine suivante. Elle teste ton runbook à froid&nbsp;: est-ce qu'elle s'en sortirait avec, sans toi&nbsp;?
 
 ---
 

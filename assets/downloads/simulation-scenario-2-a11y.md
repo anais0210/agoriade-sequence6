@@ -1,6 +1,6 @@
 # Scénario 2, Plainte pour discrimination numérique
 
-Simulation Agoriade, Module 4 « Bureau de crise responsable ». Durée en équipe : 75 minutes de préparation + 10 min de restitution.
+Simulation Agoriade, Module 4 « Atelier de consolidation ». Brief adaptable en solo sur ton propre projet. Durée indicative : 75 minutes de travail individuel.
 
 ## Le pitch
 
@@ -28,15 +28,17 @@ Mardi 10h30. Un mail du service juridique tombe dans la boîte de l'équipe prod
 - **État a11y actuel** : aucun audit n'a été fait. Aucune déclaration d'accessibilité publiée. Aucun schéma pluriannuel.
 - **Timeline presse** : l'association a annoncé un communiqué dans 15 jours si aucune réponse.
 
-## Ta mission (en équipe)
+## Ta mission (en solo, sur ton propre projet)
 
-1. **Audit éclair (20 min)** — faire passer le parcours « candidater » au crible de la grille d'audit a11y POUR. Lister les 5-8 points bloquants les plus critiques.
-2. **Parcours alternatif immédiat (15 min)** — proposer un « plan B » sans chatbot pour débloquer **cette semaine** les candidat·es empêché·es (formulaire HTML, email, téléphone&nbsp;?).
-3. **Plan d'action 30 jours (25 min)** — que livre-t-on au Défenseur des droits&nbsp;? Hiérarchiser par impact / effort, chiffrer grossièrement (jours-homme).
+Adapte ce scénario à ton produit. Imagine qu'un·e utilisateur·rice empêché·e par un obstacle a11y a porté plainte auprès du Défenseur des droits.
+
+1. **Audit éclair (20 min)** — faire passer le parcours clé de ton produit au crible de la grille d'audit a11y POUR. Lister les 5-8 points bloquants les plus critiques.
+2. **Parcours alternatif immédiat (15 min)** — proposer un « plan B » pour débloquer **cette semaine** les utilisateur·rices empêché·es (formulaire HTML, email, téléphone&nbsp;?).
+3. **Plan d'action 30 jours (25 min)** — que livres-tu au Défenseur des droits&nbsp;? Hiérarchiser par impact / effort, chiffrer grossièrement (jours-homme).
 4. **Communication (15 min)** — rédiger&nbsp;:
    - Un mail de réponse au Défenseur des droits (ton&nbsp;: engagement, factuel, chiffré).
-   - Une déclaration d'accessibilité provisoire (« non conforme, voici nos engagements »).
-   - Un script interne pour le service client (posture à tenir si appels).
+   - Une déclaration d'accessibilité provisoire (« non conforme, voici mes engagements »).
+   - Un script interne pour le support (posture à tenir si appels).
 
 ## Livrables utiles
 
@@ -46,18 +48,15 @@ Mardi 10h30. Un mail du service juridique tombe dans la boîte de l'équipe prod
 - [Trame de doc technique](/livrables/trame-doc/)
 - [Checklist « ma doc est-elle exploitable »](/livrables/checklist-doc/)
 
-## Critères d'évaluation par le jury
+## Critères d'auto-évaluation
 
-- **Empathie active** — vous parlez du candidat comme d'une personne, pas d'un dossier juridique.
+- **Empathie active** — tu parles de la personne plaignante comme d'une personne, pas d'un dossier juridique.
 - **Continuité de service** — une solution est mise en place **tout de suite**, sans attendre la refonte.
-- **Preuves et traçabilité** — ce que vous promettez est chiffré, daté, assigné.
+- **Preuves et traçabilité** — ce que tu promets est chiffré, daté, assigné.
 
-## Restitution (10 min)
+## Pour aller plus loin avec la formatrice
 
-Le jury joue le représentant du Défenseur des droits + Karim B. lui-même. Format&nbsp;:
-1. Pitch d'ouverture (2 min) — reconnaissance honnête de la situation.
-2. Présentation du plan (5 min) — court terme (cette semaine), moyen terme (30 jours), long terme (6 mois).
-3. Questions du jury (3 min), dont forcément&nbsp;: « comment évitez-vous que ça se reproduise sur vos prochains produits&nbsp;? »
+Quand tu l'appelles en 1:1, elle joue le rôle d'un représentant du Défenseur des droits et te pose la question qu'on ne veut pas entendre&nbsp;: « comment évitez-vous que ça se reproduise sur vos prochains produits&nbsp;? »
 
 ---
 

@@ -1,6 +1,6 @@
 # Scénario 4, Audit RSE, un grand compte exige des preuves
 
-Simulation Agoriade, Module 4 « Bureau de crise responsable ». Durée en équipe : 75 minutes de préparation + 10 min de restitution.
+Simulation Agoriade, Module 4 « Atelier de consolidation ». Brief adaptable en solo sur ton propre projet. Durée indicative : 75 minutes de travail individuel.
 
 ## Le pitch
 
@@ -27,16 +27,18 @@ Ta solution n'a actuellement ni bilan carbone, ni déclaration d'accessibilité,
 - **Ton argumentaire commercial actuel** : « solution française, légère, centrée utilisateur ». Aucune preuve.
 - **Contrainte** : tu ne peux pas tout refaire en 10 jours. Tu dois livrer un **dossier crédible** qui montre où tu en es honnêtement, et ta trajectoire.
 
-## Ta mission (en équipe)
+## Ta mission (en solo, sur ton propre projet)
 
-1. **État des lieux honnête (15 min)** — faire passer ChatBotRH au crible de la checklist écoconception (10 gestes). Identifier les 3-4 points les plus problématiques (choix GPT-4 vs GPT-3.5/4o-mini, taille des prompts, conservation des logs, dépendances Airtable US).
-2. **Bilan carbone approximatif (15 min)** — produire une estimation grossière du scope énergie+usage. Hypothèses explicitées. Utiliser l'API Website Carbon pour le front, estimer à la louche les tokens GPT-4 (≈ 0,5 g CO₂e / 1000 tokens selon ADEME/études récentes).
-3. **Dossier RSE v1 (30 min)** — produire les 5 livrables demandés par Caroflex, avec le principe de **« honnête plutôt que beau »**&nbsp;:
+Adapte ce scénario à ton produit. Imagine qu'un grand compte prospect exige 5 livrables RSE sous 10 jours.
+
+1. **État des lieux honnête (15 min)** — faire passer ton produit au crible de la checklist écoconception (10 gestes). Identifier les 3-4 points les plus problématiques (choix de modèle IA, taille des prompts, conservation des logs, dépendances hors UE).
+2. **Bilan carbone approximatif (15 min)** — produire une estimation grossière du scope énergie+usage. Hypothèses explicitées. Utiliser l'API Website Carbon pour le front, estimer à la louche les tokens LLM (≈ 0,5 g CO₂e / 1000 tokens selon ADEME/études récentes).
+3. **Dossier RSE v1 (30 min)** — produire les 5 livrables avec le principe de **« honnête plutôt que beau »**&nbsp;:
    - Bilan carbone v1 (énergie hébergement + usage IA + estimation visites)
    - Déclaration d'accessibilité (même si « non conforme », il faut la publier)
    - Charte d'écoconception interne (1 page, 10 engagements concrets)
    - Politique de sobriété (règles pour l'équipe, ex&nbsp;: choix du modèle le plus petit viable)
-   - Objectifs chiffrés 12 mois (ex&nbsp;: -30&nbsp;% tokens GPT par candidat traité)
+   - Objectifs chiffrés 12 mois (ex&nbsp;: -30&nbsp;% tokens LLM par usage)
 4. **Pitch commercial (15 min)** — retourner l'audit en **argument de vente**. Préparer 3 slides max.
 
 ## Livrables utiles
@@ -48,18 +50,15 @@ Ta solution n'a actuellement ni bilan carbone, ni déclaration d'accessibilité,
 - [Checklist doc](/livrables/checklist-doc/)
 - Page [empreinte carbone du site Agoriade](/empreinte-carbone/) comme exemple de rendu
 
-## Critères d'évaluation par le jury
+## Critères d'auto-évaluation
 
 - **Honnêteté** — pas de greenwashing, les chiffres viennent avec leurs hypothèses.
-- **Trajectoire** — vous montrez que vous progressez, avec des jalons datés.
+- **Trajectoire** — tu montres que tu progresses, avec des jalons datés.
 - **Commercialement tenable** — le dossier RSE devient un **argument**, pas un boulet.
 
-## Restitution (10 min)
+## Pour aller plus loin avec la formatrice
 
-Le jury joue l'équipe achats de Caroflex + un·e représentant·e CSE attentif·ve à la sobriété. Format&nbsp;:
-1. Pitch d'ouverture (2 min) — vous reprenez la main sur la narration RSE.
-2. Présentation du dossier + 3 slides commerciales (5 min).
-3. Questions du jury (3 min), dont&nbsp;: « qu'est-ce que vous faites quand un concurrent annonce -60&nbsp;% et vous -30&nbsp;%&nbsp;? »
+Quand tu l'appelles en 1:1, elle joue l'équipe achats du prospect + un·e représentant·e CSE attentif·ve à la sobriété, et te pose la question qui pique&nbsp;: « qu'est-ce que vous faites quand un concurrent annonce -60&nbsp;% et vous -30&nbsp;%&nbsp;? »
 
 ---
 
