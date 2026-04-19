@@ -9,21 +9,22 @@
 - **Dépôt GitHub** : <https://github.com/anais0210/agoriade-sequence6>
 - **Site en ligne** : <https://agoriade-s6.vercel.app>
 - **Formatrice** : Anaïs Sparesotto
-- **Format** : 3 modules d'une demi-journée, présentiel à Nantes (Halles 1 &amp; 2, 5 Allée Frida Kahlo)
+- **Format** : 4 modules d'une demi-journée (3 apports + 1 simulation), présentiel à Nantes (Halles 1 &amp; 2, 5 Allée Frida Kahlo)
 
 ---
 
 ## 📚 Contenu pédagogique
 
-Le parcours couvre trois sujets indissociables pour livrer une solution No-Code/IA responsable&nbsp;:
+Le parcours couvre trois sujets d'apport indissociables pour livrer une solution No-Code/IA responsable, puis un quatrième module de simulation pour les mobiliser tous ensemble&nbsp;:
 
 | Module | Thème | Livrables |
 |---|---|---|
 | [Module 1](dj1-rgpd-securite/) | RGPD &amp; sécurité en No-Code/IA | Checklist RGPD (24 points), Mini-AIPD, Synthèse 8 risques sécurité |
 | [Module 2](dj2-accessibilite-ecoconception/) | Accessibilité (a11y) &amp; écoconception | Grille d'audit a11y, Checklist écoconception, Synthèse POUR |
 | [Module 3](dj3-documentation/) | Documentation &amp; support | Trame doc technique, Template runbook, Checklist doc exploitable |
+| [Module 4](dj4-simulation/) | Simulation transversale, Bureau de crise responsable | 4 briefs de scénarios (contrôle CNIL, plainte a11y, panne dimanche, audit RSE) |
 
-Chaque livrable a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists.
+Chaque livrable des modules 1 à 3 a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists. Les briefs de scénario du Module 4 sont des Markdown téléchargeables dans [`assets/downloads/`](assets/downloads/).
 
 ---
 
@@ -34,7 +35,7 @@ agoriade-sequence6/
 ├── index.html                              Portail d'accueil
 ├── 404.html                                Page d'erreur
 ├── README.md                               Ce fichier
-├── vercel.json                             Config Vercel (headers, Cache-Control)
+├── vercel.json                             Config Vercel (headers de sécurité)
 ├── .htaccess                               Bonus, config Apache si migration hors Vercel
 ├── .gitignore                              Exclusions (DS_Store, éditeurs, .vercel, logs)
 │
@@ -49,12 +50,17 @@ agoriade-sequence6/
 │   └── downloads/
 │       ├── chatbotrh-brief.md              Brief du cas pratique Module 1
 │       ├── chatbotrh-audit-template.csv    Template d'audit prêt à remplir
-│       └── template-aipd.md                Template Mini-AIPD Markdown
+│       ├── template-aipd.md                Template Mini-AIPD Markdown
+│       ├── simulation-scenario-1-cnil.md   Brief Module 4, contrôle CNIL inopiné
+│       ├── simulation-scenario-2-a11y.md   Brief Module 4, plainte pour discrimination
+│       ├── simulation-scenario-3-panne.md  Brief Module 4, panne critique dimanche 23h
+│       └── simulation-scenario-4-eco.md    Brief Module 4, audit RSE grand compte
 │
 ├── a-propos-anais/index.html               Présentation d'Anaïs
 ├── dj1-rgpd-securite/index.html            Module 1, RGPD et sécurité
 ├── dj2-accessibilite-ecoconception/        Module 2, accessibilité et écoconception
 ├── dj3-documentation/index.html            Module 3, documentation et support
+├── dj4-simulation/index.html               Module 4, simulation « Bureau de crise responsable »
 │
 ├── livrables/                              Pages dédiées aux livrables
 │   ├── checklist-rgpd/                     Checklist RGPD interactive (24 points)
@@ -136,7 +142,7 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-Note&nbsp;: l'empreinte carbone inline et la revalidation des assets dépendent d'un hébergement réel. En local, un fallback s'affiche pour le badge carbone.
+Note&nbsp;: l'empreinte carbone inline dépend d'un hébergement réel. En local, un fallback s'affiche pour le badge carbone.
 
 ---
 

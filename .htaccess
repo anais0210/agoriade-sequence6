@@ -36,16 +36,6 @@ ErrorDocument 403 /403.html
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
   Header set X-Robots-Tag "noindex, nofollow"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
-
-  # Cache long pour assets
-  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|gif|webp|woff|woff2|ttf)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-
-  # Pas de cache pour HTML
-  <FilesMatch "\.html$">
-    Header set Cache-Control "public, max-age=0, must-revalidate"
-  </FilesMatch>
 </IfModule>
 
 # ----- 6. Compression -----
@@ -53,23 +43,11 @@ ErrorDocument 403 /403.html
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
 </IfModule>
 
-# ----- 7. Cache navigateur (si mod_headers absent) -----
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/html "access plus 0 seconds"
-  ExpiresByType text/css "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-</IfModule>
-
-# ----- 8. Bloquer l'accès aux fichiers sensibles -----
+# ----- 7. Bloquer l'accès aux fichiers sensibles -----
 <FilesMatch "^\.(htaccess|htpasswd|env|git)">
   Require all denied
 </FilesMatch>
 
-# ----- 9. Redirections propres -----
+# ----- 8. Redirections propres -----
 # Les répertoires DJx doivent servir index.html
 DirectoryIndex index.html
