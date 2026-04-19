@@ -371,6 +371,33 @@
         </div>
       </div>
 
+      <h4>6. L'IA Act, ce qui s'ajoute quand ton traitement passe par une IA</h4>
+      <p>Depuis <strong>août 2024</strong>, un règlement européen spécifique encadre les systèmes d'intelligence artificielle, <em>en plus</em> du RGPD. Il s'applique par paliers jusqu'en 2027. Dès que ton produit intègre un LLM ou un modèle qui prend ou prépare une décision sur une personne, il peut tomber dans son périmètre.</p>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">🧭 L'<abbr title="Règlement européen sur l'intelligence artificielle, adopté en 2024, applicable par paliers jusqu'en 2027">IA Act</abbr> classe les systèmes IA par niveau de risque</span>
+        <ul class="flow mb-0">
+          <li><strong>Inacceptable</strong>&nbsp;: interdits (notation sociale généralisée, manipulation, reconnaissance émotionnelle au travail, reconnaissance biométrique en temps réel dans l'espace public).</li>
+          <li><strong>Haut risque</strong>&nbsp;: autorisés mais sous forte contrainte. Concerne notamment les usages <strong>RH</strong> (tri de CV, gestion des candidatures, évaluation), <strong>crédit bancaire</strong>, <strong>éducation</strong> (notation, accès), <strong>services publics</strong> essentiels, <strong>biométrie</strong>, certains usages médicaux.</li>
+          <li><strong>Risque limité</strong>&nbsp;: obligations de transparence (ex&nbsp;: signaler qu'on dialogue avec un chatbot, marquer le contenu généré par IA).</li>
+          <li><strong>Risque minimal</strong>&nbsp;: pas d'obligation spécifique (jeux, filtres anti-spam, moteurs de recommandation non critiques).</li>
+        </ul>
+      </div>
+
+      <p><strong>Si ton système tombe en « haut risque »</strong>, tes obligations principales sont&nbsp;:</p>
+      <ul>
+        <li>Un <strong>système de gestion des risques</strong> formalisé (proche de l'AIPD du RGPD, mais plus large et continu).</li>
+        <li>Une <strong>documentation technique</strong> complète (données d'entraînement, métriques d'évaluation, choix de conception, limites connues).</li>
+        <li>Une <strong>supervision humaine effective</strong>&nbsp;: une personne peut intervenir, contester, contourner. Jamais de décision 100&nbsp;% automatisée sans recours.</li>
+        <li>Un <strong>enregistrement</strong> dans la base de données européenne des systèmes IA à haut risque.</li>
+        <li>Des <strong>mentions claires</strong> aux personnes concernées (« vous êtes évalué·e par un système IA, voici comment, voici vos recours »).</li>
+      </ul>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Comment l'IA Act s'articule-t-il avec le RGPD&nbsp;?</span>
+        <p class="mb-0">Le RGPD encadre <strong>la donnée personnelle</strong> (collecte, base légale, droits). L'IA Act encadre <strong>le système qui en fait quelque chose</strong> (comportement, supervision, transparence). Les deux s'additionnent&nbsp;: le <strong>ChatBotRH</strong> qu'on audite en temps 3 relève des <em>deux</em> cadres. Tri automatisé de candidatures = usage haut-risque + données personnelles sensibles.</p>
+      </div>
+
       <details class="trainer-notes">
         <summary>👩‍🏫 Notes d'animation, temps 2</summary>
         <div class="trainer-notes-body">
@@ -929,6 +956,7 @@
           </thead>
           <tbody>
             <tr><td><strong>RGPD</strong></td><td>Règlement Général sur la Protection des Données</td><td>Le texte européen de 2016 (appliqué depuis mai 2018) qui encadre la collecte et le traitement des données personnelles dans l'UE.</td></tr>
+            <tr><td><strong>IA Act</strong></td><td>Artificial Intelligence Act</td><td>Règlement européen sur l'intelligence artificielle, adopté en 2024, applicable par paliers jusqu'en 2027. Classe les systèmes IA en 4 niveaux de risque (inacceptable, haut, limité, minimal) et impose des obligations proportionnées. Se cumule avec le RGPD pour les traitements utilisant de l'IA.</td></tr>
             <tr><td><strong>CNIL</strong></td><td>Commission Nationale de l'Informatique et des Libertés</td><td>L'autorité française qui veille à l'application du RGPD. Elle conseille, contrôle et sanctionne.</td></tr>
             <tr><td><strong>AIPD</strong></td><td>Analyse d'Impact relative à la Protection des Données</td><td>Document structuré qui décrit un traitement et évalue ses risques pour les personnes. Obligatoire pour les traitements à risque élevé, recommandée partout ailleurs. Aussi appelée PIA en anglais.</td></tr>
             <tr><td><strong>DPA</strong></td><td>Data Processing Agreement</td><td>Contrat écrit entre un responsable de traitement et son sous-traitant. Il précise ce que le sous-traitant a le droit de faire avec tes données, comment il les protège, et ce qui se passe en fin de contrat.</td></tr>
