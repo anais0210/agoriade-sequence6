@@ -880,21 +880,21 @@ tr:nth-child(even) td { background: var(--c-grey-100); }
 .section--black h1, .section--black h2, .section--black h3 { color: var(--c-white); }
 .section--black a:not(.btn) { color: var(--c-yellow); }
 .section--black .btn {
-  background: var(--c-yellow);
+  background: var(--c-white);
   color: var(--c-black);
 }
 .section--black .btn:hover,
 .section--black .btn:focus-visible {
-  background: var(--c-white);
+  background: var(--c-yellow);
   color: var(--c-black);
 }
 .section--black .btn--secondary {
-  background: var(--c-white);
+  background: var(--c-yellow);
   color: var(--c-black);
 }
 .section--black .btn--secondary:hover,
 .section--black .btn--secondary:focus-visible {
-  background: var(--c-yellow);
+  background: var(--c-white);
   color: var(--c-black);
 }
 
