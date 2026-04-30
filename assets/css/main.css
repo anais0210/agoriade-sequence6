@@ -709,6 +709,43 @@ main {
   margin-bottom: 0;
 }
 
+/* Façade pour iframes externes (quiz Digiquiz, etc.) */
+.quiz-facade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  min-height: 200px;
+  padding: var(--sp-6);
+  background: var(--c-white);
+  border: 2px dashed var(--c-black);
+  border-radius: var(--r-md);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--c-black);
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+.quiz-facade:hover, .quiz-facade:focus-visible {
+  background: var(--c-yellow);
+  outline: 2px solid var(--c-black);
+  outline-offset: 2px;
+}
+.quiz-facade-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.quiz-facade-label {
+  font-weight: 700;
+}
+.quiz-facade-hint {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
 /* Tableaux */
 .table-wrapper {
   overflow-x: auto;

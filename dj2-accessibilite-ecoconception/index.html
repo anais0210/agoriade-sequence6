@@ -7,7 +7,7 @@
   <meta name="description" content="Module 2 du bootcamp AI Product Builder. Accessibilité numérique avant la pause, écoconception après la pause.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="stylesheet" href="/assets/css/print.css" media="print">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -669,27 +669,27 @@
       <div class="callout callout--yellow-soft" style="margin-top: var(--sp-6);">
         <span class="callout-label">🧠 Quiz de cas pratiques, accessibilité</span>
         <p>Cinq mini-cas pratiques sur l'accessibilité numérique à faire dans les jours qui suivent la séance&nbsp;: formulaire hostile, daltonisme, navigation clavier, European Accessibility Act, images IA. Environ 10 minutes, feedback immédiat, pas d'évaluation notée. Propulsé par <a href="https://ladigitale.dev/digiquiz" target="_blank" rel="noopener noreferrer">Digiquiz</a> (La Digitale, open source, aucune collecte).</p>
-        <iframe
-          src="https://ladigitale.dev/digiquiz/q/69e348b6971e3"
-          title="Quiz de cas pratiques accessibilité, 5 cas sur Digiquiz"
-          allow="fullscreen; autoplay"
-          loading="lazy"
-          width="100%"
-          height="500"
-          style="border: 2px solid var(--c-black); border-radius: var(--r-md);"></iframe>
+        <button type="button" class="quiz-facade" data-quiz-src="https://ladigitale.dev/digiquiz/q/69e348b6971e3" data-quiz-title="Quiz de cas pratiques accessibilité, 5 cas sur Digiquiz">
+          <span class="quiz-facade-icon" aria-hidden="true">▶</span>
+          <span class="quiz-facade-label">Charger le quiz accessibilité</span>
+          <span class="quiz-facade-hint">Aucune requête externe tant que vous n'avez pas cliqué.</span>
+        </button>
+        <noscript>
+          <iframe src="https://ladigitale.dev/digiquiz/q/69e348b6971e3" title="Quiz de cas pratiques accessibilité, 5 cas sur Digiquiz" allow="fullscreen; autoplay" width="100%" height="500" style="border: 2px solid var(--c-black); border-radius: var(--r-md);"></iframe>
+        </noscript>
       </div>
 
       <div class="callout callout--yellow-soft" style="margin-top: var(--sp-6);">
         <span class="callout-label">🧠 Quiz de cas pratiques, écoconception</span>
         <p>Cinq mini-cas pratiques sur l'écoconception à faire dans les jours qui suivent la séance&nbsp;: classement d'optimisations par ROI, repérage du greenwashing, choix du bon modèle LLM, outils de mesure gratuits, sobriété des chatbots IA. Environ 10 minutes, feedback immédiat, pas d'évaluation notée. Propulsé par <a href="https://ladigitale.dev/digiquiz" target="_blank" rel="noopener noreferrer">Digiquiz</a> (La Digitale, open source, aucune collecte).</p>
-        <iframe
-          src="https://ladigitale.dev/digiquiz/q/69e348e2799d9"
-          title="Quiz de cas pratiques écoconception, 5 cas sur Digiquiz"
-          allow="fullscreen; autoplay"
-          loading="lazy"
-          width="100%"
-          height="500"
-          style="border: 2px solid var(--c-black); border-radius: var(--r-md);"></iframe>
+        <button type="button" class="quiz-facade" data-quiz-src="https://ladigitale.dev/digiquiz/q/69e348e2799d9" data-quiz-title="Quiz de cas pratiques écoconception, 5 cas sur Digiquiz">
+          <span class="quiz-facade-icon" aria-hidden="true">▶</span>
+          <span class="quiz-facade-label">Charger le quiz écoconception</span>
+          <span class="quiz-facade-hint">Aucune requête externe tant que vous n'avez pas cliqué.</span>
+        </button>
+        <noscript>
+          <iframe src="https://ladigitale.dev/digiquiz/q/69e348e2799d9" title="Quiz de cas pratiques écoconception, 5 cas sur Digiquiz" allow="fullscreen; autoplay" width="100%" height="500" style="border: 2px solid var(--c-black); border-radius: var(--r-md);"></iframe>
+        </noscript>
       </div>
     </section>
 
@@ -848,5 +848,20 @@
 
   <script src="/assets/js/checklist.js" defer></script>
   <script src="/assets/js/carbon.js" defer></script>
+  <script>
+    document.querySelectorAll('.quiz-facade').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var iframe = document.createElement('iframe');
+        iframe.src = btn.dataset.quizSrc;
+        iframe.title = btn.dataset.quizTitle;
+        iframe.allow = 'fullscreen; autoplay';
+        iframe.width = '100%';
+        iframe.height = '500';
+        iframe.style.cssText = 'border: 2px solid var(--c-black); border-radius: var(--r-md);';
+        btn.replaceWith(iframe);
+        iframe.focus();
+      });
+    });
+  </script>
 </body>
 </html>
