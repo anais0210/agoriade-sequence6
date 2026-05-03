@@ -56,7 +56,7 @@
       </nav>
 
       <h2 id="sommaire-title">Déroulé de la demi-journée</h2>
-      <p>8 temps pédagogiques, 3h30 au total.</p>
+      <p>9 temps pédagogiques, 3h40 au total.</p>
 
       <div class="callout" style="margin-top: var(--sp-4);">
         <span class="callout-label">👀 Comment lire cette page</span>
@@ -86,37 +86,44 @@
           </div>
         </li>
         <li class="timeline-item">
+          <span class="timeline-time">10 min</span>
+          <div class="timeline-content">
+            <h4><a href="#seq-4-templates">④ Découverte, La bibliothèque des 10 templates</a></h4>
+            <p>Tu feuillettes les 10 templates de doc (README, ADR, runbook…) et tu repères ceux qui te manquent.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
           <span class="timeline-time">25 min</span>
           <div class="timeline-content">
-            <h4><a href="#seq-4-apport-support">④ Débrief + Apport 2, Des procédures de support qui tiennent</a></h4>
+            <h4><a href="#seq-5-apport-support">⑤ Débrief + Apport 2, Des procédures de support qui tiennent</a></h4>
             <p>Runbook d'incident, procédure d'escalade, post-mortem : les 3 briques indispensables.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">15 min</span>
           <div class="timeline-content">
-            <h4><a href="#seq-5-pause">⑤ Pause</a></h4>
+            <h4><a href="#seq-6-pause">⑥ Pause</a></h4>
             <p>Coupure franche, on reprend après 15 min.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">60 min</span>
           <div class="timeline-content">
-            <h4><a href="#seq-6-pratique-runbook">⑥ Pratique guidée 2, Écrire ton premier runbook</a></h4>
+            <h4><a href="#seq-7-pratique-runbook">⑦ Pratique guidée 2, Écrire ton premier runbook</a></h4>
             <p>Scénario « Mon workflow est en panne à 23h un dimanche ». Tu rédiges puis tu testes en binôme.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">20 min</span>
           <div class="timeline-content">
-            <h4><a href="#seq-7-consolidation">⑦ Consolidation, tu ancres et tu planifies</a></h4>
+            <h4><a href="#seq-8-consolidation">⑧ Consolidation, tu ancres et tu planifies</a></h4>
             <p>Tu coches la checklist doc, tu identifies 3 chantiers, tu les planifies dans ton outil.</p>
           </div>
         </li>
         <li class="timeline-item">
           <span class="timeline-time">15 min</span>
           <div class="timeline-content">
-            <h4><a href="#seq-8-cloture">⑧ Clôture du parcours</a></h4>
+            <h4><a href="#seq-9-cloture">⑨ Clôture du parcours</a></h4>
             <p>Tour de table, météo de sortie, rappel des livrables consolidés et des 3 modules.</p>
           </div>
         </li>
@@ -281,9 +288,49 @@
 
     <hr>
 
-    <section class="container" id="seq-4-apport-support" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Temps 4 · 25 min</span>
-      <h2 id="seq-4-title">Débrief + Apport 2, Des procédures de support qui tiennent</h2>
+    <section class="container" id="seq-4-templates" aria-labelledby="seq-4-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 4 · 10 min</span>
+      <h2 id="seq-4-title">Découverte, La bibliothèque des 10 templates</h2>
+
+      <div class="callout callout--yellow">
+        <span class="callout-label">🎯 Ce que tu vas faire</span>
+        <p class="mb-0">Feuilleter les <strong>10 templates de documentation</strong> proposés (README, ADR, runbook, post-mortem, changelog, monitoring, observabilité, SLA, SLO, Diátaxis), repérer ceux qui te manquent vraiment et noter le 1 ou 2 que tu vas attaquer cette semaine.</p>
+      </div>
+
+      <h3>Comment ça se passe</h3>
+      <ol>
+        <li>Tu ouvres la page <a href="/livrables/templates-doc/"><strong>10 templates de documentation</strong></a> dans un nouvel onglet.</li>
+        <li><strong>Parcours rapide (5 min)</strong>, tu déplies 2 ou 3 templates qui te parlent, tu regardes la trame, le prompt, et surtout l'<strong>exemple « Chatbot RH »</strong> qui montre à quoi ressemble le template une fois rempli.</li>
+        <li><strong>Tu identifies (3 min)</strong>, parmi les 10, lesquels existent déjà chez toi (même partiellement), lesquels manquent vraiment.</li>
+        <li><strong>Tu notes (2 min)</strong>, dans ton playbook ou ton outil de gestion de projet, le 1 à 2 templates que tu vas créer dans la semaine, et l'<strong>outil où tu vas les ranger</strong> (Notion, repo Git, Outline…).</li>
+      </ol>
+
+      <div class="callout callout--yellow-soft">
+        <span class="callout-label">🧭 La règle d'or</span>
+        <p class="mb-0">Pas besoin des 10 templates. Beaucoup de projets vivent très bien avec <strong>3 templates bien tenus</strong> (typiquement&nbsp;: README + ADR + Runbook) plutôt que 10 squelettes vides. Choisis ceux qui répondent à un manque réel, pas ceux qui te font envie.</p>
+      </div>
+
+      <details class="trainer-notes">
+        <summary>👩‍🏫 Notes d'animation, temps 4</summary>
+        <div class="trainer-notes-body">
+          <h4 class="mt-0">Méthode de travail suggérée</h4>
+          <ol>
+            <li><strong>Annoncer le but (1 min)</strong>, « ouvrons la bibliothèque, vous repérez vos manques, vous repartez avec 1 ou 2 chantiers concrets ».</li>
+            <li><strong>Démo (1 min)</strong>, projeter la page templates-doc, ouvrir un template (par ex. Runbook), montrer le bloc Template, le bloc Prompt, et surtout l'exemple « Chatbot RH ».</li>
+            <li><strong>Exploration libre (5 min)</strong>, chacun·e parcourt à son rythme.</li>
+            <li><strong>Tour de table express (3 min)</strong>, chacun·e annonce le ou les 2 templates qu'iel va créer cette semaine et l'outil de stockage.</li>
+          </ol>
+
+          <p><strong>💡 Posture&nbsp;:</strong> insister sur « moins, mais bien tenu ». Le piège classique = « je vais faire les 10 », résultat : 10 fichiers vides. Pousser au choix opportuniste (ce qui me manque vraiment) plutôt que par exhaustivité.</p>
+        </div>
+      </details>
+    </section>
+
+    <hr>
+
+    <section class="container" id="seq-5-apport-support" aria-labelledby="seq-5-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 5 · 25 min</span>
+      <h2 id="seq-5-title">Débrief + Apport 2, Des procédures de support qui tiennent</h2>
 
       <div class="callout callout--yellow">
         <span class="callout-label">🎯 Ce que tu vas apprendre</span>
@@ -327,7 +374,7 @@
       </div>
 
       <details class="trainer-notes">
-        <summary>👩‍🏫 Notes d'animation, temps 4</summary>
+        <summary>👩‍🏫 Notes d'animation, temps 5</summary>
         <div class="trainer-notes-body">
           <h4 class="mt-0">Méthode de travail suggérée</h4>
           <ol>
@@ -342,9 +389,9 @@
 
     <hr>
 
-    <section class="container" id="seq-5-pause" aria-labelledby="seq-5-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Temps 5 · 15 min</span>
-      <h2 id="seq-5-title">Pause</h2>
+    <section class="container" id="seq-6-pause" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 6 · 15 min</span>
+      <h2 id="seq-6-title">Pause</h2>
 
       <div class="callout callout--yellow">
         <span class="callout-label">☕ Coupure</span>
@@ -354,9 +401,9 @@
 
     <hr>
 
-    <section class="container" id="seq-6-pratique-runbook" aria-labelledby="seq-6-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Temps 6 · 60 min</span>
-      <h2 id="seq-6-title">Pratique guidée 2, Écrire ton premier runbook</h2>
+    <section class="container" id="seq-7-pratique-runbook" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 7 · 60 min</span>
+      <h2 id="seq-7-title">Pratique guidée 2, Écrire ton premier runbook</h2>
 
       <div class="callout callout--yellow">
         <span class="callout-label">🎯 Ce que tu vas faire</span>
@@ -385,7 +432,7 @@
       </div>
 
       <details class="trainer-notes">
-        <summary>👩‍🏫 Notes d'animation, temps 6</summary>
+        <summary>👩‍🏫 Notes d'animation, temps 7</summary>
         <div class="trainer-notes-body">
           <p><strong>💡 Posture&nbsp;:</strong> pousser les binômes à être rigoureux, pas gentils, pendant le test croisé. Un runbook qui « a l'air bien » n'a pas été testé. La rigueur bienveillante est plus utile que la politesse.</p>
         </div>
@@ -394,9 +441,9 @@
 
     <hr>
 
-    <section class="container" id="seq-7-consolidation" aria-labelledby="seq-7-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Temps 7 · 20 min</span>
-      <h2 id="seq-7-title">Consolidation, tu ancres et tu planifies</h2>
+    <section class="container" id="seq-8-consolidation" aria-labelledby="seq-8-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 8 · 20 min</span>
+      <h2 id="seq-8-title">Consolidation, tu ancres et tu planifies</h2>
 
       <div class="callout callout--yellow">
         <span class="callout-label">🎯 Ce que tu vas faire</span>
@@ -406,6 +453,7 @@
       <h3>Tes livrables à emporter</h3>
       <ul>
         <li><a href="/livrables/trame-doc/">📋 Trame de doc technique No-Code/IA</a> (6 blocs)</li>
+        <li><a href="/livrables/templates-doc/">📚 10 templates de documentation</a> (README, ADR, runbook, post-mortem, SLA/SLO, Diátaxis…)</li>
         <li><a href="/livrables/runbook/">🚨 Template runbook d'incident</a> (à dupliquer par type de panne)</li>
         <li><a href="/livrables/checklist-doc/">✅ Checklist « ma doc est-elle exploitable ? »</a> (12 points, cochable, exportable)</li>
       </ul>
@@ -425,9 +473,9 @@
 
     <hr>
 
-    <section class="container" id="seq-8-cloture" aria-labelledby="seq-8-title" style="padding-top: var(--sp-12);">
-      <span class="badge badge--dark">Temps 8 · 15 min</span>
-      <h2 id="seq-8-title">Clôture du parcours</h2>
+    <section class="container" id="seq-9-cloture" aria-labelledby="seq-9-title" style="padding-top: var(--sp-12);">
+      <span class="badge badge--dark">Temps 9 · 15 min</span>
+      <h2 id="seq-9-title">Clôture du parcours</h2>
 
       <div class="callout callout--yellow">
         <span class="callout-label">🎯 Ce que tu vas faire</span>
@@ -467,7 +515,7 @@
     <section class="section--yellow" id="livrables" aria-labelledby="livrables-title" style="margin-top: var(--sp-16);">
       <div class="container">
         <h2 id="livrables-title">Les livrables à emporter</h2>
-        <p style="max-width: 60ch; font-size: var(--fs-md);">Trois livrables pour documenter et sécuriser l'exploitation de ton produit, chacun sur sa page dédiée.</p>
+        <p style="max-width: 60ch; font-size: var(--fs-md);">Quatre livrables pour documenter et sécuriser l'exploitation de ton produit, chacun sur sa page dédiée.</p>
       </div>
     </section>
 
@@ -477,6 +525,14 @@
         <span class="resource-content">
           <span class="resource-title">Trame de doc technique No-Code/IA</span>
           <span class="resource-meta">6 blocs structurés à copier-coller dans Notion, Google Doc ou README. Couvre vue d'ensemble, stack, accès, flux, procédures, décisions.</span>
+        </span>
+      </a>
+
+      <a href="/livrables/templates-doc/" class="resource-card">
+        <span class="resource-icon" aria-hidden="true">📚</span>
+        <span class="resource-content">
+          <span class="resource-title">10 templates de documentation</span>
+          <span class="resource-meta">README, ADR, runbook, post-mortem, changelog, monitoring, observabilité, SLA, SLO, Diátaxis. Pour chaque template, une trame prête à remplir et un prompt LLM.</span>
         </span>
       </a>
 
@@ -519,7 +575,6 @@
             <tr><td><strong>Observabilité</strong></td><td>Observability</td><td>Capacité à comprendre <em>pourquoi</em> un système se comporte comme il se comporte, à partir de ses logs, métriques et traces. Va au-delà du monitoring&nbsp;: permet d'enquêter sur ce qu'on n'avait pas prévu.</td></tr>
             <tr><td><strong>SLA</strong></td><td>Service Level Agreement</td><td>Engagement contractuel sur le niveau de service (ex&nbsp;: 99,9&nbsp;% de disponibilité par mois). Signé avec le client, comporte souvent des pénalités si non tenu.</td></tr>
             <tr><td><strong>SLO</strong></td><td>Service Level Objective</td><td>Objectif interne de niveau de service, mesurable. Plus strict que le SLA pour se donner de la marge (ex&nbsp;: SLO 99,95&nbsp;% pour un SLA 99,9&nbsp;%).</td></tr>
-            <tr><td><strong>SRE</strong></td><td>Site Reliability Engineering</td><td>Discipline issue de Google qui applique les méthodes d'ingénierie logicielle aux problèmes d'exploitation. Vise à rendre les systèmes plus fiables, scalables et maintenables.</td></tr>
             <tr><td><strong>Diátaxis</strong></td><td>&mdash;</td><td>Framework de documentation créé par Daniele Procida. Sépare la doc en 4 types selon leur objectif&nbsp;: tutoriel (apprendre), guide (résoudre), explication (comprendre), référence (chercher).</td></tr>
           </tbody>
         </table>

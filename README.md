@@ -21,7 +21,7 @@ Le parcours couvre trois sujets d'apport indissociables pour livrer une solution
 |---|---|---|
 | [Module 1](dj1-rgpd-securite/) | RGPD &amp; sécurité en No-Code/IA | Checklist RGPD (24 points), Mini-AIPD, Synthèse 8 risques sécurité |
 | [Module 2](dj2-accessibilite-ecoconception/) | Accessibilité (a11y) &amp; écoconception | Grille d'audit a11y, Checklist écoconception, Synthèse POUR |
-| [Module 3](dj3-documentation/) | Documentation &amp; support | Trame doc technique, Template runbook, Checklist doc exploitable |
+| [Module 3](dj3-documentation/) | Documentation &amp; support | Trame doc technique, 10 templates de doc (README, ADR, runbook, post-mortem, changelog, monitoring, observabilité, SLA, SLO, Diátaxis), Template runbook, Checklist doc exploitable |
 | [Module 4](dj4-simulation/) | Atelier de consolidation individuelle, Ton projet au crible du parcours | Auto-diagnostic + atelier 3 niveaux + 6 briefs de scénarios au choix |
 
 Chaque livrable des modules 1 à 3 a sa page dédiée sous [`/livrables/`](livrables/), consultable, imprimable et exportable en CSV pour les checklists. Les 6 briefs de scénario du Module 4 sont des Markdown téléchargeables dans [`assets/downloads/`](assets/downloads/).
@@ -72,6 +72,7 @@ agoriade-sequence6/
 │   ├── checklist-ecoconception/            Checklist écoconception (10 gestes)
 │   ├── synthese-pour/                      Fiche visuelle POUR
 │   ├── trame-doc/                          Trame de doc technique (6 blocs)
+│   ├── templates-doc/                      10 templates de doc (README, ADR, runbook, post-mortem, etc.)
 │   ├── runbook/                            Template de runbook d'incident
 │   └── checklist-doc/                      Checklist « ma doc est-elle exploitable »
 │
@@ -174,6 +175,29 @@ Ouvre `DJ1-modulo.md`, `DJ2-modulo.md`, `DJ3-modulo.md`&nbsp;:
 ### Option B, import en masse via CSV
 
 Le fichier `sequences-global.csv` contient toutes les séquences. Si Modulo supporte l'import CSV, utilise-le pour tout créer d'un coup. Colonnes&nbsp;: `DJ, Ordre, Heure, Duree_min, Titre, Format, Type, Objectif_pedagogique, URL_ancree`.
+
+---
+
+## 🚦 Qualité automatique (Lighthouse CI)
+
+Un audit **Lighthouse CI** tourne à chaque `push` et chaque PR sur `main` (workflow GitHub Actions `.github/workflows/lighthouse-ci.yml`). La configuration est dans [`.lighthouserc.json`](.lighthouserc.json).
+
+Pages auditées : home, les 4 modules, et trois pages livrables (templates-doc, checklist-rgpd, audit-a11y).
+
+Seuils stricts (le CI échoue en dessous)&nbsp;:
+- **Accessibilité** : 100&nbsp;/ 100 (cohérent avec l'engagement WCAG 2.1 AA / contrastes AAA)
+- **Performance** : ≥ 90&nbsp;/ 100
+- **Best practices** : ≥ 95&nbsp;/ 100
+- **SEO** : ≥ 90&nbsp;/ 100 (warning uniquement, pas bloquant)
+
+Pour lancer l'audit en local&nbsp;:
+
+```bash
+npm install -g @lhci/cli@0.15.x
+lhci autorun
+```
+
+Les rapports HTML sont uploadés vers `temporary-public-storage` (Google) et le lien apparaît dans les logs du run.
 
 ---
 

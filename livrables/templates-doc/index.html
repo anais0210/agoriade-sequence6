@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Templates de documentation, Livrable Module 3, Agoriade</title>
-  <meta name="description" content="11 templates de documentation prêts à l'emploi (README, ADR, Runbook, Post-mortem, Changelog, Monitoring, Observabilité, SLA, SLO, SRE, Diátaxis), avec un prompt de génération pour chacun. Livrable Module 3 Agoriade.">
+  <meta name="description" content="10 templates de documentation prêts à l'emploi (README, ADR, Runbook, Post-mortem, Changelog, Monitoring, Observabilité, SLA, SLO, Diátaxis), avec un prompt de génération pour chacun. Livrable Module 3 Agoriade.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/print.css">
@@ -94,6 +94,39 @@
       padding-bottom: var(--sp-2);
       border-bottom: 2px solid var(--c-black);
     }
+    .tpl-example {
+      border: 1px solid var(--c-grey-300);
+      border-radius: var(--r-sm);
+      padding: var(--sp-2) var(--sp-3);
+      margin-top: var(--sp-2);
+      background: #fffbe6;
+    }
+    .tpl-example > summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: var(--fs-xs);
+      list-style: none;
+    }
+    .tpl-example > summary::-webkit-details-marker { display: none; }
+    .tpl-example > summary::before {
+      content: "▸ ";
+      display: inline-block;
+      transition: transform var(--transition);
+    }
+    .tpl-example[open] > summary::before { transform: rotate(90deg); }
+    .tpl-example pre {
+      margin-top: var(--sp-2);
+      font-size: 0.78em;
+      max-height: 380px;
+    }
+    .tpl-tool {
+      margin-top: var(--sp-3);
+      padding: var(--sp-2) var(--sp-3);
+      border-left: 3px solid var(--c-black);
+      background: var(--c-grey-100);
+      font-size: var(--fs-sm);
+    }
+    .tpl-tool strong { font-family: var(--font-heading); }
   </style>
 </head>
 <body>
@@ -128,7 +161,7 @@
       </nav>
 
       <span class="badge">📚 Livrable Module 3</span>
-      <h1>11 templates de documentation</h1>
+      <h1>10 templates de documentation</h1>
       <p style="max-width: 70ch;">
         Pour chaque grand type de doc utile en projet logiciel, une <strong>structure prête à copier-coller</strong> et un <strong>prompt de génération</strong> à utiliser avec ton LLM préféré. Replie tout par défaut, déplie ce qui te sert.
       </p>
@@ -136,6 +169,28 @@
       <div class="callout callout--yellow-soft" style="margin-top: var(--sp-4);">
         <span class="callout-label">🧭 Comment l'utiliser</span>
         <p class="mb-0">Le <strong>template</strong>, c'est la trame que tu remplis à la main. Le <strong>prompt</strong>, c'est ce que tu passes à un LLM avec tes infos pour obtenir une première version. Dans les deux cas, tu finis par relire et ajuster, sinon ça reste de la doc générique.</p>
+      </div>
+
+      <div class="callout callout--yellow" style="margin-top: var(--sp-4);">
+        <span class="callout-label">🧵 Le fil rouge des exemples — « Chatbot RH »</span>
+        <p>Pour rester concret, tous les exemples de cette page utilisent <strong>le même projet fictif</strong> : un assistant Slack qui répond aux questions RH internes (congés, mutuelle, télétravail), construit en No-Code/IA.</p>
+        <ul class="mb-0">
+          <li><strong>Stack</strong> : Slack (interface) + Make (orchestration) + Airtable (base FAQ + logs) + OpenAI gpt-4o-mini (réponse)</li>
+          <li><strong>Équipe</strong> : 1 dev No-Code mi-temps (@anais) + 1 référente RH non-tech (@julien)</li>
+          <li><strong>Volume</strong> : ~2000 messages/mois, ~30 utilisateurs internes</li>
+        </ul>
+      </div>
+
+      <div class="callout callout--yellow-soft" style="margin-top: var(--sp-4);">
+        <span class="callout-label">📦 Où ranger ta doc</span>
+        <p class="mb-0">Chaque template indique <strong>l'outil de stockage recommandé</strong>. La règle : la doc doit vivre <em>là où tu travailles</em>. Si tu ne vas jamais sur l'outil, la doc se périmera. Mes recommandations par défaut&nbsp;:</p>
+        <ul class="mb-0" style="margin-top: var(--sp-2);">
+          <li><strong>README, ADR, Changelog, références techniques</strong> → dans le <strong>repo Git</strong> (GitHub, GitLab), au format Markdown.</li>
+          <li><strong>Runbook, post-mortem, plans monitoring</strong> → <strong>Notion</strong> ou <strong>Outline</strong>, accessibles vite (mobile, sans VPN, sans login complexe).</li>
+          <li><strong>SLA, SLO</strong> → <strong>Notion</strong> espace partagé avec le client / la direction.</li>
+          <li><strong>Doc utilisateur (Diátaxis)</strong> → <strong>GitBook, Mintlify, Docusaurus</strong> si publique. <strong>Notion</strong> si interne.</li>
+          <li><strong>Logs et traces</strong> (observabilité) → l'outil de monitoring lui-même (<strong>Grafana, Datadog, Sentry</strong>) ou en No-Code, une base <strong>Airtable</strong> dédiée.</li>
+        </ul>
       </div>
 
       <ul class="tpl-toc" aria-label="Sommaire des templates">
@@ -148,8 +203,7 @@
         <li><a href="#tpl-observability">7 · Observabilité</a></li>
         <li><a href="#tpl-sla">8 · SLA</a></li>
         <li><a href="#tpl-slo">9 · SLO</a></li>
-        <li><a href="#tpl-sre">10 · SRE Handbook</a></li>
-        <li><a href="#tpl-diataxis">11 · Diátaxis (×4)</a></li>
+        <li><a href="#tpl-diataxis">10 · Diátaxis (×4)</a></li>
       </ul>
 
       <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
@@ -228,6 +282,59 @@ Voir `CONTRIBUTING.md`. Branche, tests, format de commit.
             <p>Tu es technical writer. Génère un README pour le projet <code>&lt;nom&gt;</code> dont l'objectif est <code>&lt;objectif&gt;</code>. Stack : <code>&lt;langages/frameworks&gt;</code>. Public cible : <code>&lt;dev / ops / utilisateur final&gt;</code>.</p>
             <p>Inclus : pitch en une ligne, prérequis, installation, exemple d'usage minimal qui marche, table des variables d'environnement, structure du dépôt, liens vers la doc, mainteneurs. Style direct, impératif, pas de superlatifs. Markdown.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le README rempli</summary>
+<pre><code># Chatbot RH
+
+&gt; Assistant Slack qui répond aux questions RH (congés, mutuelle, télétravail)
+&gt; à partir de notre base de connaissance interne Airtable.
+
+## Contexte
+Le pôle RH (3 personnes) reçoit ~80 demandes/semaine répétitives sur les congés,
+la mutuelle, etc. Objectif : que ce bot traite 60 % des demandes de niveau 1
+d'ici juin 2026.
+
+## Prérequis
+- Compte Slack admin sur le workspace `acme.slack.com`
+- Compte Airtable avec accès à la base "RH-Knowledge"
+- Clé API OpenAI avec budget mensuel ≥ 30 €
+- Compte Make (plan Core ou supérieur)
+
+## Installation
+1. Importer le scénario Make `chatbot-rh.json` (dossier `/make-scenarios/`)
+2. Créer une App Slack (manifest fourni `slack-manifest.yml`)
+3. Renseigner les secrets dans Make → Connexions
+
+## Configuration
+| Variable           | Rôle                              | Défaut       |
+|--------------------|-----------------------------------|--------------|
+| `OPENAI_MODEL`     | Modèle OpenAI utilisé             | gpt-4o-mini  |
+| `AIRTABLE_BASE_ID` | ID de la base Airtable RH         | —            |
+| `SLACK_CHANNEL`    | Canal d'écoute du bot             | #askrh-bot   |
+| `MAX_TOKENS`       | Limite de tokens par réponse      | 500          |
+| `FALLBACK_HUMAN`   | Mention quand le bot ne sait pas  | @rh-team     |
+
+## Structure du dépôt
+- `make-scenarios/`   — exports JSON des scénarios Make
+- `airtable-schema/`  — structure des tables Airtable
+- `slack-manifest.yml`— manifest de l'app Slack
+- `docs/adr/`         — décisions d'architecture
+- `docs/runbooks/`    — procédures d'incident
+- `docs/postmortems/` — retours d'incidents
+
+## Documentation complète
+- Tutoriel : Premier scénario en 10 min → `docs/tutorials/quickstart.md`
+- Guide : Ajouter une nouvelle catégorie de FAQ → `docs/guides/add-faq.md`
+- ADR : Pourquoi Make plutôt que n8n → `docs/adr/0003-make-vs-n8n.md`
+
+## Mainteneurs
+- @anais — Product Owner &amp; dev No-Code
+- @julien — Référent RH (contenu Airtable)</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <code>README.md</code> à la racine du repo Git (GitHub, GitLab). Affiché direct sur la page du dépôt, c'est le premier truc que voit un nouvel arrivant.</p>
         </div>
       </details>
 
@@ -280,6 +387,66 @@ Liens vers issues, RFC, benchmarks, autres ADR.</code></pre>
             <p>Tu rédiges une ADR sur <code>&lt;décision&gt;</code>. Contexte fourni : <code>&lt;contraintes, équipe, stack&gt;</code>. Options envisagées : <code>&lt;liste&gt;</code>. Décision retenue : <code>&lt;option&gt;</code>.</p>
             <p>Format Michael Nygard. Date du jour. Liste explicitement avantages/inconvénients par option, y compris « ne rien faire ». Sépare clairement décision et conséquences (positives + dette acceptée). Pas de langage promotionnel, ton factuel.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir l'ADR rempli</summary>
+<pre><code># ADR-0003 — Choix de Make plutôt que n8n pour l'orchestration
+
+- **Date**     : 2026-02-14
+- **Statut**   : Accepté
+- **Auteurs**  : @anais
+- **Décideurs**: @anais, @julien (RH), @marc (DSI)
+
+## Contexte
+Démarrage du projet Chatbot RH. Équipe : 1 dev No-Code mi-temps,
+1 référente RH non-technique. DSI accepte un SaaS si données EU
+et conformité RGPD. Budget mensuel cible : &lt; 50 €/mois.
+
+## Problème
+Quelle plateforme d'orchestration pour relier Slack ↔ Airtable ↔ OpenAI ?
+
+## Options étudiées
+
+### Option 1 — Make (ex-Integromat)
+- ➕ Interface visuelle, prise en main &lt; 1 jour
+- ➕ +1500 connecteurs natifs (Slack, Airtable, OpenAI)
+- ➕ Hébergement EU (datacenter Pologne)
+- ➖ Plan Core (9 €/mois) limité à 10 000 opérations
+- 💰 ~12 €/mois pour le volume estimé
+
+### Option 2 — n8n self-hosted
+- ➕ Open-source, contrôle total, conformité RGPD totale
+- ➖ Nécessite VPS (~10 €/mois) + compétences ops
+- ➖ Maintenance et mises à jour à notre charge
+- 💰 ~10 €/mois infra + ~4 h/mois ops
+
+### Option 3 — Zapier
+- ➖ Hébergement US uniquement → KO RGPD pour données salariés
+- ➖ Plus cher (~25 €/mois)
+
+### Option 4 — Ne rien faire (script Node maison)
+- ➖ Inaccessible à la référente RH
+- ➖ Recréer ce qui existe déjà
+
+## Décision
+On retient **Option 1 (Make)** parce que la référente RH peut auditer et
+modifier les scénarios elle-même, le coût d'opération est nul, et
+l'hébergement EU coche la case RGPD.
+
+## Conséquences
+- Positives : autonomie de l'équipe RH sur les scénarios, MVP en 2 semaines.
+- Négatives / dette acceptée : dépendance à un SaaS commercial,
+  risque de hausse tarifaire (plan limité à 10 000 ops/mois, à surveiller).
+- Actions de suivi : alerte Make à 80 % du quota mensuel,
+  revue annuelle du choix au regard du volume réel.
+
+## Références
+- Issue #4 — Comparatif outils d'orchestration
+- `/docs/benchmarks/orchestration-2026-02.md`</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où la ranger</strong> : <code>docs/adr/0003-make-vs-n8n.md</code> dans le repo Git, format Markdown numéroté séquentiellement. Index dans <code>docs/adr/README.md</code> qui liste toutes les décisions avec leur statut.</p>
         </div>
       </details>
 
@@ -335,6 +502,69 @@ Effet de bord : …
             <p>Tu écris un runbook pour <code>&lt;type d'incident&gt;</code> sur le service <code>&lt;nom&gt;</code>. Public : oncall réveillé à 3h.</p>
             <p>Contraintes : chaque commande copiable telle quelle, effet attendu explicité, pas de « il suffit de ». Inclus : symptômes observables, prérequis d'accès, diagnostic en 5 min max, actions correctives par hypothèse, condition d'escalade, procédure de rollback. Style impératif, phrases courtes, zéro ambiguïté.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le runbook rempli</summary>
+<pre><code># Runbook — Le Chatbot RH ne répond plus dans Slack
+
+- **Sévérité**       : SEV-2 (impacte les utilisateurs internes, pas critique business)
+- **Service**        : Chatbot RH (Make + Airtable + OpenAI + Slack)
+- **Owner**          : @anais
+- **Dernière vérif** : 2026-04-12
+
+## Symptômes
+- Message dans #askrh-bot sans réaction du bot après 2 min.
+- Ou : le bot répond avec « Désolé, une erreur s'est produite. »
+- Alerte UptimeRobot sur l'URL de healthcheck Make.
+
+## Pré-requis d'accès
+- Compte Make admin (login via 1Password : "make-prod")
+- Compte Airtable admin
+- Console OpenAI Platform (clé "chatbot-rh-prod")
+- Slack admin du workspace
+
+## Diagnostic — checklist 5 min
+1. **Make** : ouvrir le scénario "chatbot-rh-main" → onglet History.
+   - Vert récent (&lt; 5 min) → problème côté Slack ou OpenAI
+   - Rouge récent → cliquer pour voir l'erreur
+   - Aucune exécution depuis &gt; 10 min → scénario désactivé ou webhook KO
+2. **Quota OpenAI** : platform.openai.com → Usage. Si &gt; 90 % budget → cap atteint.
+3. **Statut Make** : status.make.com (incident global possible).
+4. **Statut OpenAI** : status.openai.com.
+
+## Actions correctives
+
+### Cas A — Scénario Make désactivé
+Onglet "Scenarios" → "chatbot-rh-main" → toggle ON.
+Effet attendu : nouvelle exécution dans les 60 s sur prochain message.
+
+### Cas B — Quota OpenAI atteint
+1. Augmenter le hard limit dans platform.openai.com → Limits (max +20 €).
+2. Si récurrent : ouvrir un post-mortem, le scénario consomme trop.
+
+### Cas C — Webhook Slack invalidé
+1. Slack admin → App "Chatbot RH" → Event Subscriptions.
+2. Re-renseigner l'URL Make du webhook (visible dans le module 1 du scénario).
+3. Tester en envoyant "ping" dans #askrh-bot.
+
+### Cas D — Erreur Airtable (rate limit ou table renommée)
+- Rate limit (5 req/s) : ajouter un Sleep 200 ms dans le scénario.
+- Table renommée : référencer la nouvelle table dans le module Airtable.
+
+## Si rien ne marche
+- Désactiver l'app Slack pour éviter le spam d'erreurs.
+- Poster dans #it-support : « Chatbot RH down depuis HH:MM, investigation en cours. »
+- Escalade : @anais (24/7 sur SEV-2).
+- Communication aux utilisateurs : message épinglé dans #askrh-bot
+  « Bot indisponible, écrire à rh@acme.com en attendant. »
+
+## Post-incident
+- Si &gt; 1 h d'indispo : ouvrir un post-mortem dans `docs/postmortems/`.
+- Mettre à jour ce runbook si nouveau cas découvert.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> (workspace équipe Tech), avec un raccourci épinglé sur le téléphone et un lien direct depuis l'alerte UptimeRobot. Backup en <code>docs/runbooks/</code> du repo. Critère clé : accessible en moins de 30 s, même sous stress, depuis n'importe quel appareil.</p>
         </div>
       </details>
 
@@ -394,6 +624,72 @@ Ce qui change durablement dans nos systèmes/process.</code></pre>
             <p>Rédige un post-mortem blameless pour l'incident <code>&lt;résumé&gt;</code> survenu le <code>&lt;date&gt;</code>. Données fournies : timeline brute, alertes déclenchées, mitigation.</p>
             <p>Règles : aucun nom associé à une faute, focus systèmes et processus, distinguer cause racine et facteurs aggravants. Inclus : résumé exécutif 3 lignes, impact chiffré, timeline UTC, ce qui a marché, ce qui n'a pas marché, actions correctives avec owner et échéance. Ton neutre, factuel.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le post-mortem rempli</summary>
+<pre><code># Post-mortem — Quota OpenAI atteint à 14h le 2026-03-22
+
+- **Statut**         : Publié
+- **Sévérité**       : SEV-2
+- **Durée d'impact** : 14:12 → 16:45 (UTC) — 2h33
+- **Auteur**         : @anais
+
+## Résumé exécutif
+Le quota mensuel OpenAI a été atteint mi-mois suite à une boucle dans
+un scénario Make qui rejouait les réponses 8 fois. Bot indisponible 2h33.
+Mise en place d'alerte budget à 50 % et idempotence sur les webhooks.
+
+## Impact
+- Utilisateurs touchés : ~30 salariés (canal #askrh-bot)
+- Fonctionnalités dégradées : bot complètement HS
+- Pertes : 0 € (mais perte de confiance interne)
+
+## Timeline (UTC)
+| Heure | Événement |
+|-------|-----------|
+| 10:30 | Modification du scénario : ajout d'une réponse alternative |
+| 14:12 | Premier message utilisateur sans réponse |
+| 14:45 | Alerte UptimeRobot reçue |
+| 14:50 | Diagnostic via dashboard OpenAI : quota épuisé |
+| 15:10 | Augmentation du hard limit (+30 €) |
+| 16:30 | Identification de la boucle dans le scénario Make |
+| 16:45 | Correctif déployé, bot rétabli |
+
+## Cause racine
+La modification du scénario à 10h30 a introduit un module Repeater
+configuré sur 8 itérations au lieu de 1. Chaque message utilisateur
+déclenchait donc 8 appels OpenAI au lieu d'un.
+Volume × 8 → quota mensuel consommé en 4 heures.
+
+## Ce qui a bien fonctionné
+- Alerte UptimeRobot a fonctionné dans les 35 min suivant l'arrêt.
+- Le runbook a permis de diagnostiquer le quota OpenAI en moins de 5 min.
+
+## Ce qui a moins bien fonctionné
+- Aucune alerte budget OpenAI avant 100 % atteint.
+- Pas de revue obligatoire avant de pousser un scénario en prod.
+- Utilisateurs informés tardivement (message arrivé après la résolution).
+
+## Facteurs aggravants
+- Modification poussée un vendredi après-midi sans test sur scénario miroir.
+- Pas d'environnement de pré-prod pour Make.
+
+## Actions correctives
+| # | Action | Type | Owner | Échéance |
+|---|--------|------|-------|----------|
+| 1 | Configurer alerte OpenAI à 50 % et 80 % du budget | Détection | @anais | 2026-03-25 |
+| 2 | Créer un scénario "chatbot-rh-staging" pour les tests | Préventif | @anais | 2026-04-15 |
+| 3 | Documenter « modifier un scénario en prod » dans le runbook | Préventif | @anais | 2026-04-01 |
+| 4 | Message d'erreur explicite dans Slack (vs silence) | Mitigation | @anais | 2026-04-30 |
+
+## Leçons apprises
+- Toute modif d'un scénario Make en prod nécessite un test préalable sur staging.
+- Les alertes budget doivent arriver AVANT l'épuisement, pas après.
+- Le silence du bot est plus douloureux qu'un message d'erreur explicite.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> (page équipe Tech), revu en réunion mensuelle de fiabilité. Backup en <code>docs/postmortems/2026-03-22-quota-openai.md</code>. Une seule source de vérité : si tu choisis Notion, ne duplique pas dans le repo (sinon désync).</p>
         </div>
       </details>
 
@@ -436,15 +732,52 @@ Format : Keep a Changelog, versions SemVer.
             <p>À partir des commits/PR fournis <code>&lt;liste&gt;</code>, génère une entrée de changelog pour la version <code>&lt;X.Y.Z&gt;</code> datée <code>&lt;YYYY-MM-DD&gt;</code>.</p>
             <p>Format Keep a Changelog avec sections : Ajouté, Modifié, Déprécié, Retiré, Corrigé, Sécurité (n'inclure que celles non vides). Une ligne par changement, point de vue utilisateur (pas « refacto interne »). Mentionne les breaking changes en haut. Ignore les commits de pure maintenance interne.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le changelog rempli</summary>
+<pre><code># Changelog
+
+Toutes les modifications notables figurent ici.
+Format : Keep a Changelog, versions SemVer.
+
+## [Non publié]
+### Ajouté
+- Catégorie FAQ "télétravail" (12 entrées).
+
+## [1.4.0] — 2026-04-01
+### Ajouté
+- Réponse aux questions sur la mutuelle (intégration table `Mutuelle`).
+- Mention @rh-team dans le message si confiance OpenAI &lt; 0,7.
+### Modifié
+- Modèle OpenAI passé de gpt-3.5-turbo à gpt-4o-mini
+  (meilleure qualité, coût équivalent).
+### Corrigé
+- Boucle infinie sur les messages &gt; 500 caractères
+  (cf. post-mortem 2026-03-22).
+
+## [1.3.0] — 2026-02-28
+### Ajouté
+- Détection des questions hors-sujet (refuse poliment).
+- Statistiques hebdo postées dans #rh-internal.
+### Modifié
+- Latence moyenne réduite de 8 s à 3 s (parallélisation des modules Make).
+
+## [1.2.0] — 2026-02-10
+### Ajouté
+- Première version production : FAQ congés (45 entrées).</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <code>CHANGELOG.md</code> à la racine du repo Git. Référencé depuis le README. Mention dans le canal #rh-internal à chaque release pour informer les utilisateurs des nouveautés.</p>
         </div>
       </details>
     </section>
 
     <!-- ============================================================ -->
-    <!-- GROUPE 2 — FIABILITÉ ET SRE                                 -->
+    <!-- GROUPE 2 — FIABILITÉ                                         -->
     <!-- ============================================================ -->
     <section class="container tpl-section">
-      <h2 class="tpl-group-title">Fiabilité &amp; SRE</h2>
+      <h2 class="tpl-group-title">Fiabilité</h2>
 
       <!-- 6. Monitoring -->
       <details class="tpl-details" id="tpl-monitoring">
@@ -487,6 +820,47 @@ Quel(s) service(s), quelle(s) dépendance(s) sont surveillés.
             <p>Tu rédiges le plan de monitoring du service <code>&lt;nom&gt;</code> (<code>&lt;rôle métier&gt;</code>). Stack télémétrie : <code>&lt;Prometheus, Datadog, …&gt;</code>.</p>
             <p>Pour chaque endpoint/composant critique, propose les indicateurs RED (Rate, Errors, Duration) ou USE (Utilization, Saturation, Errors), avec seuils warn/crit justifiés et fenêtre d'évaluation. Pour chaque alerte : sévérité, destinataire, runbook lié. Exclus toute alerte non actionnable.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le plan de monitoring rempli</summary>
+<pre><code># Plan de monitoring — Chatbot RH
+
+- **Owner**      : @anais
+- **Criticité**  : tier 2 (interne, pas de revenu direct)
+- **Mis à jour** : 2026-04-12
+
+## Périmètre
+Scénario Make "chatbot-rh-main" et ses dépendances :
+Airtable RH, OpenAI gpt-4o-mini, Slack workspace acme.
+
+## Indicateurs (RED)
+| Indicateur                  | Source              | Warn   | Crit   | Fenêtre |
+|-----------------------------|---------------------|--------|--------|---------|
+| Taux d'échec scénario Make  | Make API History    | &gt; 2 %  | &gt; 10 % | 1 h     |
+| Latence p95 réponse         | Logs Make custom    | &gt; 8 s  | &gt; 20 s | 15 min  |
+| % budget OpenAI consommé    | OpenAI Platform     | &gt; 50 % | &gt; 80 % | par jour |
+| Volume requêtes Airtable    | Airtable API        | &gt; 4/s  | &gt; 5/s  | 1 min   |
+
+## Alertes
+| Nom               | Condition                | Sévérité | Destinataire             | Runbook |
+|-------------------|--------------------------|----------|--------------------------|---------|
+| `MakeScenarioDown`| Échec &gt; 10 % sur 1 h     | SEV-2    | UptimeRobot → @anais SMS | `runbook-chatbot-down.md` |
+| `OpenAIBudget80`  | Budget &gt; 80 % du mois    | SEV-3    | Email @anais             | `runbook-budget-openai.md` |
+| `AirtableRateLimit`| &gt; 5 req/s sustained     | SEV-3    | Email @anais             | `runbook-airtable-rate.md` |
+
+## Dashboards
+- Make : history du scénario (intégré).
+- OpenAI : platform.openai.com/usage.
+- Custom : page Notion "Bot Health" mise à jour quotidiennement
+  par un scénario Make dédié.
+
+## Politique de revue
+- Audit trimestriel des seuils.
+- Suppression de toute alerte qui ne déclenche pas une action en &lt; 3 mois.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> (page "Bot Health"), avec liens vers les dashboards externes. Liste d'alertes versionnée dans <code>docs/monitoring/</code> du repo. Pour des stacks classiques : <strong>Grafana</strong> ou <strong>Datadog</strong> directement.</p>
         </div>
       </details>
 
@@ -539,6 +913,64 @@ Lien depuis dashboards vers traces, depuis traces vers logs.
             <p>Rédige la stratégie d'observabilité pour <code>&lt;produit&gt;</code> (stack <code>&lt;…&gt;</code>). Couvre les trois piliers logs / métriques / traces : format, conventions de nommage, backend, rétention, échantillonnage, corrélation par <code>trace_id</code>.</p>
             <p>Précise ce qu'on ne logue jamais (PII, secrets). Donne les conventions de code (SDK, helpers, exemples) et les leviers de maîtrise des coûts. Style normatif (MUST / SHOULD / MAY).</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir la stratégie d'observabilité remplie</summary>
+<pre><code># Observabilité — Chatbot RH
+
+## Objectif
+Pouvoir répondre en moins de 10 min à : « pourquoi le bot a-t-il
+mal répondu à la question de @bob hier à 14h ? ».
+
+## Les trois piliers
+
+### Logs
+- Format : JSON, écrit par Make dans une table Airtable `BotLogs`.
+- Champs obligatoires :
+  - `timestamp` (ISO 8601 UTC)
+  - `level` (info / warn / error)
+  - `service` ("chatbot-rh")
+  - `trace_id` (UUID généré au début de chaque conversation)
+  - `slack_user_hash` (SHA-256 du Slack user ID, jamais le user ID brut)
+  - `question` (texte de la question)
+  - `response_short` (50 premiers caractères de la réponse)
+  - `confidence_score` (score OpenAI quand disponible)
+- Backend : Airtable (250 k records gratuits, suffisant 6 mois).
+- Rétention : 90 jours, purge automatique par scénario Make.
+
+### Métriques
+- Convention : `chatbotrh_&lt;objet&gt;_&lt;unité&gt;_total`.
+- Exemples :
+  - `chatbotrh_messages_received_total`
+  - `chatbotrh_openai_tokens_consumed_total`
+  - `chatbotrh_response_duration_ms`
+- Cardinality budget : pas de label par utilisateur (sinon explosion).
+- Backend : DB Notion "Metrics" alimentée par scénario quotidien.
+
+### Traces
+- Standard : custom (pas d'OpenTelemetry sur No-Code).
+- Mécanique : `trace_id` propagé en header dans chaque appel HTTP,
+  stocké dans chaque log lié.
+- Visualisation : vue Airtable filtrée par `trace_id`.
+
+## Corrélation
+Tous les logs partagent `trace_id`. Vue "Conversation" dans Airtable
+groupant les events par `trace_id`.
+
+## Conventions de code (No-Code)
+- Chaque scénario Make commence par un module "Set variable"
+  qui génère un `trace_id`.
+- Tous les modules suivants doivent passer ce `trace_id` au logger.
+- À ne PAS logger : email salarié, contenu RH sensible
+  (santé, salaire), payload Slack complet.
+
+## Coûts
+- Budget mensuel cible : 0 € (Airtable + Notion en plan gratuit).
+- Leviers : rétention (90 j max), pas de log sur les pings de healthcheck.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où la ranger</strong> : la <strong>doc</strong> (cette stratégie) → <code>docs/observability.md</code> dans le repo. Les <strong>logs</strong> eux-mêmes → l'outil de stockage (ici Airtable, ailleurs <strong>Grafana Loki</strong>, <strong>Datadog</strong>, <strong>Sentry</strong>). Les <strong>conventions d'usage</strong> (« comment requêter les logs ») → wiki Notion partagé avec l'équipe métier.</p>
         </div>
       </details>
 
@@ -590,6 +1022,52 @@ Revue annuelle conjointe.</code></pre>
             <p>Tu rédiges un SLA entre <code>&lt;fournisseur&gt;</code> et <code>&lt;client&gt;</code> pour le service <code>&lt;nom&gt;</code>. Engagements à cadrer : disponibilité, latence, temps de rétablissement.</p>
             <p>Inclus : périmètre précis, méthode de mesure et source de vérité, exclusions (maintenance, force majeure, faute client), grille de pénalités/crédits, procédure de réclamation, modalités de révision. Style juridico-technique, sans ambiguïté, chaque seuil chiffré.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le SLA rempli</summary>
+<pre><code># Service Level Agreement — Chatbot RH
+
+- **Parties**            : Pôle DSI ↔ Pôle RH (engagement interne)
+- **Période contractuelle** : 2026-04-01 → 2027-03-31
+- **Version**            : 1.0
+
+## Périmètre
+Scénario "chatbot-rh-main" en production.
+Hors périmètre : scénario "chatbot-rh-staging".
+
+## Engagements
+| Métrique                | Engagement | Mesure                                     | Période       |
+|-------------------------|------------|--------------------------------------------|---------------|
+| Disponibilité           | ≥ 99,0 %   | Ping toutes les 5 min via UptimeRobot      | mois calendaire |
+| Latence p95 réponse     | ≤ 15 s     | Mesurée par les logs Make                  | mois calendaire |
+| Délai de rétablissement | ≤ 4 h ouvrées (9h-18h) | Du ticket à la résolution      | par incident  |
+
+## Exclusions
+- Maintenances planifiées annoncées ≥ 48 h à l'avance dans #rh-internal.
+- Indisponibilité d'une dépendance externe (Slack, OpenAI, Airtable, Make)
+  &gt; 1 h confirmée par leur status page.
+- Indisponibilité hors heures ouvrables (RTO 4 h ne s'applique qu'en 9h-18h).
+
+## Mesure et reporting
+- Source de vérité : UptimeRobot (disponibilité) et logs Make (latence).
+- Rapport mensuel envoyé le 5 du mois à `@dsi-direction` et `@rh-direction`.
+
+## Pénalités
+Engagement interne : pas de pénalité financière.
+En cas de non-respect 2 mois consécutifs : revue d'engagement
+et possible re-priorisation des chantiers.
+
+## Procédure de réclamation
+Pôle RH : ouvrir un ticket dans le projet Notion "Tickets DSI",
+catégorie "SLA Chatbot". Réponse sous 2 jours ouvrés.
+
+## Révision
+Revue conjointe annuelle (mars), avec ajustement des seuils
+selon les usages réels.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> dans un espace partagé entre les deux parties (DSI ↔ RH, ou fournisseur ↔ client). Lien envoyé en signature des relances mensuelles. Pour un SLA commercial : ajouter une copie PDF signée annexée au contrat client.</p>
         </div>
       </details>
 
@@ -638,74 +1116,63 @@ Revue annuelle conjointe.</code></pre>
           <h4>Prompt de génération</h4>
           <blockquote>
             <p>Tu définis un SLO pour <code>&lt;service / user journey&gt;</code>. Données : trafic mensuel <code>&lt;…&gt;</code>, SLA contractuel <code>&lt;…&gt;</code>, latence cible métier <code>&lt;…&gt;</code>.</p>
-            <p>Produis : un SLI précisément défini avec sa requête de mesure, une cible chiffrée justifiée, l'error budget calculé, une politique de consommation à 3 paliers, des alertes burn-rate multi-fenêtre style Google SRE, un planning de revue. Le SLO doit être plus strict que le SLA.</p>
+            <p>Produis : un SLI précisément défini avec sa requête de mesure, une cible chiffrée justifiée, l'error budget calculé, une politique de consommation à 3 paliers, des alertes burn-rate multi-fenêtre, un planning de revue. Le SLO doit être plus strict que le SLA.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le SLO rempli</summary>
+<pre><code># SLO — Chatbot RH (réponse à un message Slack)
+
+- **Owner**       : @anais
+- **Date d'effet**: 2026-04-01
+- **Revue**       : trimestrielle
+
+## SLI (indicateur)
+- **Définition** : proportion de messages reçus dans #askrh-bot
+  qui obtiennent une réponse du bot en &lt; 10 secondes.
+- **Source**     : logs Make custom (champ `response_duration_ms`),
+  agrégé via vue Airtable.
+- **Exclusions** : messages contenant `ping` (healthcheck),
+  messages des bots eux-mêmes.
+
+## SLO (cible)
+- **Objectif**   : 99,5 % sur 28 jours glissants.
+- **Justification** : SLA contractuel à 99,0 % et 15 s,
+  on se garde 0,5 pt et 5 s de marge.
+
+## Error budget
+- Budget mensuel : 0,5 % × ~2000 messages/mois ≈ 10 messages "ratés" tolérés.
+- Politique :
+  - &lt; 5 messages ratés : développement nominal (nouveau contenu FAQ, etc.).
+  - 5 à 10 : freeze sur les modifications de scénario non urgentes.
+  - &gt; 10 : focus 100 % fiabilité (corriger ou rollback).
+
+## Alertes burn-rate
+| Vitesse | Fenêtre | Sévérité           |
+|---------|---------|--------------------|
+| 14×     | 1 h     | SMS @anais         |
+| 6×      | 6 h     | email + ticket     |
+| 1×      | 3 j     | revue hebdo équipe |
+
+## Historique
+| Période  | Atteint ?  | Commentaire |
+|----------|------------|-------------|
+| 2026-Q1  | ❌ 98,2 %  | Boucle infinie + quota OpenAI atteint |
+| 2026-Q2  | (en cours) | — |</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> espace équipe Tech, mis à jour automatiquement par un scénario Make hebdomadaire. Revue trimestrielle en réunion fiabilité. Sur stack code : <strong>Grafana</strong> (avec dashboards SLO natifs) ou <strong>Nobl9</strong> pour les SLO multi-équipes.</p>
         </div>
       </details>
 
-      <!-- 10. SRE -->
-      <details class="tpl-details" id="tpl-sre">
-        <summary>10 · SRE Handbook <span class="tpl-tag">Charte d'équipe SRE</span></summary>
-        <div class="tpl-body">
-          <p>Charte de l'équipe Site Reliability Engineering&nbsp;: mission, principes, périmètre d'engagement et pratiques. Issu des méthodes Google.</p>
-
-          <h4>Template</h4>
-<pre><code># SRE Handbook — &lt;organisation&gt;
-
-## Mission
-Rendre les systèmes plus fiables, scalables et maintenables
-en appliquant des méthodes d'ingénierie aux problèmes d'exploitation.
-
-## Principes
-1. L'erreur est systémique, pas humaine.
-2. On automatise la toil &gt; 50 % du temps SRE.
-3. Les SLO pilotent la priorisation produit/fiabilité.
-4. Tout incident SEV-1/2 → post-mortem blameless publié.
-
-## Périmètre d'engagement
-- Services on-call : &lt;liste&gt;
-- Services en advisory uniquement : &lt;liste&gt;
-
-## Pratiques
-### Oncall
-- Rotation : N personnes, semaine glissante
-- Compensation : …
-- Outillage : PagerDuty + runbooks
-
-### Toil budget
-- Max 50 % par ingénieur SRE
-- Mesuré chaque sprint
-
-### Production Readiness Review (PRR)
-Checklist obligatoire avant qu'un service entre en oncall SRE.
-
-### Game days
-Fréquence : trimestrielle. Format : injection de panne contrôlée.
-
-## Métriques d'équipe
-- MTTD, MTTR par sévérité
-- % temps en toil
-- SLO atteints / total
-
-## Ressources
-- Runbooks : `runbooks/`
-- ADR : `docs/adr/`
-- Post-mortems : `docs/postmortems/`</code></pre>
-
-          <h4>Prompt de génération</h4>
-          <blockquote>
-            <p>Tu rédiges le handbook SRE de <code>&lt;organisation&gt;</code>. Couvre : mission, principes (incluant blameless, toil &lt; 50 %, SLO comme arbitre), périmètre des services oncall vs advisory, pratiques (oncall, toil budget, PRR, game days), métriques d'équipe, liens vers runbooks/ADR/post-mortems.</p>
-            <p>Inspiration : SRE Book de Google, mais adapté à une équipe de <code>&lt;taille&gt;</code>. Ton normatif, exemples concrets, pas de jargon non défini.</p>
-          </blockquote>
-        </div>
-      </details>
     </section>
 
     <!-- ============================================================ -->
     <!-- GROUPE 3 — DIÁTAXIS                                          -->
     <!-- ============================================================ -->
     <section class="container tpl-section" id="tpl-diataxis">
-      <h2 class="tpl-group-title">11 · Diátaxis — 4 types de doc, 4 prompts</h2>
+      <h2 class="tpl-group-title">10 · Diátaxis — 4 types de doc, 4 prompts</h2>
       <p style="max-width: 70ch;">
         Le framework <abbr title="Framework de documentation créé par Daniele Procida">Diátaxis</abbr> sépare la doc en 4 types selon leur objectif. Chaque type a sa logique propre — les mélanger dans un même document est la première cause de doc inutile.
       </p>
@@ -729,9 +1196,9 @@ Fréquence : trimestrielle. Format : injection de panne contrôlée.
         </div>
       </div>
 
-      <!-- 11a. Tutoriel -->
+      <!-- 10a. Tutoriel -->
       <details class="tpl-details" id="tpl-diataxis-tuto" style="margin-top: var(--sp-8);">
-        <summary>11a · Tutoriel <span class="tpl-tag">Apprendre en faisant</span></summary>
+        <summary>10a · Tutoriel <span class="tpl-tag">Apprendre en faisant</span></summary>
         <div class="tpl-body">
           <h4>Template</h4>
 <pre><code># Tutoriel — &lt;ce que l'apprenant saura faire à la fin&gt;
@@ -763,12 +1230,57 @@ Lien vers les guides « comment faire X ».</code></pre>
             <p>Rédige un <strong>tutoriel Diátaxis</strong> pour apprendre <code>&lt;compétence&gt;</code>. Public : débutant complet sur <code>&lt;sujet&gt;</code>.</p>
             <p>Règles strictes : (1) main dans la main, l'apprenant tape exactement ce qui est écrit ; (2) chaque étape produit un résultat observable, mentionné explicitement ; (3) pas d'options, pas d'alternatives, un seul chemin qui marche ; (4) zéro explication conceptuelle ; (5) finir par un récap concret. Ton encourageant, deuxième personne (« vous »).</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le tutoriel rempli</summary>
+<pre><code># Tutoriel — Ajoute ta première FAQ au Chatbot RH en 10 minutes
+
+## Ce que vous allez construire
+Une nouvelle entrée FAQ « Comment poser une RTT ? » reconnue
+et répondue par le bot dans Slack.
+
+## Prérequis
+- Compte Airtable invité dans la base "RH-Knowledge"
+- Accès au canal #askrh-bot
+
+## Étape 1 — Ouvrir la table FAQ
+Allez sur airtable.com → Base "RH-Knowledge" → table "FAQ".
+
+Vous devriez voir : une liste de questions/réponses existantes.
+
+## Étape 2 — Ajouter une ligne
+Cliquez sur le `+` en bas de la table.
+
+Remplissez :
+- **Question** : Comment poser une RTT ?
+- **Catégorie** : Congés
+- **Réponse**  : Tu poses ta RTT directement dans Lucca,
+  au moins 7 jours à l'avance.
+- **Mots-clés** : RTT, repos compensateur, jour off
+
+## Étape 3 — Tester dans Slack
+Dans #askrh-bot, écrivez : « Comment je pose une RTT ? »
+
+Vous devriez voir : le bot répond en 5-10 secondes
+avec votre nouvelle réponse.
+
+## Vous y êtes arrivé
+Vous savez maintenant ajouter du contenu au bot.
+Le bot indexe automatiquement les nouvelles entrées toutes les 15 min.
+
+## Pour aller plus loin
+- Guide pratique : « Comment corriger une mauvaise réponse du bot »
+- Guide pratique : « Comment ajouter une nouvelle catégorie »</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> (workspace partagé RH), section "Onboarding RH". Format wiki, accessible aux nouveaux arrivants RH. Si la doc est publique : <strong>GitBook</strong> ou <strong>Mintlify</strong>.</p>
         </div>
       </details>
 
-      <!-- 11b. Guide -->
+      <!-- 10b. Guide -->
       <details class="tpl-details" id="tpl-diataxis-guide">
-        <summary>11b · Guide pratique (how-to) <span class="tpl-tag">Résoudre un problème précis</span></summary>
+        <summary>10b · Guide pratique (how-to) <span class="tpl-tag">Résoudre un problème précis</span></summary>
         <div class="tpl-body">
           <h4>Template</h4>
 <pre><code># Comment &lt;accomplir une tâche précise&gt;
@@ -800,12 +1312,54 @@ Comment savoir que c'est réussi.
             <p>Rédige un <strong>guide pratique Diátaxis</strong> : « Comment <code>&lt;tâche précise&gt;</code> ». Public : utilisateur qui a déjà les bases et fait face à ce problème en situation réelle.</p>
             <p>Règles : (1) orienté tâche, pas apprentissage ; (2) suppose les bases, ne ré-explique pas ; (3) inclut les variantes selon le contexte ; (4) ne décrit que les étapes nécessaires à cette tâche ; (5) ne fait pas la promotion d'une approche, ne digresse pas. Style impératif, court.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir le guide rempli</summary>
+<pre><code># Comment corriger une mauvaise réponse du Chatbot RH
+
+## Quand utiliser ce guide
+Un salarié signale (DM, canal) que le bot a donné une info fausse
+ou périmée à une question RH.
+
+## Prérequis
+- Accès Airtable à la base "RH-Knowledge"
+- L'identifiant `trace_id` de la conversation
+  (visible dans les logs Make si tu n'as que le timestamp Slack)
+
+## Procédure
+1. Récupérer le `trace_id` :
+   - Soit l'utilisateur l'a copié (peu probable)
+   - Soit dans Airtable, table `BotLogs`, filtrer par
+     `slack_user_hash` et heure
+2. Ouvrir le log → identifier l'entrée FAQ source utilisée par le bot.
+3. Aller sur la FAQ Airtable concernée → corriger le champ "Réponse".
+4. Cocher la case "Vérifié" + saisir la date du jour.
+5. Reposer la même question dans #askrh-bot pour vérifier.
+
+## Variantes
+- Si l'erreur vient du bot qui a inventé (hallucination) sans FAQ source :
+  ajouter une FAQ explicite sur le sujet (cf. tutoriel
+  "Ajoute ta première FAQ").
+- Si l'erreur est récurrente (même question, plusieurs erreurs) :
+  ouvrir une issue GitHub pour ajuster le prompt système du scénario Make.
+
+## Vérification
+La réponse corrigée apparaît dans Slack à la prochaine question.
+Mention "Vérifié le YYYY-MM-DD" visible dans le footer du message.
+
+## Voir aussi
+- Tutoriel : Ajouter ta première FAQ
+- Référence : Schéma de la base Airtable "RH-Knowledge"</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où le ranger</strong> : <strong>Notion</strong> (espace RH), section "Maintenance du bot". Quick link en bookmark de l'équipe RH. Pour une bibliothèque de guides plus large : <strong>GitBook</strong> ou <strong>Docusaurus</strong> avec recherche full-text.</p>
         </div>
       </details>
 
-      <!-- 11c. Explication -->
+      <!-- 10c. Explication -->
       <details class="tpl-details" id="tpl-diataxis-explication">
-        <summary>11c · Explication <span class="tpl-tag">Comprendre le pourquoi</span></summary>
+        <summary>10c · Explication <span class="tpl-tag">Comprendre le pourquoi</span></summary>
         <div class="tpl-body">
           <h4>Template</h4>
 <pre><code># &lt;Concept&gt; — explication
@@ -835,12 +1389,60 @@ Lectures, papers, ADR liés.</code></pre>
             <p>Rédige une <strong>explication Diátaxis</strong> sur <code>&lt;concept&gt;</code>. Public : praticien qui sait s'en servir mais veut comprendre <em>pourquoi</em>.</p>
             <p>Règles : (1) orienté compréhension, pas action — aucune procédure pas-à-pas ; (2) éclaire les choix, le contexte, les compromis ; (3) compare aux alternatives et dit pourquoi on a choisi celle-ci ; (4) nomme les limites et idées fausses ; (5) peut être lu sans terminal ouvert. Ton réflexif, exemples illustratifs autorisés.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir l'explication remplie</summary>
+<pre><code># Pourquoi on a choisi un bot Slack plutôt qu'une interface web
+
+## De quoi parle-t-on
+Le Chatbot RH est exposé via un bot Slack et non via une page
+web dédiée (style "rh.acme.com"). Cette page explique pourquoi.
+
+## Pourquoi ça existe
+Au démarrage du projet, l'équipe RH voulait au départ un site web
+"selfservice RH". On a creusé : 87 % des questions RH étaient déjà
+posées en direct dans Slack (DM aux RHs ou canal #general).
+Mettre l'outil dans Slack = aller où sont les utilisateurs.
+
+## Comment ça fonctionne
+- Le salarié pose sa question dans Slack comme il l'aurait fait à un humain.
+- Make capte le message via Event Subscription, l'envoie à OpenAI
+  avec le contexte FAQ.
+- La réponse arrive dans le même fil Slack en 5-10 sec.
+- Aucun "déplacement" cognitif : pas de nouvel onglet, pas de login,
+  pas de "où je clique".
+
+## Compromis et alternatives
+
+### Alternative A — Site web "rh.acme.com"
+Pourquoi on ne l'a pas choisi : friction d'accès (login SSO supplémentaire),
+oubli de l'outil dans le quotidien, bouclage analytics complexe.
+
+### Alternative B — Intégration Notion (chatbot in-page)
+Pourquoi on ne l'a pas choisi : suppose que l'utilisateur ouvre Notion,
+ce qui n'est pas son réflexe pour une question RH.
+
+## Limites
+- Slack down → bot down. C'est un risque accepté car Slack est déjà
+  critique pour l'organisation.
+- Pas de réponse "longue forme" (Slack tronque à 4000 caractères) :
+  pour les sujets complexes, on poste un lien vers Notion.
+- Les nouveaux arrivants doivent connaître l'existence du canal #askrh-bot
+  (mention dans l'onboarding).
+
+## Pour creuser
+- ADR-0001 : Choix du canal d'interaction (Slack vs web vs Notion)
+- Étude usage interne 2026-Q1 : où sont posées les questions RH ?</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où la ranger</strong> : <strong>Notion</strong> (espace public salariés), section "Comprendre nos outils". Lien depuis l'onboarding et la page "FAQ Outils". Si externe : section dédiée du site documentaire (<strong>Docusaurus</strong> a un type "explanation" natif).</p>
         </div>
       </details>
 
-      <!-- 11d. Référence -->
+      <!-- 10d. Référence -->
       <details class="tpl-details" id="tpl-diataxis-reference">
-        <summary>11d · Référence <span class="tpl-tag">Chercher une info précise</span></summary>
+        <summary>10d · Référence <span class="tpl-tag">Chercher une info précise</span></summary>
         <div class="tpl-body">
           <h4>Template</h4>
 <pre><code># Référence — &lt;module / API / commande&gt;
@@ -880,6 +1482,64 @@ Symboles liés.</code></pre>
             <p>Rédige une <strong>référence Diátaxis</strong> pour <code>&lt;API / commande / module&gt;</code>. Public : développeur qui sait ce qu'il cherche et veut une réponse rapide.</p>
             <p>Règles : (1) descriptif neutre, pas pédagogique ; (2) exhaustif sur les paramètres, types, valeurs par défaut, retours, codes d'erreur ; (3) un exemple minimal par entrée, sans narration ; (4) structure plate et scannable, tableaux privilégiés ; (5) zéro opinion, zéro tutoriel embarqué. Style télégraphique, présent.</p>
           </blockquote>
+
+          <h4>💡 Exemple — Chatbot RH</h4>
+          <details class="tpl-example">
+            <summary>Voir la référence remplie</summary>
+<pre><code># Référence — Webhook du scénario Make "chatbot-rh-main"
+
+## Synopsis
+```
+POST https://hook.eu1.make.com/abc123def456
+Content-Type: application/json
+```
+
+## Description
+Endpoint principal du scénario Make qui orchestre la réponse du bot.
+Appelé par le webhook Slack à chaque message reçu dans #askrh-bot.
+
+## Paramètres (body JSON)
+| Nom              | Type    | Requis | Défaut | Description |
+|------------------|---------|--------|--------|-------------|
+| `event.text`     | string  | oui    | —      | Texte du message Slack |
+| `event.user`     | string  | oui    | —      | Slack user ID (U0123…) |
+| `event.channel`  | string  | oui    | —      | Slack channel ID (C0123…) |
+| `event.ts`       | string  | oui    | —      | Timestamp Slack du message |
+| `event.thread_ts`| string  | non    | `null` | Si réponse dans un thread |
+| `trace_id`       | string  | non    | UUID auto | UUID propagé pour observabilité |
+
+## Retour (synchronous response)
+```json
+{
+  "ok": true,
+  "received_at": "2026-04-12T14:23:01Z",
+  "trace_id": "550e8400-e29b-41d4-a716-446655440000"
+}
+```
+Le bot répond ensuite dans Slack de manière asynchrone (3-10 sec).
+
+## Erreurs
+| Code  | Cause                                                |
+|-------|------------------------------------------------------|
+| 400   | Payload JSON invalide ou champ obligatoire manquant  |
+| 401   | Header `X-Slack-Signature` invalide                  |
+| 429   | Rate limit dépassé (max 60 req/min par user)         |
+| 500   | Erreur interne Make (vérifier history du scénario)   |
+
+## Exemple minimal
+```bash
+curl -X POST https://hook.eu1.make.com/abc123def456 \
+  -H "Content-Type: application/json" \
+  -d '{"event":{"text":"Comment je pose une RTT ?","user":"U042","channel":"C001","ts":"1712925781.123"}}'
+```
+
+## Voir aussi
+- `slack-manifest.yml` — manifest de l'app Slack qui appelle ce webhook.
+- ADR-0003 — choix de Make plutôt que n8n.
+- Runbook "Chatbot down" — diagnostic en cas d'erreur 500.</code></pre>
+          </details>
+
+          <p class="tpl-tool"><strong>📦 Où la ranger</strong> : <code>docs/reference/api.md</code> du repo. Pour une API publique : <strong>OpenAPI/Swagger</strong> (génère une doc interactive), <strong>Mintlify</strong> ou <strong>ReadMe.com</strong>. Pour une API No-Code interne : Notion suffit.</p>
         </div>
       </details>
     </section>
