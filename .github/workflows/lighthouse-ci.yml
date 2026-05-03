@@ -9,8 +9,12 @@ on:
 
 jobs:
   lighthouse:
-    name: Audit Lighthouse
+    name: Audit Lighthouse (${{ matrix.preset }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [desktop, mobile]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,7 +27,7 @@ jobs:
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli@0.15.x
 
-      - name: Run Lighthouse CI
-        run: lhci autorun
+      - name: Run Lighthouse CI (${{ matrix.preset }})
+        run: lhci autorun --config=.lighthouserc.${{ matrix.preset }}.json
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

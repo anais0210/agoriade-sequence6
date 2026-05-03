@@ -180,21 +180,26 @@ Le fichier `sequences-global.csv` contient toutes les séquences. Si Modulo supp
 
 ## 🚦 Qualité automatique (Lighthouse CI)
 
-Un audit **Lighthouse CI** tourne à chaque `push` et chaque PR sur `main` (workflow GitHub Actions `.github/workflows/lighthouse-ci.yml`). La configuration est dans [`.lighthouserc.json`](.lighthouserc.json).
+Un audit **Lighthouse CI** tourne à chaque `push` et chaque PR sur `main`, **en parallèle sur desktop et mobile** (workflow GitHub Actions `.github/workflows/lighthouse-ci.yml`, configs [`.lighthouserc.desktop.json`](.lighthouserc.desktop.json) et [`.lighthouserc.mobile.json`](.lighthouserc.mobile.json)).
 
 Pages auditées : home, les 4 modules, et trois pages livrables (templates-doc, checklist-rgpd, audit-a11y).
 
 Seuils stricts (le CI échoue en dessous)&nbsp;:
-- **Accessibilité** : 100&nbsp;/ 100 (cohérent avec l'engagement WCAG 2.1 AA / contrastes AAA)
-- **Performance** : ≥ 90&nbsp;/ 100
-- **Best practices** : ≥ 95&nbsp;/ 100
-- **SEO** : ≥ 90&nbsp;/ 100 (warning uniquement, pas bloquant)
+
+| Catégorie | Desktop | Mobile |
+|---|---|---|
+| Accessibilité | 100 / 100 | 100 / 100 |
+| Performance | ≥ 90 / 100 | ≥ 70 / 100 |
+| Best practices | ≥ 95 / 100 | ≥ 95 / 100 |
+| SEO | désactivé (`noindex` assumé) | désactivé |
+
+Mobile a un seuil performance plus bas car le preset Lighthouse simule un Moto G Power sur 4G (CPU et réseau bridés). En plus, la configuration mobile active l'audit `tap-targets` (taille minimale des cibles tactiles), inactif en desktop.
 
 Pour lancer l'audit en local&nbsp;:
 
 ```bash
 npm install -g @lhci/cli@0.15.x
-lhci autorun
+lhci autorun --config=.lighthouserc.desktop.json   # ou .mobile.json
 ```
 
 Les rapports HTML sont uploadés vers `temporary-public-storage` (Google) et le lien apparaît dans les logs du run.
