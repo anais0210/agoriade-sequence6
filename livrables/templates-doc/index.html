@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates de documentation, Livrable Module 3, Agoriade</title>
+  <meta name="description" content="11 templates de documentation prêts à l'emploi (README, ADR, Runbook, Post-mortem, Changelog, Monitoring, Observabilité, SLA, SLO, SRE, Diátaxis), avec un prompt de génération pour chacun. Livrable Module 3 Agoriade.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+  <style>
+    /* Ajustements locaux pour rester compact */
+    .tpl-section { padding-top: var(--sp-8); }
+    .tpl-details {
+      border: 1px solid var(--c-grey-200);
+      border-radius: var(--r-md);
+      padding: var(--sp-3) var(--sp-4);
+      margin-bottom: var(--sp-3);
+      background: var(--c-white);
+    }
+    .tpl-details[open] {
+      border-color: var(--c-black);
+      background: var(--c-grey-100);
+    }
+    .tpl-details > summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: var(--fs-sm);
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-2);
+    }
+    .tpl-details > summary::-webkit-details-marker { display: none; }
+    .tpl-details > summary::before {
+      content: "▸";
+      display: inline-block;
+      font-size: 0.85em;
+      transition: transform var(--transition);
+    }
+    .tpl-details[open] > summary::before { transform: rotate(90deg); }
+    .tpl-details > summary .tpl-tag {
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      color: var(--c-grey-700);
+      margin-left: auto;
+    }
+    .tpl-body { padding-top: var(--sp-3); }
+    .tpl-body h4 {
+      font-size: var(--fs-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: var(--sp-4) 0 var(--sp-2);
+    }
+    .tpl-body h4:first-child { margin-top: 0; }
+    .tpl-body pre {
+      font-size: 0.82em;
+      line-height: 1.5;
+      max-height: 420px;
+      overflow: auto;
+    }
+    .tpl-body blockquote {
+      font-size: var(--fs-sm);
+      margin: 0;
+    }
+    .tpl-body blockquote p:first-child { margin-top: 0; }
+    .tpl-toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--sp-2);
+      list-style: none;
+      padding: 0;
+      margin: var(--sp-6) 0 0;
+    }
+    .tpl-toc li { margin: 0; }
+    .tpl-toc a {
+      display: block;
+      padding: var(--sp-2) var(--sp-3);
+      border: 1px solid var(--c-grey-200);
+      border-radius: var(--r-sm);
+      font-size: var(--fs-xs);
+      text-decoration: none;
+      color: var(--c-grey-900);
+      background: var(--c-white);
+    }
+    .tpl-toc a:hover {
+      background: var(--c-yellow);
+      border-color: var(--c-black);
+    }
+    .tpl-group-title {
+      margin-top: var(--sp-12);
+      padding-bottom: var(--sp-2);
+      border-bottom: 2px solid var(--c-black);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span><span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+          <li><a href="/dj4-simulation/">Consolidation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="container" style="padding-top: var(--sp-8);">
+      <nav aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj3-documentation/">Module 3 Documentation</a></li>
+          <li aria-current="page">Templates de documentation</li>
+        </ol>
+      </nav>
+
+      <span class="badge">📚 Livrable Module 3</span>
+      <h1>11 templates de documentation</h1>
+      <p style="max-width: 70ch;">
+        Pour chaque grand type de doc utile en projet logiciel, une <strong>structure prête à copier-coller</strong> et un <strong>prompt de génération</strong> à utiliser avec ton LLM préféré. Replie tout par défaut, déplie ce qui te sert.
+      </p>
+
+      <div class="callout callout--yellow-soft" style="margin-top: var(--sp-4);">
+        <span class="callout-label">🧭 Comment l'utiliser</span>
+        <p class="mb-0">Le <strong>template</strong>, c'est la trame que tu remplis à la main. Le <strong>prompt</strong>, c'est ce que tu passes à un LLM avec tes infos pour obtenir une première version. Dans les deux cas, tu finis par relire et ajuster, sinon ça reste de la doc générique.</p>
+      </div>
+
+      <ul class="tpl-toc" aria-label="Sommaire des templates">
+        <li><a href="#tpl-readme">1 · README</a></li>
+        <li><a href="#tpl-adr">2 · ADR</a></li>
+        <li><a href="#tpl-runbook">3 · Runbook</a></li>
+        <li><a href="#tpl-postmortem">4 · Post-mortem</a></li>
+        <li><a href="#tpl-changelog">5 · Changelog</a></li>
+        <li><a href="#tpl-monitoring">6 · Plan de monitoring</a></li>
+        <li><a href="#tpl-observability">7 · Observabilité</a></li>
+        <li><a href="#tpl-sla">8 · SLA</a></li>
+        <li><a href="#tpl-slo">9 · SLO</a></li>
+        <li><a href="#tpl-sre">10 · SRE Handbook</a></li>
+        <li><a href="#tpl-diataxis">11 · Diátaxis (×4)</a></li>
+      </ul>
+
+      <div class="btn-group" role="group" aria-label="Actions" style="margin-top: var(--sp-6);">
+        <button type="button" class="btn btn--secondary" onclick="document.querySelectorAll('.tpl-details').forEach(d=>d.open=true)">
+          <span aria-hidden="true">▾</span> Tout déplier
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="document.querySelectorAll('.tpl-details').forEach(d=>d.open=false)">
+          <span aria-hidden="true">▸</span> Tout replier
+        </button>
+        <button type="button" class="btn btn--secondary" onclick="window.print()">
+          <span aria-hidden="true">🖨️</span> Imprimer / PDF
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- GROUPE 1 — LES INDISPENSABLES PROJET                        -->
+    <!-- ============================================================ -->
+    <section class="container tpl-section">
+      <h2 class="tpl-group-title">Les indispensables projet</h2>
+
+      <!-- 1. README -->
+      <details class="tpl-details" id="tpl-readme">
+        <summary>1 · README <span class="tpl-tag">Point d'entrée du dépôt</span></summary>
+        <div class="tpl-body">
+          <p>Fichier (souvent Markdown) à la racine d'un projet qui explique <em>ce qu'il fait, comment l'installer, comment l'utiliser</em>. C'est la première chose que lit quelqu'un qui arrive sur le repo.</p>
+
+          <h4>Template</h4>
+<pre><code># Nom du projet
+
+&gt; Phrase d'accroche : ce que fait le projet en une ligne.
+
+## Contexte
+Quel problème résout-il ? Pour qui ?
+
+## Prérequis
+- Versions de runtime / OS
+- Comptes ou clés nécessaires
+
+## Installation
+```bash
+git clone &lt;repo&gt;
+cd &lt;repo&gt;
+&lt;commande d'install&gt;
+```
+
+## Utilisation rapide
+```bash
+&lt;commande minimale qui marche&gt;
+```
+
+## Configuration
+| Variable        | Rôle | Défaut |
+|-----------------|------|--------|
+| `EXAMPLE_KEY`   | …    | …      |
+
+## Structure du dépôt
+- `src/`   — code applicatif
+- `docs/`  — documentation détaillée
+- `tests/` — tests automatisés
+
+## Documentation complète
+Liens vers : tutoriels, guides, ADR, runbooks.
+
+## Contribuer
+Voir `CONTRIBUTING.md`. Branche, tests, format de commit.
+
+## Licence
+&lt;SPDX-Identifier&gt;
+
+## Mainteneurs
+- @nom — rôle</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu es technical writer. Génère un README pour le projet <code>&lt;nom&gt;</code> dont l'objectif est <code>&lt;objectif&gt;</code>. Stack : <code>&lt;langages/frameworks&gt;</code>. Public cible : <code>&lt;dev / ops / utilisateur final&gt;</code>.</p>
+            <p>Inclus : pitch en une ligne, prérequis, installation, exemple d'usage minimal qui marche, table des variables d'environnement, structure du dépôt, liens vers la doc, mainteneurs. Style direct, impératif, pas de superlatifs. Markdown.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 2. ADR -->
+      <details class="tpl-details" id="tpl-adr">
+        <summary>2 · ADR <span class="tpl-tag">Architecture Decision Record</span></summary>
+        <div class="tpl-body">
+          <p>Fiche courte qui trace une décision structurante (choix d'outil, refactor, arbitrage). On date, on n'efface pas&nbsp;: si la décision change, on en ajoute une nouvelle qui annule la précédente.</p>
+
+          <h4>Template</h4>
+<pre><code># ADR-NNN — &lt;titre court de la décision&gt;
+
+- **Date**     : YYYY-MM-DD
+- **Statut**   : Proposé | Accepté | Remplacé par ADR-XXX | Déprécié
+- **Auteurs**  : @…
+- **Décideurs**: @…
+
+## Contexte
+Quelle situation a déclenché la décision ?
+Quelles contraintes (techniques, business, équipe) ?
+
+## Problème
+Quelle question structurante doit être tranchée ?
+
+## Options étudiées
+### Option 1 — &lt;nom&gt;
+- ➕ Avantages
+- ➖ Inconvénients
+- 💰 Coût / effort
+
+### Option 2 — &lt;nom&gt;
+…
+
+### Option 3 — Ne rien faire
+…
+
+## Décision
+On retient **Option N** parce que …
+
+## Conséquences
+- Positives : …
+- Négatives / dette acceptée : …
+- Actions de suivi : …
+
+## Références
+Liens vers issues, RFC, benchmarks, autres ADR.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu rédiges une ADR sur <code>&lt;décision&gt;</code>. Contexte fourni : <code>&lt;contraintes, équipe, stack&gt;</code>. Options envisagées : <code>&lt;liste&gt;</code>. Décision retenue : <code>&lt;option&gt;</code>.</p>
+            <p>Format Michael Nygard. Date du jour. Liste explicitement avantages/inconvénients par option, y compris « ne rien faire ». Sépare clairement décision et conséquences (positives + dette acceptée). Pas de langage promotionnel, ton factuel.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 3. Runbook -->
+      <details class="tpl-details" id="tpl-runbook">
+        <summary>3 · Runbook <span class="tpl-tag">Procédure d'incident pas-à-pas</span></summary>
+        <div class="tpl-body">
+          <p>Procédure d'intervention pas-à-pas pour un type d'incident donné. <strong>Doit être utilisable sous stress, à 3h du matin.</strong> Pas de « ça dépend ».</p>
+
+          <h4>Template</h4>
+<pre><code># Runbook — &lt;type d'incident&gt;
+
+- **Sévérité**    : SEV-1 / SEV-2 / SEV-3
+- **Service**     : &lt;nom&gt;
+- **Owner**       : équipe @…
+- **Dernière vérif** : YYYY-MM-DD
+
+## Symptômes
+Comment l'incident se manifeste : alerte, log type, métrique.
+
+## Pré-requis d'accès
+- Accès `&lt;console / VPN / cluster&gt;`
+- Rôles IAM : `&lt;…&gt;`
+- Secrets dans : `&lt;vault path&gt;`
+
+## Diagnostic — checklist 5 min
+1. Vérifier `&lt;dashboard&gt;` → seuil attendu : …
+2. Logs récents : `&lt;commande / requête&gt;`
+3. Statut dépendances aval : `&lt;liste&gt;`
+
+## Actions correctives
+### Cas A — &lt;hypothèse 1&gt;
+```bash
+&lt;commande exacte, copiable&gt;
+```
+Effet attendu : …
+Effet de bord : …
+
+### Cas B — &lt;hypothèse 2&gt;
+…
+
+## Si rien ne marche
+- Escalade : @oncall-N+1, canal `#incident`
+- Rollback : `&lt;procédure / commande&gt;`
+- Communication : statut page, template message
+
+## Post-incident
+- Ouvrir un post-mortem si SEV-1/2
+- Mettre à jour ce runbook si nouveau cas</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu écris un runbook pour <code>&lt;type d'incident&gt;</code> sur le service <code>&lt;nom&gt;</code>. Public : oncall réveillé à 3h.</p>
+            <p>Contraintes : chaque commande copiable telle quelle, effet attendu explicité, pas de « il suffit de ». Inclus : symptômes observables, prérequis d'accès, diagnostic en 5 min max, actions correctives par hypothèse, condition d'escalade, procédure de rollback. Style impératif, phrases courtes, zéro ambiguïté.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 4. Post-mortem -->
+      <details class="tpl-details" id="tpl-postmortem">
+        <summary>4 · Post-mortem <span class="tpl-tag">Analyse à froid d'un incident</span></summary>
+        <div class="tpl-body">
+          <p>Analyse <em>blameless</em> après un incident majeur&nbsp;: ce qui s'est passé, cause racine, ce qu'on améliore. <strong>On vise les systèmes et processus, pas les personnes.</strong></p>
+
+          <h4>Template</h4>
+<pre><code># Post-mortem — &lt;incident&gt; du YYYY-MM-DD
+
+- **Statut**     : Draft | Revu | Publié
+- **Sévérité**   : SEV-N
+- **Durée d'impact** : HH:MM → HH:MM (UTC) — XX min
+- **Auteur**     : @…
+
+## Résumé exécutif
+3 lignes max : ce qui s'est passé, l'impact, ce qu'on change.
+
+## Impact
+- Utilisateurs touchés : &lt;volume&gt;
+- Fonctionnalités dégradées : …
+- Pertes (revenus, SLA, données) : …
+
+## Timeline (UTC)
+| Heure | Événement |
+|-------|-----------|
+| HH:MM | Déploiement de … |
+| HH:MM | Première alerte sur … |
+| HH:MM | Identification cause racine |
+| HH:MM | Mitigation appliquée |
+| HH:MM | Service rétabli |
+
+## Cause racine
+Analyse technique. Aller au-delà des « 5 why » si nécessaire.
+
+## Ce qui a bien fonctionné
+- …
+
+## Ce qui a moins bien fonctionné
+- …
+
+## Facteurs aggravants
+Pourquoi l'incident a duré / s'est propagé.
+
+## Actions correctives
+| # | Action | Type | Owner | Échéance |
+|---|--------|------|-------|----------|
+| 1 | … | Préventif/Détection/Mitigation | @… | YYYY-MM-DD |
+
+## Leçons apprises
+Ce qui change durablement dans nos systèmes/process.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige un post-mortem blameless pour l'incident <code>&lt;résumé&gt;</code> survenu le <code>&lt;date&gt;</code>. Données fournies : timeline brute, alertes déclenchées, mitigation.</p>
+            <p>Règles : aucun nom associé à une faute, focus systèmes et processus, distinguer cause racine et facteurs aggravants. Inclus : résumé exécutif 3 lignes, impact chiffré, timeline UTC, ce qui a marché, ce qui n'a pas marché, actions correctives avec owner et échéance. Ton neutre, factuel.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 5. Changelog -->
+      <details class="tpl-details" id="tpl-changelog">
+        <summary>5 · Changelog <span class="tpl-tag">Journal des versions</span></summary>
+        <div class="tpl-body">
+          <p>Journal chronologique des modifications. Format <em>Keep a Changelog</em> + versions <em>SemVer</em>. Une ligne par changement, point de vue utilisateur.</p>
+
+          <h4>Template</h4>
+<pre><code># Changelog
+
+Toutes les modifications notables figurent ici.
+Format : Keep a Changelog, versions SemVer.
+
+## [Non publié]
+### Ajouté
+- …
+
+## [1.4.0] — 2026-04-15
+### Ajouté
+- Nouveau endpoint `/v2/users` paginé.
+### Modifié
+- Le champ `created_at` retourne désormais l'ISO 8601 UTC.
+### Déprécié
+- `/v1/users` — sera retiré en 2.0.0.
+### Retiré
+- Support Node 16.
+### Corrigé
+- Crash sur upload &gt; 10 Mo (#412).
+### Sécurité
+- CVE-2026-XXXX corrigée.
+
+## [1.3.2] — 2026-03-01
+### Corrigé
+- …</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>À partir des commits/PR fournis <code>&lt;liste&gt;</code>, génère une entrée de changelog pour la version <code>&lt;X.Y.Z&gt;</code> datée <code>&lt;YYYY-MM-DD&gt;</code>.</p>
+            <p>Format Keep a Changelog avec sections : Ajouté, Modifié, Déprécié, Retiré, Corrigé, Sécurité (n'inclure que celles non vides). Une ligne par changement, point de vue utilisateur (pas « refacto interne »). Mentionne les breaking changes en haut. Ignore les commits de pure maintenance interne.</p>
+          </blockquote>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- GROUPE 2 — FIABILITÉ ET SRE                                 -->
+    <!-- ============================================================ -->
+    <section class="container tpl-section">
+      <h2 class="tpl-group-title">Fiabilité &amp; SRE</h2>
+
+      <!-- 6. Monitoring -->
+      <details class="tpl-details" id="tpl-monitoring">
+        <summary>6 · Plan de monitoring <span class="tpl-tag">« Est-ce que ça va&nbsp;? »</span></summary>
+        <div class="tpl-body">
+          <p>Plan des indicateurs surveillés en temps réel et des alertes associées. Répond à <em>« est-ce que le système va bien là, maintenant ? »</em>.</p>
+
+          <h4>Template</h4>
+<pre><code># Plan de monitoring — &lt;service&gt;
+
+- **Owner**      : équipe @…
+- **Criticité**  : tier 1 / 2 / 3
+- **Mis à jour** : YYYY-MM-DD
+
+## Périmètre
+Quel(s) service(s), quelle(s) dépendance(s) sont surveillés.
+
+## Indicateurs (RED ou USE)
+| Indicateur            | Source                | Warn   | Crit  | Fenêtre |
+|-----------------------|-----------------------|--------|-------|---------|
+| Taux d'erreur HTTP 5xx| `http_requests_total` | &gt; 1 % | &gt; 5 %| 5 min   |
+| Latence p95           | …                     | &gt; 300 ms | &gt; 1 s | 5 min |
+| Saturation CPU        | …                     | &gt; 70 %| &gt; 90%| 10 min  |
+
+## Alertes
+| Nom              | Condition | Sévérité | Destinataire | Runbook |
+|------------------|-----------|----------|--------------|---------|
+| `HighErrorRate`  | …         | SEV-2    | PagerDuty    | runbook-errors.md |
+
+## Dashboards
+- URL principale : …
+- Vues : santé globale, par endpoint, par dépendance.
+
+## Politique de revue
+- Audit trimestriel des seuils
+- Suppression des alertes &lt; 1 déclenchement actionnable / mois</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu rédiges le plan de monitoring du service <code>&lt;nom&gt;</code> (<code>&lt;rôle métier&gt;</code>). Stack télémétrie : <code>&lt;Prometheus, Datadog, …&gt;</code>.</p>
+            <p>Pour chaque endpoint/composant critique, propose les indicateurs RED (Rate, Errors, Duration) ou USE (Utilization, Saturation, Errors), avec seuils warn/crit justifiés et fenêtre d'évaluation. Pour chaque alerte : sévérité, destinataire, runbook lié. Exclus toute alerte non actionnable.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 7. Observability -->
+      <details class="tpl-details" id="tpl-observability">
+        <summary>7 · Stratégie d'observabilité <span class="tpl-tag">« Pourquoi ça se comporte comme ça&nbsp;? »</span></summary>
+        <div class="tpl-body">
+          <p>Capacité à comprendre <em>pourquoi</em> le système se comporte comme il se comporte, à partir de logs, métriques et traces. Va au-delà du monitoring.</p>
+
+          <h4>Template</h4>
+<pre><code># Observabilité — &lt;produit/plateforme&gt;
+
+## Objectif
+Pouvoir répondre à n'importe quelle question sur le comportement
+du système en production en moins de N minutes.
+
+## Les trois piliers
+### Logs
+- Format : JSON structuré
+- Champs obligatoires : `timestamp`, `level`, `service`,
+  `trace_id`, `user_id` (hashé)
+- Backend : &lt;Loki / ELK / …&gt;
+- Rétention : &lt;durée&gt;
+
+### Métriques
+- Convention : `&lt;service&gt;_&lt;objet&gt;_&lt;unité&gt;_total`
+- Cardinality budget : max N labels
+- Backend : &lt;Prometheus / …&gt;
+
+### Traces
+- Standard : OpenTelemetry
+- Échantillonnage : tail-based, 100 % sur erreurs, 5 % sinon
+- Backend : &lt;Tempo / Jaeger / …&gt;
+
+## Corrélation
+Tout log/métrique/trace partage `trace_id`.
+Lien depuis dashboards vers traces, depuis traces vers logs.
+
+## Conventions de code
+- SDK utilisé : …
+- Helpers : `lib/observability/*`
+- À ne PAS logger : PII brutes, secrets, payloads complets
+
+## Coûts
+- Budget mensuel cible : …
+- Leviers : rétention, échantillonnage, cardinality.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige la stratégie d'observabilité pour <code>&lt;produit&gt;</code> (stack <code>&lt;…&gt;</code>). Couvre les trois piliers logs / métriques / traces : format, conventions de nommage, backend, rétention, échantillonnage, corrélation par <code>trace_id</code>.</p>
+            <p>Précise ce qu'on ne logue jamais (PII, secrets). Donne les conventions de code (SDK, helpers, exemples) et les leviers de maîtrise des coûts. Style normatif (MUST / SHOULD / MAY).</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 8. SLA -->
+      <details class="tpl-details" id="tpl-sla">
+        <summary>8 · SLA <span class="tpl-tag">Engagement contractuel</span></summary>
+        <div class="tpl-body">
+          <p>Engagement de niveau de service signé avec le client (ex&nbsp;: 99,9&nbsp;% de disponibilité), avec pénalités si non tenu.</p>
+
+          <h4>Template</h4>
+<pre><code># Service Level Agreement — &lt;service&gt;
+
+- **Parties**            : &lt;fournisseur&gt; ↔ &lt;client&gt;
+- **Période contractuelle** : YYYY-MM-DD → YYYY-MM-DD
+- **Version**            : 1.0
+
+## Périmètre
+Service(s) couverts, environnements (prod uniquement, généralement).
+
+## Engagements
+| Métrique           | Engagement | Mesure                     | Période  |
+|--------------------|------------|----------------------------|----------|
+| Disponibilité      | ≥ 99,9 %   | ping `/healthz` toutes 60s | mois cal.|
+| Latence p95        | ≤ 500 ms   | RUM côté client            | mois cal.|
+| RTO incident SEV-1 | ≤ 4 h      | …                          | par incident |
+
+## Exclusions
+- Maintenances planifiées annoncées ≥ 7 j à l'avance
+- Force majeure
+- Indisponibilité due au client (config, quotas)
+
+## Mesure et reporting
+Source de vérité : `&lt;outil&gt;`. Rapport mensuel envoyé le 5 du mois.
+
+## Pénalités
+| Disponibilité mesurée    | Crédit |
+|--------------------------|--------|
+| &lt; 99,9 % et ≥ 99,0 %  | 10 %   |
+| &lt; 99,0 %              | 25 %   |
+
+## Procédure de réclamation
+Délai, format, contact.
+
+## Révision
+Revue annuelle conjointe.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu rédiges un SLA entre <code>&lt;fournisseur&gt;</code> et <code>&lt;client&gt;</code> pour le service <code>&lt;nom&gt;</code>. Engagements à cadrer : disponibilité, latence, temps de rétablissement.</p>
+            <p>Inclus : périmètre précis, méthode de mesure et source de vérité, exclusions (maintenance, force majeure, faute client), grille de pénalités/crédits, procédure de réclamation, modalités de révision. Style juridico-technique, sans ambiguïté, chaque seuil chiffré.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 9. SLO -->
+      <details class="tpl-details" id="tpl-slo">
+        <summary>9 · SLO <span class="tpl-tag">Objectif interne mesurable</span></summary>
+        <div class="tpl-body">
+          <p>Objectif de niveau de service interne, plus strict que le SLA pour se garder de la marge. Pilote la priorisation produit/fiabilité via l'<em>error budget</em>.</p>
+
+          <h4>Template</h4>
+<pre><code># SLO — &lt;service / user journey&gt;
+
+- **Owner**       : équipe @…
+- **Date d'effet**: YYYY-MM-DD
+- **Revue**       : trimestrielle
+
+## SLI (indicateur)
+- **Définition** : proportion de requêtes `GET /api/v1/*`
+  retournant 2xx ou 3xx en &lt; 300 ms.
+- **Source**     : `&lt;Prometheus query&gt;`
+- **Exclusions** : requêtes synthétiques, requêtes du client `&lt;…&gt;`.
+
+## SLO (cible)
+- **Objectif**   : 99,5 % sur 28 jours glissants.
+- **Justification** : SLA contractuel à 99,0 %, marge 0,5 pt.
+
+## Error budget
+- Budget mensuel : 0,5 % × requêtes/mois ≈ N requêtes
+- Politique :
+  - &lt; 50 % consommé : développement nominal
+  - 50–100 % : freeze releases non critiques
+  - &gt; 100 % : focus 100 % fiabilité jusqu'au reset
+
+## Alertes burn-rate
+| Vitesse | Fenêtre | Sévérité |
+|---------|---------|----------|
+| 14,4×   | 1 h     | page     |
+| 6×      | 6 h     | ticket   |
+| 1×      | 3 j     | revue hebdo |
+
+## Historique
+| Période  | Atteint ?  | Commentaire |
+|----------|------------|-------------|
+| 2026-Q1  | ✅ 99,67 % | …           |</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu définis un SLO pour <code>&lt;service / user journey&gt;</code>. Données : trafic mensuel <code>&lt;…&gt;</code>, SLA contractuel <code>&lt;…&gt;</code>, latence cible métier <code>&lt;…&gt;</code>.</p>
+            <p>Produis : un SLI précisément défini avec sa requête de mesure, une cible chiffrée justifiée, l'error budget calculé, une politique de consommation à 3 paliers, des alertes burn-rate multi-fenêtre style Google SRE, un planning de revue. Le SLO doit être plus strict que le SLA.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 10. SRE -->
+      <details class="tpl-details" id="tpl-sre">
+        <summary>10 · SRE Handbook <span class="tpl-tag">Charte d'équipe SRE</span></summary>
+        <div class="tpl-body">
+          <p>Charte de l'équipe Site Reliability Engineering&nbsp;: mission, principes, périmètre d'engagement et pratiques. Issu des méthodes Google.</p>
+
+          <h4>Template</h4>
+<pre><code># SRE Handbook — &lt;organisation&gt;
+
+## Mission
+Rendre les systèmes plus fiables, scalables et maintenables
+en appliquant des méthodes d'ingénierie aux problèmes d'exploitation.
+
+## Principes
+1. L'erreur est systémique, pas humaine.
+2. On automatise la toil &gt; 50 % du temps SRE.
+3. Les SLO pilotent la priorisation produit/fiabilité.
+4. Tout incident SEV-1/2 → post-mortem blameless publié.
+
+## Périmètre d'engagement
+- Services on-call : &lt;liste&gt;
+- Services en advisory uniquement : &lt;liste&gt;
+
+## Pratiques
+### Oncall
+- Rotation : N personnes, semaine glissante
+- Compensation : …
+- Outillage : PagerDuty + runbooks
+
+### Toil budget
+- Max 50 % par ingénieur SRE
+- Mesuré chaque sprint
+
+### Production Readiness Review (PRR)
+Checklist obligatoire avant qu'un service entre en oncall SRE.
+
+### Game days
+Fréquence : trimestrielle. Format : injection de panne contrôlée.
+
+## Métriques d'équipe
+- MTTD, MTTR par sévérité
+- % temps en toil
+- SLO atteints / total
+
+## Ressources
+- Runbooks : `runbooks/`
+- ADR : `docs/adr/`
+- Post-mortems : `docs/postmortems/`</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Tu rédiges le handbook SRE de <code>&lt;organisation&gt;</code>. Couvre : mission, principes (incluant blameless, toil &lt; 50 %, SLO comme arbitre), périmètre des services oncall vs advisory, pratiques (oncall, toil budget, PRR, game days), métriques d'équipe, liens vers runbooks/ADR/post-mortems.</p>
+            <p>Inspiration : SRE Book de Google, mais adapté à une équipe de <code>&lt;taille&gt;</code>. Ton normatif, exemples concrets, pas de jargon non défini.</p>
+          </blockquote>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- GROUPE 3 — DIÁTAXIS                                          -->
+    <!-- ============================================================ -->
+    <section class="container tpl-section" id="tpl-diataxis">
+      <h2 class="tpl-group-title">11 · Diátaxis — 4 types de doc, 4 prompts</h2>
+      <p style="max-width: 70ch;">
+        Le framework <abbr title="Framework de documentation créé par Daniele Procida">Diátaxis</abbr> sépare la doc en 4 types selon leur objectif. Chaque type a sa logique propre — les mélanger dans un même document est la première cause de doc inutile.
+      </p>
+
+      <div class="card-grid card-grid--modules" style="margin-top: var(--sp-6);">
+        <div class="card">
+          <h4 class="mt-0">Tutoriel</h4>
+          <p class="text-small mb-0"><strong>Apprendre en faisant.</strong> Pas-à-pas main dans la main, un seul chemin qui marche.</p>
+        </div>
+        <div class="card">
+          <h4 class="mt-0">Guide pratique</h4>
+          <p class="text-small mb-0"><strong>Résoudre un problème précis.</strong> Pour quelqu'un qui a déjà les bases.</p>
+        </div>
+        <div class="card">
+          <h4 class="mt-0">Explication</h4>
+          <p class="text-small mb-0"><strong>Comprendre.</strong> Le pourquoi, les choix, les compromis. Pas d'action.</p>
+        </div>
+        <div class="card">
+          <h4 class="mt-0">Référence</h4>
+          <p class="text-small mb-0"><strong>Chercher une info précise.</strong> Descriptif neutre, exhaustif, scannable.</p>
+        </div>
+      </div>
+
+      <!-- 11a. Tutoriel -->
+      <details class="tpl-details" id="tpl-diataxis-tuto" style="margin-top: var(--sp-8);">
+        <summary>11a · Tutoriel <span class="tpl-tag">Apprendre en faisant</span></summary>
+        <div class="tpl-body">
+          <h4>Template</h4>
+<pre><code># Tutoriel — &lt;ce que l'apprenant saura faire à la fin&gt;
+
+## Ce que vous allez construire
+Capture d'écran ou résultat final.
+
+## Prérequis
+- … (le minimum strict)
+
+## Étape 1 — &lt;action&gt;
+```bash
+&lt;commande&gt;
+```
+Vous devriez voir : `&lt;sortie attendue&gt;`
+
+## Étape 2 — …
+
+…
+
+## Vous y êtes arrivé
+Récapitulatif de ce qui a été appris. Pas de digression.
+
+## Pour aller plus loin
+Lien vers les guides « comment faire X ».</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige un <strong>tutoriel Diátaxis</strong> pour apprendre <code>&lt;compétence&gt;</code>. Public : débutant complet sur <code>&lt;sujet&gt;</code>.</p>
+            <p>Règles strictes : (1) main dans la main, l'apprenant tape exactement ce qui est écrit ; (2) chaque étape produit un résultat observable, mentionné explicitement ; (3) pas d'options, pas d'alternatives, un seul chemin qui marche ; (4) zéro explication conceptuelle ; (5) finir par un récap concret. Ton encourageant, deuxième personne (« vous »).</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 11b. Guide -->
+      <details class="tpl-details" id="tpl-diataxis-guide">
+        <summary>11b · Guide pratique (how-to) <span class="tpl-tag">Résoudre un problème précis</span></summary>
+        <div class="tpl-body">
+          <h4>Template</h4>
+<pre><code># Comment &lt;accomplir une tâche précise&gt;
+
+## Quand utiliser ce guide
+Situation concrète où ce guide s'applique.
+
+## Prérequis
+Ce que vous devez déjà avoir/savoir.
+
+## Procédure
+1. &lt;étape&gt;
+2. &lt;étape&gt;
+3. &lt;étape&gt;
+
+## Variantes
+- Si `&lt;condition A&gt;` : faire `&lt;…&gt;`
+- Si `&lt;condition B&gt;` : faire `&lt;…&gt;`
+
+## Vérification
+Comment savoir que c'est réussi.
+
+## Voir aussi
+- Référence : &lt;lien&gt;
+- Tutoriel d'introduction : &lt;lien&gt;</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige un <strong>guide pratique Diátaxis</strong> : « Comment <code>&lt;tâche précise&gt;</code> ». Public : utilisateur qui a déjà les bases et fait face à ce problème en situation réelle.</p>
+            <p>Règles : (1) orienté tâche, pas apprentissage ; (2) suppose les bases, ne ré-explique pas ; (3) inclut les variantes selon le contexte ; (4) ne décrit que les étapes nécessaires à cette tâche ; (5) ne fait pas la promotion d'une approche, ne digresse pas. Style impératif, court.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 11c. Explication -->
+      <details class="tpl-details" id="tpl-diataxis-explication">
+        <summary>11c · Explication <span class="tpl-tag">Comprendre le pourquoi</span></summary>
+        <div class="tpl-body">
+          <h4>Template</h4>
+<pre><code># &lt;Concept&gt; — explication
+
+## De quoi parle-t-on
+Définition courte.
+
+## Pourquoi ça existe
+Quel problème ce concept résout.
+Contexte historique si pertinent.
+
+## Comment ça fonctionne
+Modèle mental. Schémas. Analogies.
+
+## Compromis et alternatives
+- Alternative A — quand la préférer
+- Alternative B — pourquoi on ne l'a pas choisie
+
+## Limites
+Ce que ce concept ne résout pas, idées fausses fréquentes.
+
+## Pour creuser
+Lectures, papers, ADR liés.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige une <strong>explication Diátaxis</strong> sur <code>&lt;concept&gt;</code>. Public : praticien qui sait s'en servir mais veut comprendre <em>pourquoi</em>.</p>
+            <p>Règles : (1) orienté compréhension, pas action — aucune procédure pas-à-pas ; (2) éclaire les choix, le contexte, les compromis ; (3) compare aux alternatives et dit pourquoi on a choisi celle-ci ; (4) nomme les limites et idées fausses ; (5) peut être lu sans terminal ouvert. Ton réflexif, exemples illustratifs autorisés.</p>
+          </blockquote>
+        </div>
+      </details>
+
+      <!-- 11d. Référence -->
+      <details class="tpl-details" id="tpl-diataxis-reference">
+        <summary>11d · Référence <span class="tpl-tag">Chercher une info précise</span></summary>
+        <div class="tpl-body">
+          <h4>Template</h4>
+<pre><code># Référence — &lt;module / API / commande&gt;
+
+## Synopsis
+```
+&lt;signature ou usage en une ligne&gt;
+```
+
+## Description
+1 à 3 phrases factuelles.
+
+## Paramètres
+| Nom   | Type   | Requis | Défaut | Description |
+|-------|--------|--------|--------|-------------|
+| `foo` | string | oui    | —      | …           |
+| `bar` | int    | non    | `0`    | …           |
+
+## Retour
+Type, structure, valeurs possibles.
+
+## Erreurs
+| Code   | Cause |
+|--------|-------|
+| `E001` | …     |
+
+## Exemple minimal
+```bash
+&lt;exemple court, sans contexte narratif&gt;
+```
+
+## Voir aussi
+Symboles liés.</code></pre>
+
+          <h4>Prompt de génération</h4>
+          <blockquote>
+            <p>Rédige une <strong>référence Diátaxis</strong> pour <code>&lt;API / commande / module&gt;</code>. Public : développeur qui sait ce qu'il cherche et veut une réponse rapide.</p>
+            <p>Règles : (1) descriptif neutre, pas pédagogique ; (2) exhaustif sur les paramètres, types, valeurs par défaut, retours, codes d'erreur ; (3) un exemple minimal par entrée, sans narration ; (4) structure plate et scannable, tableaux privilégiés ; (5) zéro opinion, zéro tutoriel embarqué. Style télégraphique, présent.</p>
+          </blockquote>
+        </div>
+      </details>
+    </section>
+
+    <hr>
+
+    <section class="section--black" aria-labelledby="end-title">
+      <div class="container">
+        <h2 id="end-title">À toi de jouer</h2>
+        <p style="max-width: 60ch;">
+          Choisis le template qui te manque le plus, copie-le dans ton outil, remplis-en au moins 50&nbsp;%. Mieux vaut un README à moitié rempli qu'un dépôt sans README.
+        </p>
+        <div class="btn-group" role="group" aria-label="Actions de fin">
+          <a href="/dj3-documentation/" class="btn">
+            <span aria-hidden="true">←</span> Retour au module 3
+          </a>
+          <a href="/livrables/checklist-doc/" class="btn btn--secondary">
+            Auditer ma doc actuelle <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/dj4-simulation/">Atelier de consolidation</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+</body>
+</html>
