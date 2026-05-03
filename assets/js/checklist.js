@@ -31,6 +31,7 @@
     const id = wrapper.dataset.checklistId;
     const storageKey = STORAGE_PREFIX + id;
     const checkboxes = wrapper.querySelectorAll('.checklist input[type="checkbox"]');
+    const progressBar = wrapper.querySelector('.checklist-progress-bar');
     const progressFill = wrapper.querySelector('.checklist-progress-fill');
     const progressText = wrapper.querySelector('.checklist-progress-text');
     const resetBtn = wrapper.querySelector('.checklist-reset');
@@ -79,7 +80,9 @@
       const pct = total === 0 ? 0 : Math.round((done / total) * 100);
       if (progressFill) {
         progressFill.style.width = pct + '%';
-        progressFill.setAttribute('aria-valuenow', String(pct));
+      }
+      if (progressBar) {
+        progressBar.setAttribute('aria-valuenow', String(pct));
       }
       if (progressText) {
         progressText.textContent = `${done} sur ${total} ${done === 1 ? 'validé' : 'validés'} (${pct}%)`;

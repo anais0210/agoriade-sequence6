@@ -804,8 +804,10 @@ tr:nth-child(even) td { background: var(--c-grey-100); }
   text-align: center;
   height: fit-content;
 }
+.timeline-content h3,
 .timeline-content h4 {
   margin: 0 0 var(--sp-2);
+  font-size: var(--fs-md);
 }
 .timeline-duration {
   font-size: var(--fs-xs);
