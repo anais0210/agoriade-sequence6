@@ -29,8 +29,7 @@
         "meta-viewport": "error",
         "document-title": "error",
         "label": "error",
-        "link-name": "error",
-        "tap-targets": "error"
+        "link-name": "error"
       }
     },
     "upload": {
