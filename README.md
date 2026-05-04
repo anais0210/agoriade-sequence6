@@ -206,6 +206,24 @@ Les rapports HTML sont uploadés vers `temporary-public-storage` (Google) et le 
 
 ---
 
+## 🔗 Vérification des liens cassés (lychee)
+
+Un workflow [`lychee`](https://github.com/lycheeverse/lychee) tourne à chaque `push`, chaque PR et chaque lundi matin (cron `0 6 * * 1`). Il scanne tous les `.html` et `.md` du dépôt et bloque la CI si un lien interne ou externe renvoie une erreur autre que `200, 206, 301, 302, 403, 429`.
+
+Configuration&nbsp;:
+- Workflow&nbsp;: [`.github/workflows/links-check.yml`](.github/workflows/links-check.yml)
+- Patterns d'URL ignorés&nbsp;: [`.lycheeignore`](.lycheeignore) (placeholders de templates, URL Vercel documentée, domaines bloquant les bots&nbsp;: LinkedIn, X)
+- Le dossier `modulo-export/` est exclu (URL placeholders à remplacer par sed avant import).
+
+Pour scanner en local&nbsp;:
+
+```bash
+brew install lychee   # ou cargo install lychee
+lychee --cache --root-dir "$PWD" --exclude-path modulo-export './**/*.html' './**/*.md'
+```
+
+---
+
 ## 🎨 Visuel et accessibilité
 
 Le site respecte **WCAG 2.1 AA** avec les contrastes principaux en **AAA**&nbsp;:

@@ -1,0 +1,23 @@
+# Lycheeignore — patterns d'URL à ignorer lors du check des liens
+
+# URL de déploiement Vercel documentée dans le README (à mettre à jour manuellement)
+^https?://agoriade-s6\.vercel\.app/?$
+
+# Placeholders de templates/exemples (pas de vrais liens)
+^https?://hook\.eu1\.make\.com/
+^https?://acme\.slack\.com
+^https?://platform\.openai\.com/.*
+^https?://airtable\.com/.*
+^https?://status\.make\.com
+^https?://status\.openai\.com
+^https?://rh\.acme\.com
+^https?://TON-URL\.vercel\.app
+
+# URLs internes en localhost utilisées dans la doc (curl exemples)
+^https?://localhost
+^https?://hook\.eu1\.make\.com
+
+# Domaines connus pour bloquer les bots (faux positifs récurrents)
+^https?://([a-z0-9.-]+\.)?linkedin\.com
+^https?://([a-z0-9.-]+\.)?twitter\.com
+^https?://([a-z0-9.-]+\.)?x\.com

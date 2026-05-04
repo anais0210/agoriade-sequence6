@@ -120,7 +120,7 @@ Sortir de « la doc c'est pour les autres » et entrer dans « les procédures q
 3. Les 3 principes : utilisable à 3h du matin, testé tous les 6 mois, accessible vite.
 
 **Pièces jointes / liens**
-- Détails : https://agoriade-s6.vercel.app/dj3-documentation/#seq-4-apport-support
+- Détails : https://agoriade-s6.vercel.app/dj3-documentation/#seq-5-apport-support
 
 ---
 
@@ -163,7 +163,7 @@ Produire un runbook complet et testable pour un scénario d'incident réaliste s
 Le test croisé est LE moment d'apprentissage — beaucoup découvriront des trous. Pousser les paires à être rigoureuses, pas gentilles.
 
 **Pièces jointes / liens**
-- Détails : https://agoriade-s6.vercel.app/dj3-documentation/#seq-6-pratique-runbook
+- Détails : https://agoriade-s6.vercel.app/dj3-documentation/#seq-7-pratique-runbook
 - Template runbook : https://agoriade-s6.vercel.app/dj3-documentation/#livrable-runbook
 
 ---
