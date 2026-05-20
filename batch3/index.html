@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche récap Claude Code — Batch 3, Agoriade</title>
+  <meta name="description" content="Fiche récap pour les cheffes de projet IA du batch 3. Comment utiliser Claude Code, Git, GitHub, Vercel, créer une charte graphique, et respecter le RGPD et l'accessibilité.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFF44F'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3EA%3C/text%3E%3C/svg%3E">
+  <style>
+    /* ===== Styles spécifiques à cette fiche ===== */
+
+    /* Étapes numérotées */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--sp-6) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .steps-list li {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: var(--sp-4);
+      align-items: start;
+    }
+    .step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background: var(--c-yellow);
+      border: 3px solid var(--c-black);
+      border-radius: 50%;
+      font-weight: 900;
+      font-size: var(--fs-md);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .step-body { padding-top: 0.5rem; }
+    .step-body strong { display: block; font-size: var(--fs-base); margin-bottom: var(--sp-1); }
+    .step-body p { margin: 0; }
+
+    /* Section alternée */
+    .section-alt {
+      background: var(--c-grey-100);
+      padding: var(--sp-16) 0;
+    }
+    .section-plain {
+      padding: var(--sp-16) 0;
+    }
+
+    /* Bloc "à retenir" */
+    .retenir {
+      background: var(--c-yellow);
+      border: 3px solid var(--c-black);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      margin: var(--sp-8) 0;
+    }
+    .retenir-label {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: var(--sp-2);
+    }
+    .retenir p:last-child,
+    .retenir ul:last-child { margin-bottom: 0; }
+
+    /* Grille outil */
+    .outil-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--sp-6);
+      margin: var(--sp-8) 0;
+    }
+    .outil-card {
+      background: var(--c-white);
+      border: 3px solid var(--c-black);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+    }
+    .outil-card .outil-icon {
+      font-size: 2rem;
+      margin-bottom: var(--sp-3);
+      display: block;
+      line-height: 1;
+    }
+    .outil-card h3 { margin-top: 0; margin-bottom: var(--sp-2); }
+    .outil-card p { margin: 0; color: var(--c-grey-700); }
+
+    /* Checklist simple */
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--sp-4) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .check-list li {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: var(--sp-3);
+      padding: var(--sp-3);
+      background: var(--c-white);
+      border: 2px solid var(--c-grey-200);
+      border-radius: var(--r-md);
+      font-size: var(--fs-base);
+      align-items: start;
+    }
+    .check-list li .check-icon {
+      color: var(--c-black);
+      font-weight: 900;
+      font-size: var(--fs-base);
+      line-height: 1.4;
+    }
+
+    /* Palette de couleurs */
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-3);
+      margin: var(--sp-4) 0;
+    }
+    .swatch {
+      width: 4rem;
+      height: 4rem;
+      border-radius: var(--r-md);
+      border: 2px solid var(--c-black);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--sp-1);
+    }
+    .swatch-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.85);
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--sp-8) 0;
+      font-size: var(--fs-xs);
+      color: var(--c-grey-700);
+    }
+    .breadcrumb li + li::before { content: "›"; margin-right: var(--sp-2); }
+    .breadcrumb a { color: var(--c-grey-700); }
+
+    /* Tag batch */
+    .batch-tag {
+      display: inline-block;
+      background: var(--c-black);
+      color: var(--c-yellow);
+      font-weight: 700;
+      font-size: var(--fs-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: var(--sp-1) var(--sp-3);
+      border-radius: var(--r-sm);
+      margin-bottom: var(--sp-4);
+    }
+
+    /* Table des matières */
+    .toc {
+      background: var(--c-white);
+      border: 3px solid var(--c-black);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      margin: var(--sp-8) 0;
+    }
+    .toc h2 {
+      font-size: var(--fs-md);
+      margin-bottom: var(--sp-4);
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .toc a {
+      font-weight: 600;
+      color: var(--c-black);
+    }
+    .toc a:hover { color: var(--c-grey-700); }
+
+    @media (max-width: 640px) {
+      .steps-list li {
+        grid-template-columns: 2.5rem 1fr;
+      }
+      .step-num {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: var(--fs-base);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/index.html" class="site-logo" aria-label="Accueil Agoriade">
+        <span class="site-logo-mark" aria-hidden="true"></span>
+        <span>Agoriade</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/dj1-rgpd-securite/">RGPD</a></li>
+          <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité</a></li>
+          <li><a href="/dj3-documentation/">Documentation</a></li>
+          <li><a href="/dj4-simulation/">Consolidation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="batch-tag">Batch 3 · 2026</span>
+        <span class="hero-kicker">Fiche récap · Claude Code</span>
+        <h1 id="hero-title">Créer un produit numérique avec l'IA</h1>
+        <p class="hero-lead">
+          Cette fiche t'explique simplement comment utiliser Claude Code.
+          Tu vas apprendre à sauvegarder ton travail, mettre ton site en ligne,
+          créer un design cohérent, et respecter les règles importantes.
+          <strong>Pas de jargon. Pas de blabla technique.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="#les-outils" class="btn btn--large">Voir les outils</a>
+          <a href="#checklist-rgpd" class="btn btn--secondary btn--large">Checklist RGPD</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLE DES MATIÈRES -->
+    <div class="container section-plain" style="padding-bottom: 0;">
+      <nav class="toc" aria-label="Sommaire de la fiche">
+        <h2>Dans cette fiche</h2>
+        <ol>
+          <li><a href="#les-outils">Les 3 outils que tu vas utiliser</a></li>
+          <li><a href="#claude-code">Claude Code — l'assistant IA</a></li>
+          <li><a href="#git-github">Git et GitHub — sauvegarder ton travail</a></li>
+          <li><a href="#vercel">Vercel — mettre ton site en ligne</a></li>
+          <li><a href="#charte-graphique">La charte graphique — le style de ton produit</a></li>
+          <li><a href="#rgpd">RGPD — protéger les données de tes utilisateurs</a></li>
+          <li><a href="#accessibilite">Accessibilité — un site pour tout le monde</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- LES 3 OUTILS -->
+    <section class="section-plain" id="les-outils" aria-labelledby="outils-title">
+      <div class="container">
+        <nav aria-label="Fil d'Ariane">
+          <ol class="breadcrumb">
+            <li><a href="/index.html">Accueil</a></li>
+            <li aria-current="page">Fiche récap Batch 3</li>
+          </ol>
+        </nav>
+
+        <h2 id="outils-title">Les 3 outils que tu vas utiliser</h2>
+        <p>Tu n'as pas besoin d'apprendre à coder. Ces 3 outils font le travail à ta place.</p>
+
+        <div class="outil-grid">
+          <div class="outil-card">
+            <span class="outil-icon" aria-hidden="true">🤖</span>
+            <h3>Claude Code</h3>
+            <p>L'assistant IA qui écrit le code pour toi. Tu lui parles en français. Il fait ce que tu lui demandes.</p>
+          </div>
+          <div class="outil-card">
+            <span class="outil-icon" aria-hidden="true">🗂️</span>
+            <h3>Git &amp; GitHub</h3>
+            <p>L'outil qui sauvegarde ton travail. Comme l'historique de versions dans Google Docs, mais pour ton code.</p>
+          </div>
+          <div class="outil-card">
+            <span class="outil-icon" aria-hidden="true">🚀</span>
+            <h3>Vercel</h3>
+            <p>Le service qui met ton site en ligne automatiquement. Tu pousses ton code, le site se met à jour tout seul.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLAUDE CODE -->
+    <section class="section-alt" id="claude-code" aria-labelledby="cc-title">
+      <div class="container">
+        <h2 id="cc-title">1. Claude Code — l'assistant IA</h2>
+
+        <p>
+          <strong>Claude Code, c'est quoi ?</strong><br>
+          C'est un assistant IA qui travaille directement dans ton ordinateur.
+          Tu lui décris ce que tu veux faire. Il écrit le code pour toi.
+          Tu peux lui parler en français, comme si c'était un collègue.
+        </p>
+
+        <div class="retenir" role="note" aria-label="À retenir">
+          <p class="retenir-label">À retenir</p>
+          <p>Claude Code n'est <strong>pas</strong> ChatGPT. Il a accès à tes fichiers. Il peut modifier ton code directement. Il faut lui donner des instructions précises.</p>
+        </div>
+
+        <h3>Comment parler à Claude Code</h3>
+        <p>La méthode la plus simple : décris ce que tu veux en 3 points.</p>
+
+        <ul class="check-list" role="list">
+          <li>
+            <span class="check-icon" aria-hidden="true">1</span>
+            <span><strong>Ce que tu veux faire.</strong> Exemple : "Je veux créer une page d'accueil pour mon application de gestion de rendez-vous."</span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">2</span>
+            <span><strong>Le style à respecter.</strong> Exemple : "La couleur principale est le bleu #1A73E8. La police est Inter. Il faut que ce soit professionnel."</span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">3</span>
+            <span><strong>Les règles importantes.</strong> Exemple : "Respecte l'accessibilité web. Pas de cookies sans consentement."</span>
+          </li>
+        </ul>
+
+        <h3>Exemple de message à envoyer</h3>
+        <div class="callout callout--yellow-soft">
+          <p class="callout-label">Exemple de prompt</p>
+          <p>
+            "Crée une page d'accueil pour mon outil de gestion de projets.
+            La couleur principale est le violet #6B21A8.
+            Le titre est : <em>Planoria, gère tes projets simplement</em>.
+            Ajoute un bouton "Commencer" bien visible.
+            La page doit être accessible : texte lisible, contrastes suffisants, navigation au clavier."
+          </p>
+        </div>
+
+        <div class="retenir" role="note" aria-label="Conseil">
+          <p class="retenir-label">Conseil pratique</p>
+          <p>
+            Si le résultat ne te convient pas, dis-le à Claude Code.
+            Exemple : "Le bouton est trop petit. Agrandis-le."
+            Tu peux corriger autant de fois que tu veux.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIT ET GITHUB -->
+    <section class="section-plain" id="git-github" aria-labelledby="git-title">
+      <div class="container">
+        <h2 id="git-title">2. Git et GitHub — sauvegarder ton travail</h2>
+
+        <p>
+          <strong>Git</strong>, c'est l'outil qui sauvegarde chaque modification de ton code.
+          À chaque étape importante, tu crées un "point de sauvegarde".
+          Si tu fais une erreur, tu peux revenir en arrière.
+        </p>
+        <p>
+          <strong>GitHub</strong>, c'est le site internet où ton code est stocké en ligne.
+          Toute ton équipe peut y accéder. Vercel surveille GitHub pour mettre ton site à jour.
+        </p>
+
+        <div class="callout callout--yellow-soft">
+          <p class="callout-label">Analogie</p>
+          <p>
+            Git, c'est comme <strong>l'historique de versions de Google Docs</strong>.
+            GitHub, c'est comme <strong>Google Drive</strong> : tes fichiers sont en ligne, accessibles depuis n'importe où.
+          </p>
+        </div>
+
+        <h3>Les 3 actions que tu feras tout le temps</h3>
+        <ol class="steps-list" aria-label="Les 3 actions Git essentielles">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Préparer la sauvegarde</strong>
+              <p>Tu sélectionnes les fichiers que tu veux sauvegarder. En langage Claude Code : "Prépare tous mes fichiers modifiés pour la sauvegarde."</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Créer le point de sauvegarde</strong>
+              <p>Tu enregistres tes modifications avec un message qui explique ce que tu as fait. Exemple de message : "Ajout de la page contact".</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Envoyer sur GitHub</strong>
+              <p>Tu envoies tes sauvegardes sur le site GitHub. Dès que c'est fait, Vercel met ton site à jour automatiquement.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="retenir" role="note" aria-label="À retenir">
+          <p class="retenir-label">Ce que tu peux dire à Claude Code</p>
+          <p>"Sauvegarde mon travail sur GitHub. Le message de sauvegarde est : <em>Ajout du formulaire de contact</em>."</p>
+          <p style="margin-top:var(--sp-2); margin-bottom:0;">Claude Code gère toutes les commandes à ta place.</p>
+        </div>
+
+        <h3>Créer ton premier dépôt GitHub</h3>
+        <p>Un <strong>dépôt</strong> (en anglais : <em>repository</em>), c'est le dossier en ligne de ton projet.</p>
+
+        <ol class="steps-list">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Crée un compte sur github.com</strong>
+              <p>C'est gratuit. Utilise ton adresse email professionnelle.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Crée un nouveau dépôt</strong>
+              <p>Clique sur "New repository". Donne un nom à ton projet. Coche "Private" si ton projet ne doit pas être public.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Connecte Claude Code à GitHub</strong>
+              <p>Dis à Claude Code : "Connecte ce projet à mon dépôt GitHub [lien de ton dépôt]."</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- VERCEL -->
+    <section class="section-alt" id="vercel" aria-labelledby="vercel-title">
+      <div class="container">
+        <h2 id="vercel-title">3. Vercel — mettre ton site en ligne</h2>
+
+        <p>
+          <strong>Vercel</strong> est le service qui publie ton site sur internet.
+          Tu n'as rien à faire manuellement.
+          Quand tu envoies ton code sur GitHub, Vercel le détecte et met le site à jour.
+        </p>
+        <p>
+          Vercel donne à ton site une adresse en ligne.
+          Exemple : <code>mon-projet.vercel.app</code>.
+          Tu peux aussi brancher ton propre nom de domaine.
+        </p>
+
+        <div class="callout callout--yellow-soft">
+          <p class="callout-label">Bon à savoir</p>
+          <p>Vercel est <strong>gratuit</strong> pour les petits projets. Pour un usage professionnel avec plus de trafic, il existe des offres payantes.</p>
+        </div>
+
+        <h3>Mettre ton projet en ligne en 4 étapes</h3>
+        <ol class="steps-list">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Crée un compte sur vercel.com</strong>
+              <p>Clique sur "Sign up". Choisis "Continue with GitHub". Vercel se connecte à ton compte GitHub.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Importe ton projet GitHub</strong>
+              <p>Dans Vercel, clique sur "Add New Project". Choisis ton dépôt GitHub dans la liste.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Lance le déploiement</strong>
+              <p>Clique sur "Deploy". Vercel met ton site en ligne. Tu reçois une adresse web.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-body">
+              <strong>Ensuite, c'est automatique</strong>
+              <p>À chaque fois que tu envoies du nouveau code sur GitHub, Vercel met le site à jour. Tu n'as rien d'autre à faire.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="retenir" role="note" aria-label="À retenir">
+          <p class="retenir-label">À retenir</p>
+          <p>
+            Le flux complet est :<br>
+            <strong>Claude Code</strong> crée le code →
+            <strong>GitHub</strong> le sauvegarde →
+            <strong>Vercel</strong> le met en ligne.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARTE GRAPHIQUE -->
+    <section class="section-plain" id="charte-graphique" aria-labelledby="charte-title">
+      <div class="container">
+        <h2 id="charte-title">4. La charte graphique — le style de ton produit</h2>
+
+        <p>
+          La <strong>charte graphique</strong>, c'est le "style" de ton produit.
+          Elle définit les couleurs, les polices de caractères, et l'aspect visuel général.
+          Grâce à elle, ton produit a l'air professionnel et cohérent partout.
+        </p>
+        <p>
+          Quand tu travailles avec Claude Code, tu lui fournis la charte graphique dès le début.
+          Il la respecte dans tout le code qu'il crée.
+        </p>
+
+        <h3>Les éléments d'une charte graphique simple</h3>
+        <ul class="check-list" role="list">
+          <li>
+            <span class="check-icon" aria-hidden="true">🎨</span>
+            <span>
+              <strong>Les couleurs.</strong>
+              Choisis 2 ou 3 couleurs maximum. Une couleur principale, une couleur secondaire, une couleur de texte.
+              Exemple : bleu #1A73E8, blanc #FFFFFF, texte gris foncé #1A1A1A.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">🔤</span>
+            <span>
+              <strong>La police de caractères.</strong>
+              Choisis une seule police pour commencer.
+              Exemple : Inter, Roboto, ou Arial. Ces polices sont gratuites et lisibles.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">📐</span>
+            <span>
+              <strong>Les formes.</strong>
+              Décide si les boutons sont arrondis ou droits. Si les cadres ont des coins ronds ou non.
+              La cohérence compte plus que la perfection.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">🖼️</span>
+            <span>
+              <strong>Le logo ou l'icône.</strong>
+              Si tu as un logo, fournis-le à Claude Code. Il l'intégrera dans les pages.
+            </span>
+          </li>
+        </ul>
+
+        <h3>Comment créer ta charte avec Claude Code</h3>
+        <ol class="steps-list">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Décris ton univers visuel</strong>
+              <p>Dis à Claude Code : "Mon produit s'appelle [nom]. C'est un outil pour [public cible]. Je veux un style [moderne / rassurant / dynamique / professionnel]."</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Donne tes couleurs</strong>
+              <p>Si tu as déjà des couleurs, donne les codes hexadécimaux (ex: #FFF44F). Sinon, demande à Claude Code de proposer une palette.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Demande un fichier de charte</strong>
+              <p>Dis-lui : "Crée un fichier de charte graphique pour mon projet avec toutes ces décisions de design."</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-body">
+              <strong>Répète la charte dans chaque instruction</strong>
+              <p>À chaque nouvelle page, rappelle à Claude Code : "Respecte la charte graphique du fichier [nom du fichier]."</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="callout callout--warning" role="note">
+          <p class="callout-label">Important : les contrastes de couleurs</p>
+          <p>
+            Les couleurs de ta charte doivent avoir un <strong>contraste suffisant</strong>.
+            Texte clair sur fond clair = illisible. Texte foncé sur fond clair = lisible.
+            C'est aussi une obligation légale d'accessibilité (voir section 6).
+            Tu peux tester sur le site <strong>contrast-ratio.com</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RGPD -->
+    <section class="section-alt" id="rgpd" aria-labelledby="rgpd-title">
+      <div class="container">
+        <h2 id="rgpd-title">5. RGPD — protéger les données de tes utilisateurs</h2>
+
+        <p>
+          Le <strong>RGPD</strong> est une loi européenne.
+          Elle protège les informations personnelles de tes utilisateurs.
+          Une information personnelle, c'est par exemple : un prénom, un email, une adresse IP.
+          Si tu ne respectes pas le RGPD, tu risques une amende.
+        </p>
+
+        <div class="callout callout--yellow-soft" role="note">
+          <p class="callout-label">La règle de base</p>
+          <p>
+            Tu ne peux pas collecter des données personnelles sans l'accord de l'utilisateur.
+            Cet accord s'appelle le <strong>consentement</strong>.
+            Il doit être libre, clair, et l'utilisateur doit pouvoir le retirer à tout moment.
+          </p>
+        </div>
+
+        <h3 id="checklist-rgpd">Checklist RGPD — les points essentiels</h3>
+        <p>Avant de mettre ton produit en ligne, vérifie ces 8 points.</p>
+
+        <ul class="check-list" role="list" aria-label="Checklist RGPD">
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Demande l'accord avant de collecter.</strong>
+              Si ton site a un formulaire d'inscription, l'utilisateur doit cocher une case pour accepter.
+              Cette case ne doit pas être cochée par défaut.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Explique pourquoi tu collectes.</strong>
+              Ton utilisateur doit savoir à quoi servent ses données.
+              Exemple : "Ton email sera utilisé uniquement pour t'envoyer ta confirmation de rendez-vous."
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Ne collecte que ce dont tu as besoin.</strong>
+              Si tu n'as pas besoin de la date de naissance, ne la demande pas.
+              Moins tu collectes, moins tu risques.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Bandeaux de cookies.</strong>
+              Si ton site utilise des cookies (outils de suivi, publicités, analytics), tu dois afficher un bandeau.
+              L'utilisateur doit pouvoir refuser les cookies non essentiels.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Droit de suppression.</strong>
+              Ton utilisateur peut demander à supprimer toutes ses données.
+              Tu dois pouvoir répondre à cette demande.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Page de politique de confidentialité.</strong>
+              Ton site doit avoir une page qui explique comment tu gères les données.
+              Claude Code peut t'aider à la créer.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Mentions légales.</strong>
+              Ton site doit afficher le nom de l'entreprise, l'adresse, et les coordonnées.
+              C'est obligatoire en France.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Pas d'IA générative avec des données sensibles.</strong>
+              Ne donne pas à Claude Code des données personnelles réelles (vrais noms, vrais emails).
+              Utilise des données fictives pour tes tests.
+            </span>
+          </li>
+        </ul>
+
+        <div class="retenir" role="note" aria-label="Ce que tu peux dire à Claude Code">
+          <p class="retenir-label">Ce que tu peux dire à Claude Code</p>
+          <p>"Crée une page de politique de confidentialité pour mon site. Mon site s'appelle [nom]. Je collecte : email et prénom. Je n'utilise pas de cookies publicitaires."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBILITÉ -->
+    <section class="section-plain" id="accessibilite" aria-labelledby="a11y-title">
+      <div class="container">
+        <h2 id="a11y-title">6. Accessibilité — un site pour tout le monde</h2>
+
+        <p>
+          L'<strong>accessibilité numérique</strong>, c'est s'assurer que ton site fonctionne pour tout le monde.
+          Y compris les personnes malvoyantes, les personnes handicapées, et les personnes âgées.
+          En France, c'est aussi une obligation légale pour de nombreuses organisations.
+        </p>
+
+        <div class="callout callout--yellow-soft" role="note">
+          <p class="callout-label">Ce que ça change concrètement</p>
+          <p>
+            Un site accessible, c'est un site où les contrastes sont lisibles, les images ont une description,
+            on peut naviguer au clavier, et les formulaires sont bien étiquetés.
+            Claude Code peut faire tout ça si tu lui demandes.
+          </p>
+        </div>
+
+        <h3>Les règles essentielles à respecter</h3>
+        <ul class="check-list" role="list" aria-label="Checklist accessibilité">
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Contrastes de couleurs suffisants.</strong>
+              Le texte doit être lisible sur le fond. Ratio minimum : 4.5:1 pour le texte normal.
+              Tu peux tester sur <strong>contrast-ratio.com</strong>.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Description des images.</strong>
+              Chaque image doit avoir un texte alternatif.
+              Exemple : <code>alt="Photo d'une femme qui sourit en tenant un café"</code>.
+              Les personnes malvoyantes lisent ce texte.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Navigation au clavier.</strong>
+              Ton site doit fonctionner sans souris.
+              Quelqu'un doit pouvoir naviguer avec la touche Tab.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Titres bien organisés.</strong>
+              Chaque page a un seul grand titre (h1). Les sous-titres suivent un ordre logique (h2, h3…).
+              Claude Code gère ça si tu lui demandes.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Formulaires avec étiquettes.</strong>
+              Chaque champ de formulaire a un label visible.
+              Exemple : "Ton email :" au-dessus du champ email.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Pas d'animations qui clignotent.</strong>
+              Évite les animations rapides. Elles peuvent causer des crises d'épilepsie.
+              Si tu as des animations, elles doivent s'arrêter sur demande.
+            </span>
+          </li>
+          <li>
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>
+              <strong>Texte assez grand.</strong>
+              Taille minimale recommandée : 16 pixels pour le texte courant.
+              L'utilisateur doit pouvoir zoomer sans que la mise en page casse.
+            </span>
+          </li>
+        </ul>
+
+        <div class="retenir" role="note" aria-label="Ce que tu peux dire à Claude Code">
+          <p class="retenir-label">Ce que tu peux dire à Claude Code</p>
+          <p>"Vérifie l'accessibilité de cette page. Assure-toi que les contrastes sont suffisants, que les images ont des descriptions, et que la navigation au clavier fonctionne."</p>
+        </div>
+
+        <div class="callout callout--warning" role="note">
+          <p class="callout-label">Obligation légale en France</p>
+          <p>
+            Depuis 2023, les entreprises de plus de 250 salariés et les services publics doivent respecter le <strong>RGAA</strong> (Référentiel Général d'Amélioration de l'Accessibilité).
+            Si tu travailles pour ce type d'organisation, tu dois publier une déclaration d'accessibilité sur ton site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉCAP FINAL -->
+    <section class="section-alt" aria-labelledby="recap-title">
+      <div class="container">
+        <h2 id="recap-title">En résumé — le flux de travail du Batch 3</h2>
+        <p>Voici les étapes dans l'ordre pour créer et publier ton produit.</p>
+
+        <ol class="steps-list" aria-label="Flux de travail complet">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <strong>Définis ta charte graphique</strong>
+              <p>Couleurs, police, style. Fournis tout à Claude Code dès le début.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <strong>Crée ton dépôt GitHub</strong>
+              <p>Un dossier en ligne pour stocker ton code. Gratuit, indispensable.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <strong>Connecte Vercel à GitHub</strong>
+              <p>Une seule fois. Ensuite, c'est automatique.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-body">
+              <strong>Demande à Claude Code de créer tes pages</strong>
+              <p>Décris ce que tu veux. Précise la charte graphique, le RGPD, et l'accessibilité.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">5</span>
+            <div class="step-body">
+              <strong>Sauvegarde sur GitHub</strong>
+              <p>Dis à Claude Code : "Sauvegarde sur GitHub, message : [ce que tu as fait]."</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">6</span>
+            <div class="step-body">
+              <strong>Ton site est en ligne</strong>
+              <p>Vercel publie automatiquement. Vérifie que tout s'affiche bien sur mobile et ordinateur.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="retenir" role="note">
+          <p class="retenir-label">Le message à donner à Claude Code dès le départ</p>
+          <p>
+            "Je commence un nouveau projet. Il s'appelle [nom]. C'est pour [public cible].
+            La charte graphique : couleur principale [couleur], police [police].
+            Respecte l'accessibilité web (WCAG AA) et le RGPD français dans tout le code que tu crées.
+            Mon dépôt GitHub est : [lien]."
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer-grid">
+
+        <div class="site-footer-brand">
+          <span class="site-footer-brand-logo">
+            <span class="site-logo-mark" aria-hidden="true"></span>
+            <span>Agoriade</span>
+          </span>
+          <p>Bootcamp AI Product Builder, Édition 2026.</p>
+        </div>
+
+        <nav aria-label="Navigation pied de page">
+          <h2 class="site-footer-title">Parcours</h2>
+          <ul class="site-footer-nav">
+            <li><a href="/index.html">Accueil</a></li>
+            <li><a href="/dj1-rgpd-securite/">RGPD et Sécurité</a></li>
+            <li><a href="/dj2-accessibilite-ecoconception/">Accessibilité et Écoconception</a></li>
+            <li><a href="/dj3-documentation/">Documentation et Support</a></li>
+            <li><a href="/dj4-simulation/">Atelier de consolidation</a></li>
+            <li><a href="/a-propos-anais/">À propos d'Anaïs</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="site-footer-title">Contacts</h2>
+          <p class="site-footer-contact">
+            <strong>Formation</strong>
+            Anaïs Sparesotto<br>
+            <a href="mailto:contact@agoriade.fr">contact@agoriade.fr</a>
+          </p>
+          <p class="site-footer-contact">
+            <strong>École Agoriade</strong>
+            Goulven<br>
+            <a href="mailto:goulven@agoriade.fr">goulven@agoriade.fr</a>
+          </p>
+        </div>
+
+        <div>
+          <h2 class="site-footer-title">Lieu &amp; empreinte</h2>
+          <p class="site-footer-contact">
+            Halles 1 &amp; 2<br>
+            5 Allée Frida Kahlo<br>
+            44200 Nantes
+          </p>
+          <div class="site-footer-carbon" role="status" aria-live="polite"></div>
+        </div>
+
+      </div>
+      <div class="site-footer-bottom">
+        <p>
+          <a href="/mentions-legales/">Mentions légales</a> ·
+          <a href="/accessibilite/">Déclaration d'accessibilité</a> ·
+          <a href="/empreinte-carbone/">Empreinte carbone</a>
+        </p>
+        <p>© 2026 Agoriade · Batch 3.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/carbon.js" defer></script>
+
+</body>
+</html>
